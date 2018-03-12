@@ -1,0 +1,29 @@
+.projects-table{
+    border-collapse:collapse;
+    width: 100%;
+}
+
+.projects-table-header{
+    text-align: left;
+    border: 1px solid #BBBBBB;
+    padding:16px;
+}
+
+.projects-table-odd-row{
+    text-align: left;
+    height: 30px;
+    background:none repeat scroll 0 0 #FFFFFF;
+    border-top: 1px solid #BBBBBB;
+}
+
+.projects-table-even-row{
+    text-align: left;
+    height: 30px;
+    background:none repeat scroll 0 0 #F9F9F9;
+    border-top: 1px solid #BBBBBB;
+}
+
+td{
+    padding: 4px 16px;
+    border: 1px solid #BBBBBB;;
+}

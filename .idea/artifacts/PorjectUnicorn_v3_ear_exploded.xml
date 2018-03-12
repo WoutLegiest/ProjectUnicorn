@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="PorjectUnicorn_v3:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/PorjectUnicorn_v3_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ProjectUnicorn_v3/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="UseEJB.jar">
+        <element id="artifact" artifact-name="UseEJB:ejb exploded" />
+      </element>
+      <element id="directory" name="UseWeb.war">
+        <element id="artifact" artifact-name="UseWeb:war exploded" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="archive" name="UseJPA.jar">
+          <element id="module-output" name="UseJPA" />
+        </element>
+        <element id="archive" name="UseEJBClient.jar">
+          <element id="module-output" name="UseEJBClient" />
+        </element>
+        <element id="library" level="project" name="Java EE 6-Java EE 6" />
+      </element>
+    </root>
+  </artifact>
+</component>

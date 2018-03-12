@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+	<link rel="stylesheet" type="text/css" href="resources/style.css"></link>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	
+	<title>Welcome Page</title>
+</h:head> 
+
+<h:body>
+	<nav class="left">
+		<a href="index.xhtml" class="left">
+			<img src="resources/Unicorn_Logo.png" alt="Logo" class="logo"></img>
+		</a>
+		
+		<a href="ProUser/home.xhtml" class="link left">HOME</a>
+		<a href="" class="link left">PROJECTEN</a>
+		<a href="" class="link left">INFO</a>
+		<a href="" class="link left">FEEDBACK</a>
+		
+		<a href="login.xhtml" class="right"><i class="material-icons" style="font-size:36px;">public</i></a>
+		<a href="addUser.xhtml" class="right"><i class="material-icons" style="font-size:36px;">person</i></a>
+	</nav>
+	
+	<main>
+		<p>Om naar de homepagina te gaan van de pro user druk op home</p>
+
+		<h:form id="proUserForm" method="post" action="j_security_check">
+
+			<h:commandButton style="margin-left:350px;float:left;hight:100px;width:200px" value="ProUser" action="#{userController.activateProUser}" class="btn btn-primary pull-left" id="ProUser"/>
+
+		</h:form>
+
+
+	</main>	
+
+</h:body>
+
+</html>

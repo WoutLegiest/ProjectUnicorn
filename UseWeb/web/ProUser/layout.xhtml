@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+    <link rel="stylesheet" type="text/css" href="../resources/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="../resources/table_style.css"></link>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+    <title>
+        <ui:insert name="title">Default title</ui:insert>
+    </title>
+</h:head>
+
+<h:body>
+    <nav class="left">
+        <a href="../index.xhtml" class="left">
+            <img src="../resources/Unicorn_Logo.png" alt="Logo" class="logo"></img>
+        </a>
+
+        <a href="home.xhtml" class="link left">HOME</a>
+        <a href="projecten.xhtml" class="link left">PROJECTEN</a>
+        <a href="" class="link left">WORLD MAP</a>
+        <a href="" class="link left">FEEDBACK</a>
+
+        <a href="" class="right"><i class="material-icons" style="font-size:36px;">public</i></a>
+        <a href="" class="right"><i class="material-icons" style="font-size:36px;">person</i></a>
+    </nav>
+
+    <main>
+
+        <ui:insert name="content">Default content</ui:insert>
+
+    </main>
+</h:body>
+
+</html>

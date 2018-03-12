@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layout.xhtml">
+    <ui:define name="title">Home</ui:define>
+
+    <ui:define name="content">
+
+        <a href="https://www.mkyong.com/jsf2/jsf-2-datatable-example/">De inspiratie </a>
+        <p></p>
+
+        <h:dataTable value="#{spotter_projects.projectsList}" var="p"
+                     styleClass="projects-table"
+                     headerClass="projects-table-header"
+                     rowClasses="projects-table-odd-row,projects-table-even-row"
+        >
+
+            <h:column>
+                <!-- column header -->
+                <f:facet name="header">Nr</f:facet>
+                <!-- row record -->
+                #{p.projectId}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Project Naam</f:facet>
+                #{p.projectNaam}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Locatie</f:facet>
+                #{p.locatie}
+            </h:column>
+
+        </h:dataTable>
+    </ui:define>
+
+</ui:composition>
+</html>
