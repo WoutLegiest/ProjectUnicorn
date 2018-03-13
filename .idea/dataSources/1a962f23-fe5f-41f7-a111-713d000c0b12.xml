@@ -4,26 +4,26 @@
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="Wereld">
+    <schema id="2" parent="1" name="homecare">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="3" parent="1" name="audit">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="4" parent="1" name="films">
+    <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="5" parent="1" name="homecare">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="6" parent="1" name="information_schema">
+    <schema id="4" parent="1" name="mydb">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="7" parent="1" name="mysql">
+    <schema id="5" parent="1" name="mysql">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="8" parent="1" name="performance_schema">
+    <schema id="6" parent="1" name="performance_schema">
       <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="sys">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="8" parent="1" name="test">
+      <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="9" parent="1" name="unicorn">
       <Current>1</Current>
@@ -945,295 +945,333 @@
     <table id="240" parent="9" name="User">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="241" parent="232" name="GroupName">
+    <table id="241" parent="9" name="UserTokens">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="242" parent="232" name="GroupName">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="232" name="Group_LoginNaam">
+    <column id="243" parent="232" name="Group_LoginNaam">
       <Position>2</Position>
       <DataType>varchar(64)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="243" parent="232" name="fk_Group_User_User1_idx">
+    <index id="244" parent="232" name="fk_Group_User_User1_idx">
       <ColNames>Group_LoginNaam</ColNames>
     </index>
-    <key id="244" parent="232" name="PRIMARY">
+    <key id="245" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>GroupName
 Group_LoginNaam</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="245" parent="232" name="fk_Group_User_User1">
+    <foreign-key id="246" parent="232" name="fk_Group_User_User1">
       <ColNames>Group_LoginNaam</ColNames>
       <RefSchemaName>unicorn</RefSchemaName>
       <RefTableName>User</RefTableName>
       <RefColNames>LoginNaam</RefColNames>
     </foreign-key>
-    <column id="246" parent="233" name="Group_User_User_LoginNaam">
+    <column id="247" parent="233" name="Group_User_User_LoginNaam">
       <Position>1</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="247" parent="233" name="fk_ProUser_Group_User1_idx1">
+    <index id="248" parent="233" name="fk_ProUser_Group_User1_idx1">
       <ColNames>Group_User_User_LoginNaam</ColNames>
     </index>
-    <key id="248" parent="233" name="PRIMARY">
+    <key id="249" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Group_User_User_LoginNaam</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="249" parent="233" name="fk_ProUser_Group_User1">
+    <foreign-key id="250" parent="233" name="fk_ProUser_Group_User1">
       <ColNames>Group_User_User_LoginNaam</ColNames>
       <RefSchemaName>unicorn</RefSchemaName>
       <RefTableName>GroupUser</RefTableName>
       <RefColNames>Group_LoginNaam</RefColNames>
     </foreign-key>
-    <column id="250" parent="234" name="id">
+    <column id="251" parent="234" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="234" name="Naam">
+    <column id="252" parent="234" name="Naam">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="234" name="Location">
+    <column id="253" parent="234" name="Location">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="253" parent="234" name="id_UNIQUE">
+    <index id="254" parent="234" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="254" parent="234" name="PRIMARY">
+    <key id="255" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="255" parent="234" name="id_UNIQUE">
+    <key id="256" parent="234" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
-    <column id="256" parent="235" name="Data">
+    <column id="257" parent="235" name="Data">
       <Position>1</Position>
       <DataType>blob|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="235" name="Beschrijving">
+    <column id="258" parent="235" name="Beschrijving">
       <Position>2</Position>
       <DataType>longtext|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="235" name="SpotterProject_id">
+    <column id="259" parent="235" name="SpotterProject_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="235" name="ProUser_Group_User_User_LoginNaam">
+    <column id="260" parent="235" name="ProUser_Group_User_User_LoginNaam">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="260" parent="235" name="fk_Spottermeting_SpotterProject1_idx">
+    <index id="261" parent="235" name="fk_Spottermeting_SpotterProject1_idx">
       <ColNames>SpotterProject_id</ColNames>
     </index>
-    <index id="261" parent="235" name="fk_Spottermeting_ProUser1_idx">
+    <index id="262" parent="235" name="fk_Spottermeting_ProUser1_idx">
       <ColNames>ProUser_Group_User_User_LoginNaam</ColNames>
     </index>
-    <key id="262" parent="235" name="PRIMARY">
+    <key id="263" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>SpotterProject_id
 ProUser_Group_User_User_LoginNaam</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="263" parent="235" name="fk_Spottermeting_SpotterProject1">
+    <foreign-key id="264" parent="235" name="fk_Spottermeting_SpotterProject1">
       <ColNames>SpotterProject_id</ColNames>
       <RefSchemaName>unicorn</RefSchemaName>
       <RefTableName>SpotterProject</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="264" parent="235" name="fk_Spottermeting_ProUser1">
+    <foreign-key id="265" parent="235" name="fk_Spottermeting_ProUser1">
       <ColNames>ProUser_Group_User_User_LoginNaam</ColNames>
       <RefSchemaName>unicorn</RefSchemaName>
       <RefTableName>ProUser</RefTableName>
       <RefColNames>Group_User_User_LoginNaam</RefColNames>
     </foreign-key>
-    <column id="265" parent="236" name="StemProject_id">
+    <column id="266" parent="236" name="StemExperimentID">
       <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="267" parent="236" name="StemProject_id">
+      <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="236" name="Data">
-      <Position>2</Position>
+    <column id="268" parent="236" name="Data">
+      <Position>3</Position>
       <DataType>blob|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="236" name="Student_Group_User_User_LoginNaam">
-      <Position>3</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="268" parent="236" name="fk_StemExperiment_StemProject1_idx">
-      <ColNames>StemProject_id</ColNames>
-    </index>
-    <index id="269" parent="236" name="fk_StemExperiment_Student1_idx">
-      <ColNames>Student_Group_User_User_LoginNaam</ColNames>
-    </index>
-    <key id="270" parent="236" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>StemProject_id
-Student_Group_User_User_LoginNaam</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="271" parent="236" name="fk_StemExperiment_StemProject1">
-      <ColNames>StemProject_id</ColNames>
-      <RefSchemaName>unicorn</RefSchemaName>
-      <RefTableName>StemProject</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="272" parent="236" name="fk_StemExperiment_Student1">
-      <ColNames>Student_Group_User_User_LoginNaam</ColNames>
-      <RefSchemaName>unicorn</RefSchemaName>
-      <RefTableName>Student</RefTableName>
-      <RefColNames>Group_User_User_LoginNaam</RefColNames>
-    </foreign-key>
-    <column id="273" parent="237" name="id">
-      <Position>1</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="274" parent="237" name="Teacher_Group_User_User_LoginNaam">
-      <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="275" parent="237" name="fk_StemProject_Teacher1_idx">
-      <ColNames>Teacher_Group_User_User_LoginNaam</ColNames>
-    </index>
-    <key id="276" parent="237" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id
-Teacher_Group_User_User_LoginNaam</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="277" parent="237" name="fk_StemProject_Teacher1">
-      <ColNames>Teacher_Group_User_User_LoginNaam</ColNames>
-      <RefSchemaName>unicorn</RefSchemaName>
-      <RefTableName>Teacher</RefTableName>
-      <RefColNames>Group_User_User_LoginNaam</RefColNames>
-    </foreign-key>
-    <column id="278" parent="238" name="Group_User_User_LoginNaam">
-      <Position>1</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="279" parent="238" name="fk_Student_Group_User1_idx">
-      <ColNames>Group_User_User_LoginNaam</ColNames>
-    </index>
-    <key id="280" parent="238" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>Group_User_User_LoginNaam</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="281" parent="238" name="fk_Student_Group_User1">
-      <ColNames>Group_User_User_LoginNaam</ColNames>
-      <RefSchemaName>unicorn</RefSchemaName>
-      <RefTableName>GroupUser</RefTableName>
-      <RefColNames>Group_LoginNaam</RefColNames>
-    </foreign-key>
-    <column id="282" parent="239" name="School">
-      <Position>1</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="283" parent="239" name="Group_User_User_LoginNaam">
-      <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="284" parent="239" name="fk_Teacher_Group_User1_idx1">
-      <ColNames>Group_User_User_LoginNaam</ColNames>
-    </index>
-    <key id="285" parent="239" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>Group_User_User_LoginNaam</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="286" parent="239" name="fk_Teacher_Group_User1">
-      <ColNames>Group_User_User_LoginNaam</ColNames>
-      <RefSchemaName>unicorn</RefSchemaName>
-      <RefTableName>GroupUser</RefTableName>
-      <RefColNames>Group_LoginNaam</RefColNames>
-    </foreign-key>
-    <column id="287" parent="240" name="idUser">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="288" parent="240" name="Naam">
-      <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="289" parent="240" name="LoginNaam">
-      <Position>3</Position>
-      <DataType>varchar(64)|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="290" parent="240" name="hPassword">
+    <column id="269" parent="236" name="Student_Group_User_User_LoginNaam">
       <Position>4</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="240" name="EMail">
+    <index id="270" parent="236" name="fk_StemExperiment_StemProject1_idx">
+      <ColNames>StemProject_id</ColNames>
+    </index>
+    <index id="271" parent="236" name="fk_StemExperiment_Student1_idx">
+      <ColNames>Student_Group_User_User_LoginNaam</ColNames>
+    </index>
+    <key id="272" parent="236" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>StemExperimentID
+StemProject_id
+Student_Group_User_User_LoginNaam</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="273" parent="236" name="fk_StemExperiment_StemProject1">
+      <ColNames>StemProject_id</ColNames>
+      <RefSchemaName>unicorn</RefSchemaName>
+      <RefTableName>StemProject</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="274" parent="236" name="fk_StemExperiment_Student1">
+      <ColNames>Student_Group_User_User_LoginNaam</ColNames>
+      <RefSchemaName>unicorn</RefSchemaName>
+      <RefTableName>Student</RefTableName>
+      <RefColNames>Group_User_User_LoginNaam</RefColNames>
+    </foreign-key>
+    <column id="275" parent="237" name="id">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="276" parent="237" name="Teacher_Group_User_User_LoginNaam">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="277" parent="237" name="fk_StemProject_Teacher1_idx">
+      <ColNames>Teacher_Group_User_User_LoginNaam</ColNames>
+    </index>
+    <key id="278" parent="237" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id
+Teacher_Group_User_User_LoginNaam</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="279" parent="237" name="fk_StemProject_Teacher1">
+      <ColNames>Teacher_Group_User_User_LoginNaam</ColNames>
+      <RefSchemaName>unicorn</RefSchemaName>
+      <RefTableName>Teacher</RefTableName>
+      <RefColNames>Group_User_User_LoginNaam</RefColNames>
+    </foreign-key>
+    <column id="280" parent="238" name="Group_User_User_LoginNaam">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="281" parent="238" name="fk_Student_Group_User1_idx">
+      <ColNames>Group_User_User_LoginNaam</ColNames>
+    </index>
+    <key id="282" parent="238" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Group_User_User_LoginNaam</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="283" parent="238" name="fk_Student_Group_User1">
+      <ColNames>Group_User_User_LoginNaam</ColNames>
+      <RefSchemaName>unicorn</RefSchemaName>
+      <RefTableName>GroupUser</RefTableName>
+      <RefColNames>Group_LoginNaam</RefColNames>
+    </foreign-key>
+    <column id="284" parent="239" name="School">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="285" parent="239" name="Group_User_User_LoginNaam">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="286" parent="239" name="fk_Teacher_Group_User1_idx1">
+      <ColNames>Group_User_User_LoginNaam</ColNames>
+    </index>
+    <key id="287" parent="239" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Group_User_User_LoginNaam</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="288" parent="239" name="fk_Teacher_Group_User1">
+      <ColNames>Group_User_User_LoginNaam</ColNames>
+      <RefSchemaName>unicorn</RefSchemaName>
+      <RefTableName>GroupUser</RefTableName>
+      <RefColNames>Group_LoginNaam</RefColNames>
+    </foreign-key>
+    <column id="289" parent="240" name="idUser">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="290" parent="240" name="Naam">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="291" parent="240" name="LoginNaam">
+      <Position>3</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="292" parent="240" name="hPassword">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="293" parent="240" name="EMail">
       <Position>5</Position>
       <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="292" parent="240" name="idUser_UNIQUE">
+    <index id="294" parent="240" name="idUser_UNIQUE">
       <ColNames>idUser</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="293" parent="240" name="LoginNaam_UNIQUE">
+    <index id="295" parent="240" name="LoginNaam_UNIQUE">
       <ColNames>LoginNaam</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="294" parent="240" name="PRIMARY">
+    <key id="296" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUser
 LoginNaam</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="295" parent="240" name="idUser_UNIQUE">
+    <key id="297" parent="240" name="idUser_UNIQUE">
       <ColNames>idUser</ColNames>
       <UnderlyingIndexName>idUser_UNIQUE</UnderlyingIndexName>
     </key>
-    <key id="296" parent="240" name="LoginNaam_UNIQUE">
+    <key id="298" parent="240" name="LoginNaam_UNIQUE">
       <ColNames>LoginNaam</ColNames>
       <UnderlyingIndexName>LoginNaam_UNIQUE</UnderlyingIndexName>
     </key>
+    <column id="299" parent="241" name="User_Login">
+      <Position>1</Position>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="241" name="Token">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="301" parent="241" name="fk_UserTokens_User_LoginNaam_idx">
+      <ColNames>User_Login</ColNames>
+    </index>
+    <key id="302" parent="241" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>User_Login</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="303" parent="241" name="fk_UserTokens_User_LoginNaam">
+      <ColNames>User_Login</ColNames>
+      <RefSchemaName>unicorn</RefSchemaName>
+      <RefTableName>User</RefTableName>
+      <RefColNames>LoginNaam</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
