@@ -8,6 +8,7 @@ import java.util.List;
 @Local
 public interface SpotterProjectManagementEJBLocal {
 
-    public List<SpotterProject> findProjects();
+    public List<SpotterProject> findAllProjects();
 
+    SpotterProject findProject(long id);
 }

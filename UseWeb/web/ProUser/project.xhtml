@@ -5,14 +5,48 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="layout.xhtml">
 
     <ui:define name="title">Project</ui:define>
 
+    <ui:define name="meta">
+        <f:metadata>
+            <f:viewParam name="spotterProject" value="#{spotterProjectController.project.id}" />
+            <f:viewAction action="#{spotterProjectController.findProject}" />
+        </f:metadata>
+    </ui:define>
+
     <ui:define name="content">
-        <h:outputLabel value="#{spotterProjectController.project.title}"/>
+
+        <section class="col-12 left">
+
+            <h1><h:outputLabel value="#{spotterProjectController.project.naam}"/></h1>
+
+            <h:outputLabel value="#{spotterProjectController.project.locatie}"/>
+
+            <div id="map"></div>
+
+            <p>Hier komt een tabel met meetwaarden</p>
+
+        </section>
+
+        <script>
+            function initMap() {
+                var uluru = {lat: 51.059, lng: 3.708};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+        </script>
+        <script async="1" defer="1" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_LoQNtoB_ZatWcLYg35NIQ0PWJoQsM0&amp;callback=initMap"></script>
     </ui:define>
 
 </ui:composition>

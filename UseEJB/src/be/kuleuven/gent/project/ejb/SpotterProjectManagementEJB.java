@@ -24,10 +24,15 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
     }
 
     @Override
-    public List<SpotterProject> findProjects() {
+    public List<SpotterProject> findAllProjects() {
         TypedQuery<SpotterProject> q =
                 em.createQuery("SELECT p FROM SpotterProject p", SpotterProject.class);
         List<SpotterProject> projects = q.getResultList();
         return projects;
+    }
+
+    @Override
+    public SpotterProject findProject(long id){
+        return em.find(SpotterProject.class, id);
     }
 }

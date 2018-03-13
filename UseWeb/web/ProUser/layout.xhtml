@@ -5,6 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
@@ -17,6 +18,8 @@
     <title>
         <ui:insert name="title">Default title</ui:insert>
     </title>
+
+    <f:view><ui:insert name="meta"></ui:insert></f:view>
 </h:head>
 
 <h:body>

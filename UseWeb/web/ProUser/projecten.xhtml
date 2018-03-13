@@ -15,7 +15,7 @@
         <a href="https://www.mkyong.com/jsf2/jsf-2-datatable-example/">De inspiratie </a>
         <p></p>
 
-        <h:dataTable value="#{spotterProjectController.findProjects()}" var="p"
+        <h:dataTable value="#{spotterProjectController.findAllProjects()}" var="p"
                      styleClass="projects-table"
                      headerClass="projects-table-header"
                      rowClasses="projects-table-odd-row,projects-table-even-row"
@@ -23,18 +23,23 @@
 
             <h:column>
                 <f:facet name="header">Nr</f:facet>
-                <h:outputText value="#{p.id}"/>
+                <a href="project.xhtml?spotterProject=#{p.id}"><h:outputText value="#{p.id}"/></a>
             </h:column>
 
             <h:column>
                 <f:facet name="header">Project Naam</f:facet>
-                <h:outputText value="#{p.naam}"/>
+                <a href="project.xhtml?spotterProject=#{p.id}"><h:outputText value="#{p.naam}"/></a>
             </h:column>
 
             <h:column>
                 <f:facet name="header">Locatie</f:facet>
-                <h:outputText value="#{p.locatie}"/>
+                <a href="project.xhtml?spotterProject=#{p.id}"><h:outputText value="#{p.locatie}"/></a>
             </h:column>
+
+            <!--<h:column>
+                <f:facet name="header">Actie</f:facet>
+                <a href="project.xhtml?spotterProject=#{p.id}">Bekijk project</a>
+            </h:column>-->
 
         </h:dataTable>
     </ui:define>

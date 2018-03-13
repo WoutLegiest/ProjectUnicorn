@@ -1,3 +1,7 @@
+/*
+De algemene layout van de pagina
+*/
+
 * {
     box-sizing: border-box;
 }
@@ -64,12 +68,6 @@ section {
 	float: right;
 }
 
-.toren {
-	width: 80%;
-    height: auto;
-	float: right;
-}
-
 /* For desktop: */
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -83,6 +81,28 @@ section {
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
+
+/*
+Dingen in specifieke webpagina's
+*/
+
+.toren {
+	width: 80%;
+    height: auto;
+	float: right;
+}
+
+#map {
+	display: inline;
+	float: left;
+	height: 400px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+/*
+Om de webpagina responsive te maken (later)
+*/
 
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
@@ -106,5 +126,3 @@ section {
 		height: auto;
 	}
 }
-
-

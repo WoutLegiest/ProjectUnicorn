@@ -9,6 +9,8 @@ import javax.ejb.EJB;
 //import javax.ejb.Stateless;
 //import javax.enterprise.context.SessionScoped;
 
+
+import javax.enterprise.context.SessionScoped;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -21,7 +23,7 @@ import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 public class SpotterProjectController implements Serializable{
     private static final long serialVersionUID = 6737147724536164355L;
 
-    @Inject
+    @EJB
     private SpotterProjectManagementEJBLocal spotterProjectEJB;
 
     private SpotterProject project = new SpotterProject();
@@ -29,9 +31,13 @@ public class SpotterProjectController implements Serializable{
     public SpotterProjectController() {
     }
 
-    public List<SpotterProject> findProjects() {
+    public List<SpotterProject> findAllProjects() {
 
-        return spotterProjectEJB.findProjects();
+        return spotterProjectEJB.findAllProjects();
+    }
+
+    public void findProject() {
+        project = spotterProjectEJB.findProject(project.getId());
     }
 
     public SpotterProject getProject() {
