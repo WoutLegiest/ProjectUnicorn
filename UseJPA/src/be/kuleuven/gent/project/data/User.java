@@ -9,14 +9,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name="User")
 @SecondaryTable(name = "GroupUser", pkJoinColumns=@PrimaryKeyJoinColumn(name="Group_LoginNaam", referencedColumnName="LoginNaam"))
-@NamedQueries({
-        @NamedQuery(
-        name="findUserById",query = "SELECT u FROM User u WHERE u.login=:LoginNaam")})
 public class User implements Serializable {
     private static final long serialVersionUID = 4990525852036485337L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUser", nullable = false, length = 16)
     private Long id;
 
@@ -62,6 +59,7 @@ public class User implements Serializable {
 
     public User(){
         super();
+        group="ProUser";
     }
 
     public Long getId() {
