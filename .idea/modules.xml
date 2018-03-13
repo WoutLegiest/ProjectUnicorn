@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProjectUnicorn_v3.iml" filepath="$PROJECT_DIR$/ProjectUnicorn_v3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectUnicorn.iml" filepath="$PROJECT_DIR$/ProjectUnicorn.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseEJB/UseEJB.iml" filepath="$PROJECT_DIR$/UseEJB/UseEJB.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseEJBClient/UseEJBClient.iml" filepath="$PROJECT_DIR$/UseEJBClient/UseEJBClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseJPA/UseJPA.iml" filepath="$PROJECT_DIR$/UseJPA/UseJPA.iml" />
