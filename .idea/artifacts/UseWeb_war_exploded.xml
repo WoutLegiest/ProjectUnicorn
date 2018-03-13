@@ -8,6 +8,7 @@
           <element id="module-output" name="UseWeb" />
           <element id="module-output" name="UseJPA" />
           <element id="module-output" name="UseEJBClient" />
+          <element id="module-output" name="UseRest" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="JPA 2.0-2.0" />

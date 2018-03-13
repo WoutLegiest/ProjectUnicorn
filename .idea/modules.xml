@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/UseEJB/UseEJB.iml" filepath="$PROJECT_DIR$/UseEJB/UseEJB.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseEJBClient/UseEJBClient.iml" filepath="$PROJECT_DIR$/UseEJBClient/UseEJBClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseJPA/UseJPA.iml" filepath="$PROJECT_DIR$/UseJPA/UseJPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UseRest/UseRest.iml" filepath="$PROJECT_DIR$/UseRest/UseRest.iml" />
       <module fileurl="file://$PROJECT_DIR$/UseWeb/UseWeb.iml" filepath="$PROJECT_DIR$/UseWeb/UseWeb.iml" />
     </modules>
   </component>

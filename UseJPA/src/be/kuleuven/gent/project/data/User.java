@@ -59,7 +59,6 @@ public class User implements Serializable {
 
     public User(){
         super();
-        group="ProUser";
     }
 
     public Long getId() {
