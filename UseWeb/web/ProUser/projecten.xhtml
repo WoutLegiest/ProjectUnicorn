@@ -8,34 +8,32 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="layout.xhtml">
-    <ui:define name="title">Home</ui:define>
+    <ui:define name="title">Project</ui:define>
 
     <ui:define name="content">
 
         <a href="https://www.mkyong.com/jsf2/jsf-2-datatable-example/">De inspiratie </a>
         <p></p>
 
-        <h:dataTable value="#{spotter_projects.projectsList}" var="p"
+        <h:dataTable value="#{spotterProjectController.findProjects()}" var="p"
                      styleClass="projects-table"
                      headerClass="projects-table-header"
                      rowClasses="projects-table-odd-row,projects-table-even-row"
         >
 
             <h:column>
-                <!-- column header -->
                 <f:facet name="header">Nr</f:facet>
-                <!-- row record -->
-                #{p.projectId}
+                <h:outputText value="#{p.id}"/>
             </h:column>
 
             <h:column>
                 <f:facet name="header">Project Naam</f:facet>
-                #{p.projectNaam}
+                <h:outputText value="#{p.naam}"/>
             </h:column>
 
             <h:column>
                 <f:facet name="header">Locatie</f:facet>
-                #{p.locatie}
+                <h:outputText value="#{p.locatie}"/>
             </h:column>
 
         </h:dataTable>

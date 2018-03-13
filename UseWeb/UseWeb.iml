@@ -24,5 +24,6 @@
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
     <orderEntry type="module" module-name="UseJPA" />
     <orderEntry type="module" module-name="UseEJBClient" />
+    <orderEntry type="module" module-name="UseEJB" />
   </component>
 </module>
