@@ -22,6 +22,7 @@ public class ApplicationConfig extends Application {
 		HashSet<Class<?>> c = new HashSet<>();
 		c.add(BasicRestService.class);
 		c.add(ParameterRestService.class);
+		c.add(LoginAndRegister.class);
 		c.add(ContentTypesRestService.class);
 		c.add(ResponseRestService.class);
 
