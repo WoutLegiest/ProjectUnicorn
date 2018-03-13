@@ -52,4 +52,12 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 
 	}
 
+	@Override
+	public String createToken(User user){
+		String token=null;
+
+
+		return token;
+	}
+
 }

@@ -11,4 +11,6 @@ public interface UserManagementEJBLocal {
 
     public User findPerson(String login);
 
+    public String createToken(User user);
+
 }
