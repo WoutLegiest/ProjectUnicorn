@@ -25,7 +25,6 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 	private EntityManager em;
 
 	public UserManagementEJB() {
-		// TO DO
 	}
 
 	@Override

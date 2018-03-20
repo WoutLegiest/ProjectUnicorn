@@ -29,19 +29,33 @@ public class RegisterController implements Serializable {
 
     private User usr = new User();
 
-    /*
+    private String pass;
+    private String confirmPass;
+
+
     public void validatePassword(ComponentSystemEvent event) {
+
         FacesContext facesContext = FacesContext.getCurrentInstance();
+
         UIComponent components = event.getComponent();
+
         // get password
+
         UIInput uiInputPassword = (UIInput) components.findComponent("password");
+
         String password = uiInputPassword.getLocalValue() == null ? "" : uiInputPassword.getLocalValue().toString();
+
         String passwordId = uiInputPassword.getClientId();
+
         // get confirm password
+
         UIInput uiInputConfirmPassword = (UIInput) components.findComponent("confirmpassword");
+
         String confirmPassword = uiInputConfirmPassword.getLocalValue() == null ? ""
                 : uiInputConfirmPassword.getLocalValue().toString();
+
         // Let required="true" do its job.
+
         if (password.isEmpty() || confirmPassword.isEmpty()) {
             return;
         }
@@ -51,14 +65,16 @@ public class RegisterController implements Serializable {
             facesContext.addMessage(passwordId, msg);
             facesContext.renderResponse();
         }
+        /*
         if (ejb.findUserById(usr.getEmail()) != null) {
             FacesMessage msg = new FacesMessage("User with this e-mail already exists");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
             facesContext.addMessage(passwordId, msg);
             facesContext.renderResponse();
         }
+        */
     }
-*/
+
     public String register() {
         usr.setGroup("ProUser");
         ejb.createUser(usr);
@@ -72,5 +88,21 @@ public class RegisterController implements Serializable {
 
     public void setUsr(User usr) {
         this.usr = usr;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getConfirmPass() {
+        return confirmPass;
+    }
+
+    public void setConfirmPass(String confirmPass) {
+        this.confirmPass = confirmPass;
     }
 }

@@ -6,14 +6,16 @@
 <h:head>
     <title>register</title>
 </h:head>
+
 <h:body>
+
     <h:form>
 
         <h3>Create new account</h3>
         <h:panelGrid columns="2">
             <h:outputLabel for="name">Name:</h:outputLabel>
             <h:inputText id="name" value="#{registerController.usr.name}" required="true"
-                         requiredMessage="Please enter your name" maxlength="30"/>
+                         requiredMessage="Please enter your name"  maxlength="30"/>
 
             <h:outputLabel for="login">Login:</h:outputLabel>
             <h:inputText id="login" value="#{registerController.usr.login}" required="true"
@@ -31,8 +33,10 @@
 
         </h:panelGrid>
     </h:form>
-    <br />
-    <br />
-    <h:link value="I already have an account" outcome="signin" />
+
+
+    <br/>
+    <br/>
+    <h:link value="I already have an account" outcome="login" />
 </h:body>
 </html>

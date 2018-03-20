@@ -29,11 +29,17 @@ public class SpotterProject implements Serializable{
     private String naam;
 
     @Column(name = "Location", nullable = false)
-    private String Locatie;
+    private String LocatieNaam;
+
+    @Column(name = "Latitude", nullable = false)
+    private String latitude;
+
+    @Column(name = "Longitude", nullable = false)
+    private String longitude;
 
     public SpotterProject(SpotterProject spotterProject) {
         this.naam = spotterProject.naam;
-        this.Locatie = spotterProject.Locatie;
+        this.LocatieNaam = spotterProject.LocatieNaam;
         this.id=spotterProject.id;
     }
 
@@ -58,10 +64,26 @@ public class SpotterProject implements Serializable{
     }
 
     public String getLocatie() {
-        return Locatie;
+        return LocatieNaam;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public void setLocatie(String locatie) {
-        Locatie = locatie;
+        LocatieNaam = locatie;
     }
 }
