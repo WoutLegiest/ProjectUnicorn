@@ -16,7 +16,6 @@
           <element id="module-output" name="UseEJBClient" />
         </element>
         <element id="library" level="project" name="Java EE 6-Java EE 6" />
-        <element id="library" level="project" name="JPA 2.0-2.0" />
       </element>
       <element id="javaee-facet-resources" facet="ProjectUnicorn/javaeeApplication/javaEEApplication" />
     </root>

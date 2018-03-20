@@ -23,23 +23,23 @@
 
             <h:column>
                 <f:facet name="header">Nr</f:facet>
-                <a href="project.xhtml?spotterProject=#{p.id}"><h:outputText value="#{p.id}"/></a>
+                <h:outputText value="#{p.id}"/>
             </h:column>
 
             <h:column>
                 <f:facet name="header">Project Naam</f:facet>
-                <a href="project.xhtml?spotterProject=#{p.id}"><h:outputText value="#{p.naam}"/></a>
+                <h:outputText value="#{p.naam}"/>
             </h:column>
 
             <h:column>
                 <f:facet name="header">Locatie</f:facet>
-                <a href="project.xhtml?spotterProject=#{p.id}"><h:outputText value="#{p.locatie}"/></a>
+                <h:outputText value="#{p.locatie}"/>
             </h:column>
 
-            <!--<h:column>
+            <h:column>
                 <f:facet name="header">Actie</f:facet>
                 <a href="project.xhtml?spotterProject=#{p.id}">Bekijk project</a>
-            </h:column>-->
+            </h:column>
 
         </h:dataTable>
     </ui:define>
