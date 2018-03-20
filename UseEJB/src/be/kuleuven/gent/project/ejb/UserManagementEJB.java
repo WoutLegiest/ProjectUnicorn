@@ -1,6 +1,8 @@
 package be.kuleuven.gent.project.ejb;
 
+import java.nio.charset.Charset;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.*;
 
 import javax.ejb.Stateless;
@@ -9,6 +11,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import be.kuleuven.gent.project.data.User;
+import be.kuleuven.gent.project.data.UserToken;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 
 /**
@@ -54,10 +57,12 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 
 	@Override
 	public String createToken(User user){
-		String token=null;
-
-
-		return token;
+		byte[] array = new byte[45]; // length is bounded by 45
+		new Random().nextBytes(array);
+		String generatedString = new String(array, Charset.forName("UTF-8"));
+		UserToken userToken= new UserToken(user.getLogin(),generatedString);
+		em.persist(userToken);
+		return generatedString;
 	}
 
 }

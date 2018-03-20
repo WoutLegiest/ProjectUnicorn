@@ -59,6 +59,8 @@ public class LoginAndRegister {
         return json.toString();
     }
 
+
+
     /*
     @GET
     public Boolean getBasicService()
