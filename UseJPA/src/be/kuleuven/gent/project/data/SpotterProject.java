@@ -67,6 +67,10 @@ public class SpotterProject implements Serializable{
         return LocatieNaam;
     }
 
+    public void setLocatie(String locatie) {
+        LocatieNaam = locatie;
+    }
+
     public String getLatitude() {
         return latitude;
     }
@@ -83,7 +87,4 @@ public class SpotterProject implements Serializable{
         this.longitude = longitude;
     }
 
-    public void setLocatie(String locatie) {
-        LocatieNaam = locatie;
-    }
 }

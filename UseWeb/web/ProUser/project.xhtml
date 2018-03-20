@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="layout.xhtml">
@@ -14,7 +14,7 @@
 
     <ui:define name="meta">
         <f:metadata>
-            <f:viewParam name="spotterProject" value="#{spotterProjectController.project.id}" />
+            <f:viewParam name="spotterProject" value="#{spotterProjectController.projectId}" />
             <f:viewAction action="#{spotterProjectController.findProject}" />
         </f:metadata>
     </ui:define>
@@ -33,9 +33,12 @@
 
         </div>
 
-        <script>
+        <script type="text/javascript">
             function initMap() {
-                var uluru = {lat: 51.059, lng: 3.708};
+                //werkt nog niet
+                var latitude = "#{spotterProjectController.project().latitude}";
+                var longitude = "#{spotterProjectController.project().longitude}";
+                var uluru = {lat: latitude, lng: longitude};
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 17,
                     center: uluru
@@ -46,7 +49,7 @@
                 });
             }
         </script>
-        <script async="1" defer="1" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_LoQNtoB_ZatWcLYg35NIQ0PWJoQsM0&amp;callback=initMap"></script>
+        <script type="text/javascript" async="1" defer="1" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_LoQNtoB_ZatWcLYg35NIQ0PWJoQsM0&amp;callback=initMap"></script>
     </ui:define>
 
 </ui:composition>

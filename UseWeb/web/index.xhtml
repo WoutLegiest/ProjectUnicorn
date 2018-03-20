@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:h="http://java.sun.com/jsf/html">
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <h:head>
 
@@ -15,7 +15,7 @@
 </h:head> 
 
 <h:body>
-	<nav class="left">
+	<div id="nav" class="left">
 		<a href="index.xhtml" class="left">
 			<img src="resources/Unicorn_Logo.png" alt="Logo" class="logo"></img>
 		</a>
@@ -27,9 +27,9 @@
 		
 		<a href="login.xhtml" class="right"><i class="material-icons" style="font-size:36px;">public</i></a>
 		<a href="addUser.xhtml" class="right"><i class="material-icons" style="font-size:36px;">person</i></a>
-	</nav>
+	</div>
 	
-	<main>
+	<div id="main">
 		<p>Om naar de homepagina te gaan van de pro user druk op home</p>
 
 		<h:form id="proUserForm" method="post" action="j_security_check">
@@ -39,7 +39,7 @@
 		</h:form>
 
 
-	</main>	
+	</div>
 
 </h:body>
 

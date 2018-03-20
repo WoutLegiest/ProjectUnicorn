@@ -36,7 +36,6 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
 
     @Override
     public SpotterProject findProject(long id){
-
         return em.find(SpotterProject.class, id);
     }
 
