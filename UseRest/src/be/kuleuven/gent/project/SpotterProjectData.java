@@ -1,0 +1,33 @@
+package be.kuleuven.gent.project;
+
+import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
+import com.owlike.genson.Genson;
+
+import javax.ejb.EJB;
+import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import java.util.LinkedList;
+import java.util.List;
+
+@Path("SpotterProjectData")
+@Produces(MediaType.TEXT_PLAIN)
+public class SpotterProjectData {
+
+    @EJB
+    private SpotterProjectManagementEJBLocal spmejbl;
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getProjectLocations(@HeaderParam("Latitude") String latitude, @HeaderParam("Longitude") String longitude){
+        List<String> locaties= spmejbl.projectByLocations(Double.parseDouble(latitude), Double.parseDouble(longitude));
+        StringBuilder json =new StringBuilder();
+        Genson genson = new Genson();
+        for (String s : locaties){
+            json.append(genson.serialize(s));
+        }
+        return json.toString();
+    }
+}

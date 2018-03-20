@@ -25,6 +25,7 @@ public class ApplicationConfig extends Application {
 		c.add(LoginAndRegister.class);
 		c.add(ContentTypesRestService.class);
 		c.add(ResponseRestService.class);
+		c.add(SpotterProjectData.class);
 
 		classes = Collections.unmodifiableSet(c);
 	}
