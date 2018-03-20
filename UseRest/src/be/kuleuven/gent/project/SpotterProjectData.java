@@ -22,12 +22,23 @@ public class SpotterProjectData {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public String getProjectLocations(@HeaderParam("Latitude") String latitude, @HeaderParam("Longitude") String longitude){
-        List<String> locaties= spmejbl.projectByLocations(Double.parseDouble(latitude), Double.parseDouble(longitude));
+
+        List<String> locaties= spmejbl.projectByLocations(Float.parseFloat(latitude), Float.parseFloat(longitude));
         StringBuilder json =new StringBuilder();
         Genson genson = new Genson();
         for (String s : locaties){
             json.append(genson.serialize(s));
         }
         return json.toString();
+
+        //return "getter gelukt";
     }
+
+    /*
+    @GET
+    public String getBasicService() {
+
+        return "UseWebWeb/rest_unicorn/SpotterProjectData/";
+    }
+    */
 }

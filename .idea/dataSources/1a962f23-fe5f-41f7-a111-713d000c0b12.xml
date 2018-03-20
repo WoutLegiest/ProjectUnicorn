@@ -4,26 +4,26 @@
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="Wereld">
+    <schema id="2" parent="1" name="homecare">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="3" parent="1" name="audit">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="4" parent="1" name="films">
+    <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="5" parent="1" name="homecare">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="6" parent="1" name="information_schema">
+    <schema id="4" parent="1" name="mydb">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="7" parent="1" name="mysql">
+    <schema id="5" parent="1" name="mysql">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="8" parent="1" name="performance_schema">
+    <schema id="6" parent="1" name="performance_schema">
       <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="sys">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="8" parent="1" name="test">
+      <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="9" parent="1" name="unicorn">
       <Current>1</Current>
@@ -1008,12 +1008,12 @@ Group_LoginNaam</ColNames>
     </column>
     <column id="253" parent="234" name="Latitude">
       <Position>3</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>float(10,6)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="254" parent="234" name="Longitude">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>float(10,6)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="255" parent="234" name="Location">

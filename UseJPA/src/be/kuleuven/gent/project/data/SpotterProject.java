@@ -32,10 +32,10 @@ public class SpotterProject implements Serializable{
     private String LocatieNaam;
 
     @Column(name = "Latitude", nullable = false)
-    private String latitude;
+    private float latitude;
 
     @Column(name = "Longitude", nullable = false)
-    private String longitude;
+    private float longitude;
 
     public SpotterProject(SpotterProject spotterProject) {
         this.naam = spotterProject.naam;
@@ -71,19 +71,19 @@ public class SpotterProject implements Serializable{
         LocatieNaam = locatie;
     }
 
-    public String getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
