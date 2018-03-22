@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project;
 
+import be.kuleuven.gent.project.data.SpotterProject;
 import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 import com.owlike.genson.Genson;
 
@@ -9,6 +10,7 @@ import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,6 +34,14 @@ public class SpotterProjectData {
         return json.toString();
 
         //return "getter gelukt";
+    }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("/all")
+    public Response getAllProjects(){
+        List<SpotterProject> projects=spmejbl.findAllProjects();
+        return Response.ok(projects, MediaType.APPLICATION_JSON).build();
     }
 
     /*
