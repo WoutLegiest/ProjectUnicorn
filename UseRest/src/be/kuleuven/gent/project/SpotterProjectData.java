@@ -1,6 +1,8 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.data.SpotterProject;
+import be.kuleuven.gent.project.data.Spottermeting;
+import be.kuleuven.gent.project.ejb.SpotterExperimentManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 import com.owlike.genson.Genson;
 
@@ -20,6 +22,7 @@ public class SpotterProjectData {
 
     @EJB
     private SpotterProjectManagementEJBLocal spmejbl;
+    private SpotterExperimentManagementEJBLocal semejbl;
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -32,8 +35,6 @@ public class SpotterProjectData {
             json.append(genson.serialize(s));
         }
         return json.toString();
-
-        //return "getter gelukt";
     }
 
     @GET
@@ -42,6 +43,15 @@ public class SpotterProjectData {
     public Response getAllProjects(){
         List<SpotterProject> projects=spmejbl.findAllProjects();
         return Response.ok(projects, MediaType.APPLICATION_JSON).build();
+    }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("/metingen")
+    public Response getMetingenByProject(@HeaderParam("projectid") long projectID){
+        SpotterProject spotterProject=spmejbl.findProject(projectID);
+        List<Spottermeting>spottermeringen=semejbl.findAllMetingen(spotterProject);
+        return Response.ok(spottermeringen, MediaType.APPLICATION_JSON).build();
     }
 
     /*
