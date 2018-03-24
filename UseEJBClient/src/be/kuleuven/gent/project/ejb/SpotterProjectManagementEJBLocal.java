@@ -12,6 +12,6 @@ public interface SpotterProjectManagementEJBLocal {
 
     SpotterProject findProject(long id);
 
-    public List<String> projectByLocations(double latitude, double longitude);
+    public List<String> projectByLocations(float latitude, float longitude);
 
 }

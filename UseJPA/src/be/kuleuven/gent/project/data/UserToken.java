@@ -12,8 +12,6 @@ import java.io.Serializable;
 @Table(name="UserTokens")
 public class UserToken implements Serializable {
 
-
-
     @Id
     @Column(name = "User_Login", nullable = false, length = 64)
     private String loginNaam;
@@ -44,7 +42,6 @@ public class UserToken implements Serializable {
     public UserToken(){
         super();
     }
-
 
     public String getLoginNaam() {
         return loginNaam;

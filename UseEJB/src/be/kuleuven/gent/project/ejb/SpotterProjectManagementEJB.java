@@ -40,28 +40,26 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
     }
 
     @Override
-    public List<String> projectByLocations(double latitude, double longitude) {
+    public List<String> projectByLocations(float latitude, float longitude) {
 
         StringBuilder queryBuilder = new StringBuilder();
-        queryBuilder.append("SELECT p FROM SpotterProject p WHERE Longitude >");
-        queryBuilder.append(longitude-1);
-        queryBuilder.append(" AND ");
-        queryBuilder.append(" Longitude < ");
-        queryBuilder.append(longitude+1);
-        queryBuilder.append(" AND ");
-        queryBuilder.append(" Latitude > ");
+        queryBuilder.append("SELECT p FROM SpotterProject p ");
+        queryBuilder.append("WHERE p.latitude BETWEEN ");
         queryBuilder.append(latitude-1);
         queryBuilder.append(" AND ");
-        queryBuilder.append(" Latitude < ");
         queryBuilder.append(latitude+1);
-        queryBuilder.append(";");
+        queryBuilder.append(" AND ");
+        queryBuilder.append(" p.longitude BETWEEN ");
+        queryBuilder.append(longitude-1);
+        queryBuilder.append(" AND ");
+        queryBuilder.append(longitude+1);
 
         TypedQuery<SpotterProject> q =
                 em.createQuery(queryBuilder.toString(), SpotterProject.class);
         List<SpotterProject> projects = q.getResultList();
         List<String> output = new LinkedList<>();
         for (SpotterProject p : projects){
-            output.add(p.getLocatie());
+            output.add(p.getNaam());
         }
         return output;
     }

@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project.ejb;
 
 import be.kuleuven.gent.project.data.SpotterProject;
+import be.kuleuven.gent.project.data.Spottermeting;
 
 import javax.ejb.Local;
 import java.util.LinkedList;
@@ -11,5 +12,5 @@ public interface SpotterExperimentManagementEJBLocal {
 
     public boolean experimentVerwerken(LinkedList<LinkedList<Double>> input );
 
-
+    List<Spottermeting> findAllMetingen(SpotterProject spotterProject);
 }
