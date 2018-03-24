@@ -1,19 +1,13 @@
 package be.kuleuven.gent.project.data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -32,10 +26,10 @@ public class SpotterProject implements Serializable{
     private String LocatieNaam;
 
     @Column(name = "Latitude", nullable = false)
-    private String latitude;
+    private float latitude;
 
     @Column(name = "Longitude", nullable = false)
-    private String longitude;
+    private float longitude;
 
     public SpotterProject(SpotterProject spotterProject) {
         this.naam = spotterProject.naam;
@@ -71,19 +65,19 @@ public class SpotterProject implements Serializable{
         LocatieNaam = locatie;
     }
 
-    public String getLatitude() {
+    public float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
