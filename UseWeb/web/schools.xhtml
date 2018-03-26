@@ -7,13 +7,17 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition template="layoutProUser.xhtml">
-    <ui:define name="title">Home</ui:define>
+<ui:composition template="layoutIndex.xhtml">
+    <ui:define name="title">Schools</ui:define>
 
     <ui:define name="content">
-        <div class="col-12 section left">
+        <div class="col-7 section left">
 
-            <h1>Lorem ipsum</h1>
+            <h1>Schools</h1>
+
+            <p>
+                Wat uitleg voor scholen. Hieronder nog wat dummy text.
+            </p>
 
             <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
@@ -35,6 +39,10 @@
                 Nam eget dui.
             </p>
 
+        </div>
+
+        <div class="col-5 section right">
+            <img src="resources/STEM_Toren.png" alt="Toren" class="toren"></img>
         </div>
 
     </ui:define>

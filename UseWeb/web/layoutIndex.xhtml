@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+    <!-- add stylesheet -->
+    <link rel="stylesheet" type="text/css" href="resources/style.css"></link>
+
+    <!-- enables the use of icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+
+    <title>
+        <ui:insert name="title">Default title</ui:insert>
+    </title>
+
+    <f:view><ui:insert name="meta"></ui:insert></f:view>
+</h:head>
+
+<h:body>
+
+    <!-- navbar -->
+    <div class="navbar left" id="Navbar">
+        <a href="index.xhtml" class="navlogo">
+            <img src="resources/Unicorn_Logo_50.png" alt="Logo" id="logo"></img>
+        </a>
+
+        <a href="index.xhtml" class="navitem">HOME</a>
+        <a href="info.xhtml" class="navitem">INFO</a>
+        <a href="proUser.xhtml" class="navitem">SPOTTER</a>
+        <a href="schools.xhtml" class="navitem">SCHOOLS</a>
+
+        <div class="dropdown right">
+            <button class="dropbtn">
+                <i class="material-icons">person</i>
+            </button>
+            <div class="dropdown-content">
+                <a href="login.xhtml" class="">LOGIN</a>
+                <a href="addUser.xhtml" class="">REGISTER</a>
+            </div>
+        </div>
+        <a href="#" class="right">
+            <i class="material-icons">public</i>
+        </a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+
+        <ui:insert name="content">Default content</ui:insert>
+
+    </div>
+
+</h:body>
+
+</html>

@@ -23,25 +23,38 @@
 </h:head>
 
 <h:body>
-    <div id="nav" class="left">
-        <a href="../index.xhtml" class="left">
-            <img src="../resources/Unicorn_Logo.png" alt="Logo" class="logo"></img>
+    <!-- navbar -->
+    <div class="navbar left" id="Navbar">
+        <a href="../index.xhtml" class="navlogo">
+            <img src="../resources/Unicorn_Logo_50.png" alt="Logo" id="logo"></img>
         </a>
 
-        <a href="home.xhtml" class="link left">HOME</a>
-        <a href="projecten.xhtml" class="link left">PROJECTEN</a>
-        <a href="" class="link left">WORLD MAP</a>
-        <a href="" class="link left">FEEDBACK</a>
+        <a href="home.xhtml" class="navitem">HOME</a>
+        <a href="projecten.xhtml" class="navitem">PROJECTEN</a>
+        <a href="" class="navitem">WORLD MAP</a>
+        <a href="" class="navitem">FEEDBACK</a>
 
-        <a href="" class="right"><i class="material-icons" style="font-size:36px;">public</i></a>
-        <a href="" class="right"><i class="material-icons" style="font-size:36px;">person</i></a>
+        <div class="dropdown right">
+            <button class="dropbtn">
+                <i class="material-icons">person</i>
+            </button>
+            <div class="dropdown-content">
+                <a href="" class="">ACCOUNT</a>
+                <a href="" class="">LOGOUT</a>
+            </div>
+        </div>
+        <a href="#" class="right">
+            <i class="material-icons">public</i>
+        </a>
     </div>
 
-    <div id="main">
+    <!-- Page content -->
+    <div class="content">
 
         <ui:insert name="content">Default content</ui:insert>
 
     </div>
+
 </h:body>
 
 </html>

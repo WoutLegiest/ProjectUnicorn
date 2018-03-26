@@ -1,74 +1,16 @@
-/*
-De algemene layout van de pagina
-*/
+/************************************
+			general
+************************************/
 
 * {
-    box-sizing: border-box;
-}
-
-body {
-	margin: 0px;
-}
-
-#nav {
-	width: 100%;
-	min-height: 70px;
+	box-sizing: border-box;
 	margin: 0;
-	float: left;
-    background-color: #3ba2fb;
-	font-size: 16px;
-}
-
-.logo {
-	display: block;
-	float: left;
-	height: 50px;
-}
-
-.link {
-	margin: 16px 0px;
-}
-
-#nav a {
-	padding: 10px;
-    text-align: center;
-    text-decoration: none;
-	color: white;
-}
-
-#nav a:hover {
-    color: #111;
-}
-
-i {
-	margin: 7px 0;
-}
-
-#main {
-	display: block;
-	width: 90%;
-	min-height: 100px;
-	margin: 1% 5%;
-	padding: 5%;
-	float: left;
-	background-color: #f8f8f8;
-	color: #3ba2fb;
-	
-}
-
-section {
-	padding: 5%;
-}
-
-.left {
-	float: left;
 }
 
 .right {
-	float: right;
+	float: right !important;
 }
 
-/* For desktop: */
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -82,13 +24,129 @@ section {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-/*
-Dingen in specifieke webpagina's
-*/
+
+/************************************
+			navbar
+************************************/
+
+#logo {
+	height: 44px;
+}
+
+/* Navbar container */
+.navbar {
+	overflow: hidden;
+	background-color: #3ba2fb;
+}
+
+/* Links inside the navbar */
+.navbar a {
+	float: left;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navlogo {
+	padding: 4px !important;
+}
+
+.navitem {
+	padding-top: 18px !important;
+	padding-bottom: 18px !important;
+}
+
+/* The dropdown container */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+	font-size: 18px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a darker background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: DodgerBlue;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	right: 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.navbar .icon {
+	display: none;
+}
+
+/************************************
+			content
+************************************/
+
+.content {
+	width: 90%;
+	min-height: 100px;
+	margin: 1% 5%;
+	padding: 5%;
+	float: left;
+	background-color: #f8f8f8;
+	color: #3ba2fb;
+
+}
+
+.section {
+	padding: 5%;
+	float: left;
+}
+
+.section h1 {
+	margin-bottom: 20px;
+}
+
+.section p {
+	margin-bottom: 10px;
+}
 
 .toren {
 	width: 80%;
-    height: auto;
+	height: auto;
 	float: right;
 }
 
@@ -97,30 +155,26 @@ Dingen in specifieke webpagina's
 	float: left;
 	height: 400px;
 	width: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 }
 
-/*
-Om de webpagina responsive te maken (later)
-*/
-
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
-	
+	/* For mobile phones: */
+	[class*="col-"] {
+		width: 100%;
+	}
+
 	.logo {
 		display: none;
 	}
-	
+
 	nav a {
 		float: none;
 		width: 100%;
 		text-align: left;
 		padding: 3% 7%;
 	}
-	
+
 	.toren {
 		width: 100%;
 		height: auto;
