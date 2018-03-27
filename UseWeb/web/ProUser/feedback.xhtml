@@ -12,31 +12,17 @@
 
     <ui:define name="title">World map</ui:define>
 
+    <ui:define name="files"><script src="worldMap.js"></script></ui:define>
+
     <ui:define name="content">
 
         <div class="col-12 section left">
 
-            <h1><h:outputLabel value="World map"/></h1>
+            <h1><h:outputLabel value="Feedback"/></h1>
 
-            <div id="map"></div>
-
-            <p id="test">Hier komt een tabel met meetwaarden</p>
+            <p>zever</p>
 
         </div>
-
-        <script type="text/javascript">
-            function initMap() {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (xhttp.readyState == 4 && xhttp.status == 200) {
-                        document.getElementById("demo").innerHTML = xhttp.responseText;
-                    }
-                };
-                xhttp.open("GET", "basicRestService()", true);
-                xhttp.send();
-
-            }
-        </script>
     </ui:define>
 
 </ui:composition>
