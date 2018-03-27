@@ -13,5 +13,4 @@ public class Encryptie {
         byte[] digest = md.digest();
         return DatatypeConverter.printBase64Binary(digest).toString();
     }
-
 }
