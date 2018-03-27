@@ -1,0 +1,50 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+    <!-- add stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/formStyle.css"></link>
+
+    <title>register</title>
+</h:head>
+
+<h:body>
+
+    <div class="form">
+        <h:form>
+
+            <h3>Create new account</h3>
+            <h:panelGrid columns="1">
+                <h:outputLabel for="name">Name:</h:outputLabel>
+                <h:inputText id="name" value="#{registerController.usr.name}" required="true"
+                             requiredMessage="Please enter your name"  maxlength="30"/>
+
+                <h:outputLabel for="login">Login:</h:outputLabel>
+                <h:inputText id="login" value="#{registerController.usr.login}" required="true"
+                             requiredMessage="Please enter your login" maxlength="30"/>
+
+                <h:outputLabel for="email">E-Mail:</h:outputLabel>
+                <h:inputText id="email" value="#{registerController.usr.email}" required="true"
+                             requiredMessage="Please enter your e-mail address"/>
+
+                <h:outputLabel for="password">Password:</h:outputLabel>
+                <h:inputSecret id="password" value="#{registerController.usr.hPassword}"
+                               required="true" requiredMessage="Please enter password"/>
+
+                <h:commandButton action="#{registerController.register}" value="Register"/>
+
+            </h:panelGrid>
+        </h:form>
+
+        <br/>
+        <br/>
+        <h:link value="I already have an account" outcome="login" />
+        <a href="../index.xhtml" class="fRight">return </a>
+    </div>
+
+
+</h:body>
+</html>

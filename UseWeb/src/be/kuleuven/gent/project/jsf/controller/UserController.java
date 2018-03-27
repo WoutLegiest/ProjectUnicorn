@@ -1,13 +1,11 @@
 package be.kuleuven.gent.project.jsf.controller;
 
-import java.io.IOException;
-import java.io.Serializable;
-
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import java.io.IOException;
+import java.io.Serializable;
 
 @Named
 @Stateless

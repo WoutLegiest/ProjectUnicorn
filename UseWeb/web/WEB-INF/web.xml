@@ -27,8 +27,8 @@
     <realm-name>unicorn-realm</realm-name>
 
     <form-login-config>
-      <form-login-page>/login.xhtml</form-login-page>
-      <form-error-page>/loginError.xhtml</form-error-page>
+      <form-login-page>/userStuff/login.xhtml</form-login-page>
+      <form-error-page>/userStuff/loginError.xhtml</form-error-page>
     </form-login-config>
 
   </login-config>

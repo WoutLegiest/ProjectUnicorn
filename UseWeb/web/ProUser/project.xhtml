@@ -35,17 +35,30 @@
 
         <script type="text/javascript">
             function initMap() {
+
+                var name = "#{spotterProjectController.project.naam}";
                 var latitude = parseFloat("#{spotterProjectController.project().latitude}");
                 var longitude = parseFloat("#{spotterProjectController.project().longitude}");
                 var uluru = {lat: latitude, lng: longitude};
+
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 17,
                     center: uluru
                 });
+
+                var infowindow = new google.maps.InfoWindow();
+
                 var marker = new google.maps.Marker({
                     position: uluru,
                     map: map
                 });
+
+                google.maps.event.addListener(marker, 'click', (function(marker) {
+                    return function() {
+                        infowindow.setContent(name);
+                        infowindow.open(map, marker);
+                    }
+                })(marker));
             }
         </script>
         <script type="text/javascript" async="1" defer="1" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_LoQNtoB_ZatWcLYg35NIQ0PWJoQsM0&amp;callback=initMap"></script>

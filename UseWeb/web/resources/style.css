@@ -93,17 +93,22 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content a, input {
 	float: none;
 	color: black;
+	background-color: inherit;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
 	text-align: left;
+	border-width: 0;
+	font-size: inherit;
+	width: 100%;
+	font-family: inherit;
 }
 
 /* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content a:hover, input:hover {
 	background-color: #ddd;
 }
 

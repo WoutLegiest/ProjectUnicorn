@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layoutProUser.xhtml">
+
+    <ui:define name="title">World map</ui:define>
+
+    <ui:define name="content">
+
+        <div class="col-12 section left">
+
+            <h1><h:outputLabel value="World map"/></h1>
+
+            <div id="map"></div>
+
+            <p>Hier komt een tabel met meetwaarden</p>
+
+        </div>
+
+        <script type="text/javascript">
+            function initMap() {
+                var locations = [
+                    ['Bondi Beach', -33.890542, 151.274856, 4],
+                    ['Coogee Beach', -33.923036, 151.259052, 5],
+                    ['Cronulla Beach', -34.028249, 151.157507, 3],
+                    ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
+                    ['Maroubra Beach', -33.950198, 151.259302, 1]
+                ];
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 1,
+                    center: new google.maps.LatLng( 15, 0),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                var infowindow = new google.maps.InfoWindow();
+
+                var marker, i;
+
+                var unicorn = '../resources/unicornMarker.png'
+                var flag = '../resources/flag.png'
+
+                for (i = 0; i &lt; locations.length; i++) {
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                        map: map,
+                        icon: unicorn
+                    });
+
+                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                        return function() {
+                            infowindow.setContent(locations[i][0]);
+                            infowindow.open(map, marker);
+                        }
+                    })(marker, i));
+                }
+
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(51.059246, 3.707904),
+                    map: map,
+                    icon: flag
+                });
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent(Home);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+        </script>
+        <script type="text/javascript" async="1" defer="1" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_LoQNtoB_ZatWcLYg35NIQ0PWJoQsM0&amp;callback=initMap"></script>
+    </ui:define>
+
+</ui:composition>
+</html>

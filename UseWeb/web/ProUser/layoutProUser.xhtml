@@ -9,11 +9,18 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-    <link rel="stylesheet" type="text/css" href="../resources/style.css"></link>
-    <link rel="stylesheet" type="text/css" href="../resources/table_style.css"></link>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+    <!-- add stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="../resources/tableStyle.css"></link>
+
+    <!-- enables the use of icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+
+    <!-- add favicon -->
+    <link rel="shortcut icon" href="resources/unicornIcon.ico" type="image/x-icon"></link>
+    <link rel="icon" href="resources/unicornIcon.ico" type="image/x-icon"></link>
 
     <title>
         <ui:insert name="title">Default title</ui:insert>
@@ -31,7 +38,7 @@
 
         <a href="home.xhtml" class="navitem">HOME</a>
         <a href="projecten.xhtml" class="navitem">PROJECTEN</a>
-        <a href="" class="navitem">WORLD MAP</a>
+        <a href="worldMap.xhtml" class="navitem">WORLD MAP</a>
         <a href="" class="navitem">FEEDBACK</a>
 
         <div class="dropdown right">
@@ -40,10 +47,10 @@
             </button>
             <div class="dropdown-content">
                 <a href="" class="">ACCOUNT</a>
-                <a href="" class="">LOGOUT</a>
+                <h:commandButton value="LOGOUT" action="#{userController.logout}"/>
             </div>
         </div>
-        <a href="#" class="right">
+        <a href="https://iiw.kuleuven.be/english/research/technologycluster/construction" class="right">
             <i class="material-icons">public</i>
         </a>
     </div>
