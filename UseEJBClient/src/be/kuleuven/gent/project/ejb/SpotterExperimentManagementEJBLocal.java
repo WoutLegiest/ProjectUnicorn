@@ -10,7 +10,7 @@ import java.util.List;
 @Local
 public interface SpotterExperimentManagementEJBLocal {
 
-    public boolean experimentVerwerken(LinkedList<LinkedList<Double>> input );
+    public boolean experimentVerwerken(List<LinkedList<Double>> input );
 
     List<Spottermeting> findAllMetingen(SpotterProject spotterProject);
 }

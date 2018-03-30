@@ -1,8 +1,5 @@
 package be.kuleuven.gent.project.jsf.controller;
 
-import java.io.Serializable;
-import java.util.logging.Logger;
-
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 
@@ -14,6 +11,7 @@ import javax.faces.event.ComponentSystemEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.logging.Logger;
 
 @Named

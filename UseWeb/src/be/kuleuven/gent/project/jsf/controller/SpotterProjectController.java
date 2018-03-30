@@ -1,22 +1,13 @@
 package be.kuleuven.gent.project.jsf.controller;
 
-import java.io.Serializable;
-import java.util.List;
+import be.kuleuven.gent.project.data.SpotterProject;
+import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 
-//import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
-
-//import javax.ejb.Stateless;
-//import javax.enterprise.context.SessionScoped;
-
-
-import javax.enterprise.context.SessionScoped;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import be.kuleuven.gent.project.data.SpotterProject;
-import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
+import java.io.Serializable;
+import java.util.List;
 
 @Named
 @ViewScoped
@@ -34,6 +25,7 @@ public class SpotterProjectController implements Serializable{
     }
 
     public SpotterProjectController() {
+        //default constructor
     }
 
     public List<SpotterProject> findAllProjects() {

@@ -15,10 +15,11 @@ public class SpotterExperimentManagementEJB implements SpotterExperimentManageme
     private EntityManager em;
 
     public SpotterExperimentManagementEJB() {
+        //default constructor
     }
 
     @Override
-    public boolean experimentVerwerken(LinkedList<LinkedList<Double>> input) {
+    public boolean experimentVerwerken(List<LinkedList<Double>> input) {
 
         return false;
     }
@@ -30,7 +31,6 @@ public class SpotterExperimentManagementEJB implements SpotterExperimentManageme
         query.append(spotterProject.getId());
         TypedQuery<Spottermeting> q =
                 em.createQuery(query.toString() , Spottermeting.class);
-        List<Spottermeting> metingen = q.getResultList();
-        return metingen;
+        return q.getResultList();
     }
 }

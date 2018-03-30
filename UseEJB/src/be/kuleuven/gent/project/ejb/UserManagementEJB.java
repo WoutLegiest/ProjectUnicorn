@@ -1,18 +1,17 @@
 package be.kuleuven.gent.project.ejb;
 
-import java.nio.charset.Charset;
-import java.util.List;
-import java.util.Random;
-import java.util.logging.*;
+import be.kuleuven.gent.project.data.User;
+import be.kuleuven.gent.project.data.UserToken;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
-import be.kuleuven.gent.project.data.User;
-import be.kuleuven.gent.project.data.UserToken;
-import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
+import java.nio.charset.Charset;
+import java.util.List;
+import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Session Bean implementation class UserManagementEJB
@@ -25,6 +24,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 	private EntityManager em;
 
 	public UserManagementEJB() {
+		//default constructor
 	}
 
 	@Override

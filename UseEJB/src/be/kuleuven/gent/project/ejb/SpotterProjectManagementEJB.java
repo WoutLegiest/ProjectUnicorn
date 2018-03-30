@@ -1,16 +1,13 @@
 package be.kuleuven.gent.project.ejb;
 
-import java.util.LinkedList;
-import java.util.List;
+import be.kuleuven.gent.project.data.SpotterProject;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-//import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-
-import be.kuleuven.gent.project.data.SpotterProject;
-import org.apache.tools.ant.Project;
+import java.util.LinkedList;
+import java.util.List;
 
 @Stateless
 public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBLocal{
@@ -22,15 +19,14 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
      * Default constructor.
      */
     public SpotterProjectManagementEJB() {
-        // TODO Auto-generated constructor stub
+        //Auto-generated constructor stub
     }
 
     @Override
     public List<SpotterProject> findAllProjects() {
         TypedQuery<SpotterProject> q =
                 em.createQuery("SELECT p FROM SpotterProject p", SpotterProject.class);
-        List<SpotterProject> projects = q.getResultList();
-        return projects;
+        return q.getResultList();
     }
 
 

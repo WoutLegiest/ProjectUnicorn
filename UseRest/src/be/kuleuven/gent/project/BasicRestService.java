@@ -14,11 +14,6 @@ public class BasicRestService {
 		System.out.println("get basic service");
 		return true;
 	}
-
-	@GET
-	public String mijnTest(){
-		return "whoop whoop";
-	}
 	
 	@POST
 	public Boolean postBasicService()
