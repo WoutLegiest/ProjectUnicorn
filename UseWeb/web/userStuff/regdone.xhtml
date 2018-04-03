@@ -2,12 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html" >
 <h:head>
+    <!-- add stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/formStyle.css"></link>
+
     <title>Registration done</title>
 </h:head>
 <h:body>
-    <h3>Your account has been successfully created</h3>
-    <br/><br/>
-    <h:link value="Sign in with your new account" outcome="signin" />
-    <a href="../index.xhtml" class="navitem">HOME</a>
+    <div class="form">
+        <h3>Your account has been successfully created</h3>
+        <br/>
+        <br/>
+        <h:link value="Sign in with your new account" outcome="login" />
+        <h:link value="HOME" outcome="/index" styleClass="fRight" />
+    </div>
+
 </h:body>
 </html>

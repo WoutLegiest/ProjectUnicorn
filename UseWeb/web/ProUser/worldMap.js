@@ -1,4 +1,6 @@
 function initMap(callback) {
+    /**Deze functie vraagt een lijst met alle projecten op.
+     * Zodra we de lijst hebben wordt de functie getLatLng opgeroepen*/
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -14,9 +16,13 @@ function initMap(callback) {
 }
 
 function getLatLng(data) {
+    /**De data die we binnen krijgen is een aray van JSON's als string.
+     * Deze funtie zal hiervan een array van JSON's maken en daarna uit
+     * elke JSON de naam, latitude en longitude halen en die in hun eigen array steken.
+     * Zodra we data hebben waar we iets mee zijn roepen we de methode map op.*/
 
-    data = data.slice(0, -1);
-    var res = data.split("}");
+    data = data.slice(0, -1);   //De ']' van de array wegnemen
+    var res = data.split("}");  //De string splitten op '}' omdat een JSON eindigd op een '}'
     var ans = "";
 
     var name = [];
@@ -25,12 +31,12 @@ function getLatLng(data) {
 
     for (var i = 0; i < res.length-1; i++) {
 
-        ans = res[i].concat("}");
-        ans = ans.slice(1);
+        ans = res[i].concat("}");   //Aan de gesplitte string de '}' terugplaatsen
+        ans = ans.slice(1);         //Het eerste kar weghalen want dat is een ',' of een '['
 
         //console.log(ans);
 
-        var json = JSON.parse(ans);
+        var json = JSON.parse(ans); //De JSON als string omzetten naar een JSON
 
         name.push(json.naam);
         lat.push(json.latitude);
@@ -53,6 +59,7 @@ function getLatLng(data) {
 }
 
 function map(name, lat, lng) {
+    /**Deze methode is verantwoordelijk voor het weergeven van de map.*/
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 1,
@@ -64,9 +71,13 @@ function map(name, lat, lng) {
 
     var marker, i;
 
+    //Custom markers
     var unicorn = '../resources/unicornMarker.png';
+    var unicornPink = '../resources/unicornMarkerPink.png';
+    var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
     var flag = '../resources/flag.png';
 
+    //Elk project uit de data weergeven als een marker op de map.
     for (i = 0; i < name.length; i++) {
         marker = new google.maps.Marker({
             position: new google.maps.LatLng(lat[i], lng[i]),
@@ -82,15 +93,17 @@ function map(name, lat, lng) {
         })(marker, i));
     }
 
+    //Speciale marker
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(51.059246, 3.707904),
         map: map,
-        icon: flag
+        //icon: flag
+        icon: unicornPink
     });
 
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
         return function () {
-            infowindow.setContent(Home);
+            infowindow.setContent("Home");
             infowindow.open(map, marker);
         }
     })(marker, i));
