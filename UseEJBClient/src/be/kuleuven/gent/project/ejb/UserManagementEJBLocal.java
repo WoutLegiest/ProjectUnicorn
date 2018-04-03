@@ -1,17 +1,17 @@
 package be.kuleuven.gent.project.ejb;
 
-import javax.ejb.Local;
-
 import be.kuleuven.gent.project.data.User;
+
+import javax.ejb.Local;
 
 @Local
 public interface UserManagementEJBLocal {
 
-    public User createUser(User user);
+    User createUser(User user);
 
-    public User findPerson(String login);
+    User findPerson(String login);
 
-    public String createToken(User user);
+    String createToken(User user);
 
 
 

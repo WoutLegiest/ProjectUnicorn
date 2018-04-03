@@ -13,35 +13,37 @@
 
     <!-- add stylesheet -->
     <link rel="stylesheet" type="text/css" href="../resources/style.css"></link>
-    <link rel="stylesheet" type="text/css" href="../resources/styleTable.css"></link>
+    <link rel="stylesheet" type="text/css" href="../resources/styleAccordion.css"></link>
 
     <!-- enables the use of icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
 
     <!-- add favicon -->
     <link rel="shortcut icon" href="resources/unicornIcon.ico" type="image/x-icon"></link>
-    <link rel="icon" href="resources/unicornIcon.ico" type="image/x-icon"></link>
+    <link rel="icon" href="../resources/unicornIcon.ico" type="image/x-icon"></link>
+
+    <!-- add other files -->
+    <ui:insert name="files"></ui:insert>
 
     <title>
         <ui:insert name="title">Default title</ui:insert>
     </title>
 
-    <ui:insert name="files"></ui:insert>
-
     <f:view><ui:insert name="meta"></ui:insert></f:view>
 </h:head>
 
 <h:body>
+
     <!-- navbar -->
     <div class="navbar left" id="Navbar">
         <a href="../index.xhtml" class="navlogo">
             <img src="../resources/Unicorn_Logo_50.png" alt="Logo" id="logo"></img>
         </a>
 
-        <a href="home.xhtml" class="navitem">HOME</a>
-        <a href="projecten.xhtml" class="navitem">PROJECTEN</a>
-        <a href="worldMap.xhtml" class="navitem">WORLD MAP</a>
-        <a href="feedback.xhtml" class="navitem">FEEDBACK</a>
+        <a href="../ProUser/home.xhtml" class="navitem">HOME</a>
+        <a href="../ProUser/projecten.xhtml" class="navitem">PROJECTEN</a>
+        <a href="../ProUser/worldMap.xhtml" class="navitem">WORLD MAP</a>
+        <a href="../ProUser/feedback.xhtml" class="navitem">FEEDBACK</a>
 
         <div class="dropdown right">
             <button class="dropbtn">

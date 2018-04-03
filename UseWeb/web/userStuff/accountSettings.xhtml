@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layoutUserStuff.xhtml">
+    <ui:define name="title">Settings</ui:define>
+
+    <ui:define name="content">
+        <!--<form method="post" action="/userServlet/">-->
+        <div class="col-12">
+
+            <h1>Account settings</h1>
+
+            <button class="accordion">General</button>
+            <div class="panel">
+                <p class="col-3">UserName </p>
+                <input name="j_name" value="#{userController.getUser().name}" class="right col-9" />
+
+                <p class="col-3">Login</p>
+                <input name="j_login" value="#{userController.getUser().login}" class="right col-9" />
+
+                <p class="col-3">email</p>
+                <input name="j_email" value="#{userController.getUser().email}" class="right col-9" />
+
+                <p class="col-3">password</p>
+                <input name="j_password" type="password" value="#{userController.getUser().hPassword}" class="right col-9" />
+            </div>
+
+            <button class="accordion">Professional</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div>
+
+            <button class="accordion">Personal</button>
+            <div class="panel">
+                <p>Lorem ipsum...</p>
+            </div>
+
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+        <!--</form>-->
+
+        <script src="accordion.js"></script>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

@@ -74,8 +74,8 @@ function map(name, lat, lng) {
     //Custom markers
     var unicorn = '../resources/unicornMarker.png';
     var unicornPink = '../resources/unicornMarkerPink.png';
-    var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
-    var flag = '../resources/flag.png';
+    //var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
+    //var flag = '../resources/flag.png';
 
     //Elk project uit de data weergeven als een marker op de map.
     for (i = 0; i < name.length; i++) {
