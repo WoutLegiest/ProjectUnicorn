@@ -41,6 +41,5 @@ public class UserController implements Serializable{
         return userEJB.findPerson(userName);
     }
 
-
 }
 

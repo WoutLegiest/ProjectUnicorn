@@ -45,9 +45,22 @@
             <button class="dropbtn">
                 <i class="material-icons">person</i>
             </button>
-            <div class="dropdown-content">
-                <a href="userStuff/login.xhtml" class="">LOGIN</a>
-                <a href="userStuff/addUser.xhtml" class="">REGISTER</a>
+            <div class="dropdown-content" >
+                <h:outputLink value="userStuff/login.xhtml"
+                              rendered="#{empty request.remoteUser}">
+                    LOGIN
+                </h:outputLink>
+                <h:outputLink value="userStuff/addUser.xhtml"
+                              rendered="#{empty request.remoteUser}">
+                    REGISTER
+                </h:outputLink>
+                <h:outputLink value="../userStuff/accountSettings.xhtml"
+                              rendered="#{not empty request.remoteUser}">
+                    ACCOUNT
+                </h:outputLink>
+                <h:commandButton value="LOGOUT"
+                                 action="#{userController.logout}"
+                                 rendered="#{not empty request.remoteUser}"/>
             </div>
         </div>
         <a href="https://iiw.kuleuven.be/english/research/technologycluster/construction" class="right">
