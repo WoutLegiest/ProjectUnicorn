@@ -11,7 +11,7 @@
 		<class>be.kuleuven.gent.project.data.ProfessionalProject</class>
 		<class>be.kuleuven.gent.project.data.Teacher</class>
 		<class>be.kuleuven.gent.project.data.Student</class>
-		<class>be.kuleuven.gent.project.data.StemExperiment</class>
+		<class>be.kuleuven.gent.project.data.STEMMeasurement</class>
         <class>be.kuleuven.gent.project.data.StemProject</class>
 		<!--
 		<class>be.kuleuven.gent.project.data.ProfessionalMeasurementeasurement</class>

@@ -9,20 +9,23 @@ import java.io.Serializable;
 
 @XmlRootElement
 @Entity
-@Table(name="UserTokens")
+@Table(name = "UserTokens")
 public class UserToken implements Serializable {
 
     @Id
-    @Column(name = "User_Login", nullable = false, length = 64)
+    @Column(name = "user_Login", nullable = false, length = 64)
     private String loginName;
 
-    @Column(name = "Token", nullable = false)
+    @Column(name = "token", nullable = false)
     private String token;
 
-    public UserToken(UserToken userToken)
-    {
+    @Column(name = "date", nullable = false)
+    private java.sql.Date date;
+
+    public UserToken(UserToken userToken) {
         this.loginName = userToken.loginName;
         this.token = userToken.token;
+        this.date = userToken.date;
     }
 
     public UserToken(String loginName, String token) {
@@ -39,7 +42,7 @@ public class UserToken implements Serializable {
         this.token = token;
     }
 
-    public UserToken(){
+    public UserToken() {
         super();
     }
 
@@ -49,5 +52,13 @@ public class UserToken implements Serializable {
 
     public void setLoginName(String loginNaam) {
         this.loginName = loginNaam;
+    }
+
+    public java.sql.Date getDate() {
+        return date;
+    }
+
+    public void setDate(java.sql.Date date) {
+        this.date = date;
     }
 }

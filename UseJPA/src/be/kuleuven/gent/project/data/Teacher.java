@@ -9,7 +9,7 @@ public class Teacher implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Group_User_User_LoginNaam", nullable = false)
+    @Column(name = "group_User_User_LoginName", nullable = false)
     private String loginName;
 
     @Column(name = "School", nullable = false)

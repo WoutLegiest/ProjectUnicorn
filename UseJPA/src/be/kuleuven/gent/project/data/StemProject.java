@@ -6,23 +6,27 @@ import java.io.Serializable;
 
 @XmlRootElement
 @Entity
-@Table(name="StemProject")
+@Table(name = "StemProject")
 public class StemProject implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", nullable=false, length=16)
+    @Column(name = "id", nullable = false, length = 16)
     private Long id;
 
     @Column(name = "Teacher_Group_User_User_LoginName", nullable = false)
     private String teacherName;
 
-    public StemProject(StemProject stemProject){
-        this.id=stemProject.id;
-        this.teacherName =stemProject.teacherName;
+    @Column(name = "className", nullable = false)
+    private String className;
+
+    public StemProject(StemProject stemProject) {
+        this.id = stemProject.id;
+        this.teacherName = stemProject.teacherName;
+        this.className = stemProject.className;
     }
 
-    public StemProject(){
+    public StemProject() {
         super();
     }
 
@@ -40,5 +44,13 @@ public class StemProject implements Serializable {
 
     public void setTeacherName(String teacherNaam) {
         this.teacherName = teacherNaam;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
 }

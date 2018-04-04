@@ -1,14 +1,8 @@
 package be.kuleuven.gent.project.data;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 @XmlRootElement
 @Entity
@@ -19,16 +13,16 @@ public class ProfessionalProject implements Serializable{
     @Column(name="id", nullable=false, length=16)
     private Long id;
 
-    @Column(name = "Name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "Location", nullable = false)
+    @Column(name = "location", nullable = false)
     private String locationName;
 
-    @Column(name = "Latitude", nullable = false)
+    @Column(name = "latitude", nullable = false)
     private float latitude;
 
-    @Column(name = "Longitude", nullable = false)
+    @Column(name = "longitude", nullable = false)
     private float longitude;
 
     public ProfessionalProject(ProfessionalProject professionalProject) {

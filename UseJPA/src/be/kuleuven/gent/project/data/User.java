@@ -7,7 +7,7 @@ import java.io.Serializable;
 @XmlRootElement
 @Entity
 @Table(name="User")
-@SecondaryTable(name = "GroupUser", pkJoinColumns=@PrimaryKeyJoinColumn(name="Group_LoginNaam", referencedColumnName="LoginNaam"))
+@SecondaryTable(name = "GroupUser", pkJoinColumns=@PrimaryKeyJoinColumn(name="group_LoginName", referencedColumnName="LoginName"))
 public class User implements Serializable {
     private static final long serialVersionUID = 4990525852036485337L;
 
@@ -16,14 +16,17 @@ public class User implements Serializable {
     @Column(name = "idUser", nullable = false, length = 16)
     private Long id;
 
-    @Column(name = "Name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "LoginName", nullable = false)
+    @Column(name = "loginName", nullable = false)
     private String login;
 
     @Column(name = "hPassword", nullable = false)
     private String hPassword;
+
+    @Column(name = "description")
+    private String descripton;
 
     //@ManyToMany
 //	@OneToOne(cascade=CascadeType.ALL)
@@ -32,10 +35,10 @@ public class User implements Serializable {
 //			joinColumns={@JoinColumn(name="login", referencedColumnName="login")},
 //			inverseJoinColumns={@JoinColumn(name="idGroup", referencedColumnName="idGroup")})
 
-    @Column(table = "GroupUser", name = "GroupName")
+    @Column(table = "GroupUser", name = "groupName")
     private String group;
 
-    @Column(name = "EMail", nullable = false)
+    @Column(name = "eMail", nullable = false)
     private String email;
 
     public User(User user)
@@ -45,15 +48,7 @@ public class User implements Serializable {
         this.login = user.login;
         this.hPassword = user.hPassword;
         this.email = user.email;
-    }
-
-    public User(String name, String login, String hPassword, String email, Long id) {
-        this.name = name;
-        this.login = login;
-        this.hPassword = hPassword;
-        this.email = email;
-        this.id=id;
-
+        this.descripton = user.descripton;
     }
 
     public User(){
@@ -106,5 +101,13 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDescripton() {
+        return descripton;
+    }
+
+    public void setDescripton(String descripton) {
+        this.descripton = descripton;
     }
 }

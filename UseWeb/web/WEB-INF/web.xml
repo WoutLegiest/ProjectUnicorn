@@ -51,7 +51,7 @@
   <!--voor account settings-->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>Secure ProUser Pages</web-resource-name>
+      <web-resource-name>Secure User Pages</web-resource-name>
       <url-pattern>/userStuff/accountSettings.xhtml</url-pattern>
     </web-resource-collection>
     <auth-constraint>
