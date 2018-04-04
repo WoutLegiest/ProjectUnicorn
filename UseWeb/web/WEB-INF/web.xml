@@ -59,15 +59,6 @@
     </auth-constraint>
   </security-constraint>
 
-  <servlet>
-    <servlet-name>userServlet</servlet-name>
-    <servlet-class>be.kuleuven.gent.project.jsf.servlet.userServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>userServlet</servlet-name>
-    <url-pattern>/userServlet/</url-pattern>
-  </servlet-mapping>
-
 </web-app>
 
 

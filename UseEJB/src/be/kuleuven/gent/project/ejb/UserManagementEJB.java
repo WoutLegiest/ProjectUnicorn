@@ -30,7 +30,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 	@Override
 	public User createUser(User user) {
 		try {
-			user.sethPassword(Encryptie.encodeSHA256(user.gethPassword()));
+			user.sethPassword(Encryption.encodeSHA256(user.gethPassword()));
 		} catch (Exception e) {
 			Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
 			e.printStackTrace();

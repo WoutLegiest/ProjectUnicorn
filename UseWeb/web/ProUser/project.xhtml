@@ -14,7 +14,7 @@
 
     <ui:define name="meta">
         <f:metadata>
-            <f:viewParam name="spotterProject" value="#{spotterProjectController.projectId}" />
+            <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}" />
             <f:viewAction action="#{spotterProjectController.findProject}" />
         </f:metadata>
     </ui:define>
@@ -23,9 +23,9 @@
 
         <div class="col-12 section left">
 
-            <h1><h:outputLabel value="#{spotterProjectController.project.naam}"/></h1>
+            <h1><h:outputLabel value="#{spotterProjectController.project.name}"/></h1>
 
-            <p><h:outputLabel value="#{spotterProjectController.project.locatie}"/></p>
+            <p><h:outputLabel value="#{spotterProjectController.project.location}"/></p>
 
             <div id="map"></div>
 
@@ -41,7 +41,7 @@
                 var unicornPink = '../resources/unicornMarkerPink.png';
                 var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
 
-                var name = "#{spotterProjectController.project.naam}";
+                var name = "#{spotterProjectController.project.name}";
                 var latitude = parseFloat("#{spotterProjectController.project().latitude}");
                 var longitude = parseFloat("#{spotterProjectController.project().longitude}");
                 var uluru = {lat: latitude, lng: longitude};

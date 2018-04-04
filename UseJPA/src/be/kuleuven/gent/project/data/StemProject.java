@@ -14,12 +14,12 @@ public class StemProject implements Serializable {
     @Column(name="id", nullable=false, length=16)
     private Long id;
 
-    @Column(name = "Teacher_Group_User_User_LoginNaam", nullable = false)
-    private String teacherNaam;
+    @Column(name = "Teacher_Group_User_User_LoginName", nullable = false)
+    private String teacherName;
 
     public StemProject(StemProject stemProject){
         this.id=stemProject.id;
-        this.teacherNaam=stemProject.teacherNaam;
+        this.teacherName =stemProject.teacherName;
     }
 
     public StemProject(){
@@ -34,11 +34,11 @@ public class StemProject implements Serializable {
         this.id = id;
     }
 
-    public String getTeacherNaam() {
-        return teacherNaam;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setTeacherNaam(String teacherNaam) {
-        this.teacherNaam = teacherNaam;
+    public void setTeacherName(String teacherNaam) {
+        this.teacherName = teacherNaam;
     }
 }

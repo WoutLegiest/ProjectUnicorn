@@ -10,14 +10,14 @@ public class Teacher implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Group_User_User_LoginNaam", nullable = false)
-    private String loginNaam;
+    private String loginName;
 
     @Column(name = "School", nullable = false)
     private String school;
 
     public Teacher(Teacher teacher)
     {
-        this.loginNaam=teacher.loginNaam;
+        this.loginName =teacher.loginName;
         this.school = teacher.school;
     }
 
@@ -25,12 +25,12 @@ public class Teacher implements Serializable {
         super();
     }
 
-    public String getLoginNaam() {
-        return loginNaam;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLoginNaam(String loginNaam) {
-        this.loginNaam = loginNaam;
+    public void setLoginName(String loginNaam) {
+        this.loginName = loginNaam;
     }
 
     public String getSchool() {

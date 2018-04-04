@@ -2,16 +2,16 @@ package be.kuleuven.gent.project;
 
 public class UserLight {
     private long id;
-    private String naam;
-    private String Login;
+    private String name;
+    private String login;
     private String email;
     private String group;
     private String token;
 
-    public UserLight(long id, String naam, String login, String email, String group) {
+    public UserLight(long id, String name, String login, String email, String group) {
         this.id = id;
-        this.naam = naam;
-        this.Login = login;
+        this.name = name;
+        this.login = login;
         this.email = email;
         this.group= group;
     }
@@ -32,20 +32,20 @@ public class UserLight {
         this.id = id;
     }
 
-    public String getNaam() {
-        return naam;
+    public String getName() {
+        return name;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
     public void setLogin(String login) {
-        Login = login;
+        this.login = login;
     }
 
     public String getEmail() {

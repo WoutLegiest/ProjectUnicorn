@@ -1,17 +1,15 @@
 package be.kuleuven.gent.project;
 
-import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 import be.kuleuven.gent.project.data.User;
+import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 import com.owlike.genson.Genson;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
-import javax.json.Json;
-import javax.json.JsonBuilderFactory;
-import javax.json.JsonObject;
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.Map;
 
 @Path("LoginOrRegister")
 @Produces(MediaType.TEXT_PLAIN)
@@ -58,8 +56,6 @@ public class LoginAndRegister {
 
         return json.toString();
     }
-
-
 
     /*
     @GET

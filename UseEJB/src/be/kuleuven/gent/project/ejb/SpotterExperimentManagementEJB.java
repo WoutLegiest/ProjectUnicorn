@@ -1,7 +1,7 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.SpotterProject;
-import be.kuleuven.gent.project.data.Spottermeting;
+import be.kuleuven.gent.project.data.ProfessionalMeasurement;
+import be.kuleuven.gent.project.data.ProfessionalProject;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -19,18 +19,18 @@ public class SpotterExperimentManagementEJB implements SpotterExperimentManageme
     }
 
     @Override
-    public boolean experimentVerwerken(List<LinkedList<Double>> input) {
+    public boolean processExperiment(List<LinkedList<Double>> input) {
 
         return false;
     }
 
     @Override
-    public List<Spottermeting> findAllMetingen(SpotterProject spotterProject) {
+    public List<ProfessionalMeasurement> findAllMeasurements(ProfessionalProject professionalProject) {
         StringBuilder query = new StringBuilder();
-        query.append("SELECT m FROM Spottermeting m WHERE m.id = ");
-        query.append(spotterProject.getId());
-        TypedQuery<Spottermeting> q =
-                em.createQuery(query.toString() , Spottermeting.class);
+        query.append("SELECT m FROM ProfessionalMeasurement m WHERE m.id = ");
+        query.append(professionalProject.getId());
+        TypedQuery<ProfessionalMeasurement> q =
+                em.createQuery(query.toString() , ProfessionalMeasurement.class);
         return q.getResultList();
     }
 }

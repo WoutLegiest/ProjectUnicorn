@@ -1,9 +1,8 @@
 package be.kuleuven.gent.project.data;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
 @XmlRootElement
 @Entity
@@ -17,10 +16,10 @@ public class User implements Serializable {
     @Column(name = "idUser", nullable = false, length = 16)
     private Long id;
 
-    @Column(name = "Naam", nullable = false)
+    @Column(name = "Name", nullable = false)
     private String name;
 
-    @Column(name = "LoginNaam", nullable = false)
+    @Column(name = "LoginName", nullable = false)
     private String login;
 
     @Column(name = "hPassword", nullable = false)
@@ -37,7 +36,7 @@ public class User implements Serializable {
     private String group;
 
     @Column(name = "EMail", nullable = false)
-    private String Email;
+    private String email;
 
     public User(User user)
     {
@@ -45,14 +44,14 @@ public class User implements Serializable {
         this.name = user.name;
         this.login = user.login;
         this.hPassword = user.hPassword;
-        this.Email = user.Email;
+        this.email = user.email;
     }
 
     public User(String name, String login, String hPassword, String email, Long id) {
         this.name = name;
         this.login = login;
         this.hPassword = hPassword;
-        Email = email;
+        this.email = email;
         this.id=id;
 
     }
@@ -102,10 +101,10 @@ public class User implements Serializable {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 }

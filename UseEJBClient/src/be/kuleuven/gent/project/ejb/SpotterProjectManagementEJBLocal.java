@@ -1,6 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.SpotterProject;
+import be.kuleuven.gent.project.data.ProfessionalProject;
 
 import javax.ejb.Local;
 import java.util.List;
@@ -8,9 +8,9 @@ import java.util.List;
 @Local
 public interface SpotterProjectManagementEJBLocal {
 
-    public List<SpotterProject> findAllProjects();
+    public List<ProfessionalProject> findAllProjects();
 
-    SpotterProject findProject(long id);
+    ProfessionalProject findProject(long id);
 
     public List<String> projectByLocations(float latitude, float longitude);
 

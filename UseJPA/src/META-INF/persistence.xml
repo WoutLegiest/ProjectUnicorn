@@ -7,15 +7,15 @@
 	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<jta-data-source>jdbc/unicorn</jta-data-source>
 		<class>be.kuleuven.gent.project.data.User</class>
-		<class>be.kuleuven.gent.project.data.Spottermeting</class>
-		<class>be.kuleuven.gent.project.data.SpotterProject</class>
+		<class>be.kuleuven.gent.project.data.ProfessionalMeasurement</class>
+		<class>be.kuleuven.gent.project.data.ProfessionalProject</class>
 		<class>be.kuleuven.gent.project.data.Teacher</class>
 		<class>be.kuleuven.gent.project.data.Student</class>
 		<class>be.kuleuven.gent.project.data.StemExperiment</class>
         <class>be.kuleuven.gent.project.data.StemProject</class>
 		<!--
-		<class>be.kuleuven.gent.project.data.Spottermeting</class>
-		<class>be.kuleuven.gent.project.data.SpotterProject</class>
+		<class>be.kuleuven.gent.project.data.ProfessionalMeasurementeasurement</class>
+		<class>be.kuleuven.gent.project.data.ProfessionalProjectoject</class>
 		-->
 
 		<properties>

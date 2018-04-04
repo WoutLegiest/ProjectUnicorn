@@ -28,18 +28,18 @@
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Project Naam</f:facet>
-                    <h:outputText value="#{p.naam}"/>
+                    <f:facet name="header">Project Name</f:facet>
+                    <h:outputText value="#{p.name}"/>
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Locatie</f:facet>
-                    <h:outputText value="#{p.locatie}"/>
+                    <f:facet name="header">Location</f:facet>
+                    <h:outputText value="#{p.location}"/>
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Actie</f:facet>
-                    <a href="project.xhtml?spotterProject=#{p.id}">Bekijk project</a>
+                    <f:facet name="header">Action</f:facet>
+                    <a href="project.xhtml?professionalProject=#{p.id}">View project</a>
                 </h:column>
 
             </h:dataTable>

@@ -7,7 +7,7 @@ import java.io.Serializable;
 @XmlRootElement
 @Entity
 @Table(name="Spottermeting")
-public class Spottermeting implements Serializable {
+public class ProfessionalMeasurement implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,18 +17,18 @@ public class Spottermeting implements Serializable {
     @Column(name = "ProUser_Group_User_User_LoginNaam", nullable = false)
     private String userID;
 
-    @Column(name = "Beschrijving", nullable = false)
-    private String beschrijving;
+    @Column(name = "Description", nullable = false)
+    private String description;
 
-    public Spottermeting(Spottermeting spottermeting)
+    public ProfessionalMeasurement(ProfessionalMeasurement professionalMeasurement)
     {
-        this.id=spottermeting.id;
-        this.userID = spottermeting.userID;
-        this.beschrijving = spottermeting.beschrijving;
+        this.id=professionalMeasurement.id;
+        this.userID = professionalMeasurement.userID;
+        this.description = professionalMeasurement.description;
 
     }
 
-    public Spottermeting(){
+    public ProfessionalMeasurement(){
         super();
     }
 
@@ -49,11 +49,11 @@ public class Spottermeting implements Serializable {
         this.userID = userID;
     }
 
-    public String getBeschrijving() {
-        return beschrijving;
+    public String getDescription() {
+        return description;
     }
 
-    public void setBeschrijving(String beschrijving) {
-        this.beschrijving = beschrijving;
+    public void setDescription(String beschrijving) {
+        this.description = beschrijving;
     }
 }

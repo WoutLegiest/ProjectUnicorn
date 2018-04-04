@@ -9,25 +9,25 @@ public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Group_User_User_LoginNaam", nullable = false)
-    private String loginNaam;
+    @Column(name = "Group_User_User_LoginName", nullable = false)
+    private String loginName;
 
 
     public Student(Student student)
     {
-        this.loginNaam=student.loginNaam;
+        this.loginName =student.loginName;
     }
 
     public Student(){
         super();
     }
 
-    public String getLoginNaam() {
-        return loginNaam;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLoginNaam(String loginNaam) {
-        this.loginNaam = loginNaam;
+    public void setLoginName(String loginNaam) {
+        this.loginName = loginNaam;
     }
 
 

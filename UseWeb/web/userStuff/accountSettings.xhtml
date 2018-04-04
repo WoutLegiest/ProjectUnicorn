@@ -11,24 +11,27 @@
     <ui:define name="title">Settings</ui:define>
 
     <ui:define name="content">
-        <!--<form method="post" action="/userServlet/">-->
+
         <div class="col-12">
 
             <h1>Account settings</h1>
 
             <button class="accordion">General</button>
             <div class="panel">
-                <p class="col-3">UserName </p>
-                <input name="j_name" value="#{userController.getUser().name}" class="right col-9" />
+                <h:form>
+                    <h:outputLabel class="col-3">UserName </h:outputLabel>
+                    <h:inputText name="j_name" value="#{userController.getUser().name}" class="right col-9"/>
 
-                <p class="col-3">Login</p>
-                <input name="j_login" value="#{userController.getUser().login}" class="right col-9" />
+                    <h:outputLabel class="col-3">Login</h:outputLabel>
+                    <h:inputText name="j_login" value="#{userController.getUser().login}" class="right col-9" />
 
-                <p class="col-3">email</p>
-                <input name="j_email" value="#{userController.getUser().email}" class="right col-9" />
+                    <h:outputLabel class="col-3">email</h:outputLabel>
+                    <h:inputText name="j_email" value="#{userController.getUser().email}" class="right col-9" />
 
-                <p class="col-3">password</p>
-                <input name="j_password" type="password" value="#{userController.getUser().hPassword}" class="right col-9" />
+                    <h:outputLabel class="col-3">password</h:outputLabel>
+                    <h:inputSecret name="j_password" value="#{userController.getUser().hPassword}" class="right col-9" />
+                    <input type="submit" value="Submit" class="submit" />
+                </h:form>
             </div>
 
             <button class="accordion">Professional</button>
@@ -43,7 +46,7 @@
 
             <input type="submit" value="Submit" class="submit" />
         </div>
-        <!--</form>-->
+
 
         <script src="accordion.js"></script>
 

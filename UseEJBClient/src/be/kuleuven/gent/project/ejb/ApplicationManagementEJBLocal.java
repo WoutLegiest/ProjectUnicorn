@@ -7,5 +7,5 @@ import java.util.List;
 @Local
 public interface ApplicationManagementEJBLocal {
 
-    public LinkedList<LinkedList<Double>> verwerkData(List<LinkedList<Double>> input );
+    public LinkedList<LinkedList<Double>> processData(List<LinkedList<Double>> input );
 }

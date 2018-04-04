@@ -1,6 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.SpotterProject;
+import be.kuleuven.gent.project.data.ProfessionalProject;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -23,23 +23,23 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
     }
 
     @Override
-    public List<SpotterProject> findAllProjects() {
-        TypedQuery<SpotterProject> q =
-                em.createQuery("SELECT p FROM SpotterProject p", SpotterProject.class);
+    public List<ProfessionalProject> findAllProjects() {
+        TypedQuery<ProfessionalProject> q =
+                em.createQuery("SELECT p FROM ProfessionalProject p", ProfessionalProject.class);
         return q.getResultList();
     }
 
 
     @Override
-    public SpotterProject findProject(long id){
-        return em.find(SpotterProject.class, id);
+    public ProfessionalProject findProject(long id){
+        return em.find(ProfessionalProject.class, id);
     }
 
     @Override
     public List<String> projectByLocations(float latitude, float longitude) {
 
         StringBuilder queryBuilder = new StringBuilder();
-        queryBuilder.append("SELECT p FROM SpotterProject p ");
+        queryBuilder.append("SELECT p FROM ProfessionalProject p ");
         queryBuilder.append("WHERE p.latitude BETWEEN ");
         queryBuilder.append(latitude-1);
         queryBuilder.append(" AND ");
@@ -50,12 +50,12 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
         queryBuilder.append(" AND ");
         queryBuilder.append(longitude+1);
 
-        TypedQuery<SpotterProject> q =
-                em.createQuery(queryBuilder.toString(), SpotterProject.class);
-        List<SpotterProject> projects = q.getResultList();
+        TypedQuery<ProfessionalProject> q =
+                em.createQuery(queryBuilder.toString(), ProfessionalProject.class);
+        List<ProfessionalProject> projects = q.getResultList();
         List<String> output = new LinkedList<>();
-        for (SpotterProject p : projects){
-            output.add(p.getNaam());
+        for (ProfessionalProject p : projects){
+            output.add(p.getName());
         }
         return output;
     }

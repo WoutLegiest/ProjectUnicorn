@@ -14,19 +14,19 @@ public class UserToken implements Serializable {
 
     @Id
     @Column(name = "User_Login", nullable = false, length = 64)
-    private String loginNaam;
+    private String loginName;
 
     @Column(name = "Token", nullable = false)
     private String token;
 
     public UserToken(UserToken userToken)
     {
-        this.loginNaam = userToken.loginNaam;
+        this.loginName = userToken.loginName;
         this.token = userToken.token;
     }
 
-    public UserToken(String loginNaam, String token) {
-        this.loginNaam = loginNaam;
+    public UserToken(String loginName, String token) {
+        this.loginName = loginName;
         this.token = token;
 
     }
@@ -43,11 +43,11 @@ public class UserToken implements Serializable {
         super();
     }
 
-    public String getLoginNaam() {
-        return loginNaam;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLoginNaam(String loginNaam) {
-        this.loginNaam = loginNaam;
+    public void setLoginName(String loginNaam) {
+        this.loginName = loginNaam;
     }
 }

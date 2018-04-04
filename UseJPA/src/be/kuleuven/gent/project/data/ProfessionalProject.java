@@ -12,18 +12,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @Entity
-@Table(name="SpotterProject")
-public class SpotterProject implements Serializable{
+@Table(name="ProfessionalProject")
+public class ProfessionalProject implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable=false, length=16)
     private Long id;
 
-    @Column(name = "Naam", nullable = false)
-    private String naam;
+    @Column(name = "Name", nullable = false)
+    private String name;
 
     @Column(name = "Location", nullable = false)
-    private String LocatieNaam;
+    private String locationName;
 
     @Column(name = "Latitude", nullable = false)
     private float latitude;
@@ -31,13 +31,13 @@ public class SpotterProject implements Serializable{
     @Column(name = "Longitude", nullable = false)
     private float longitude;
 
-    public SpotterProject(SpotterProject spotterProject) {
-        this.naam = spotterProject.naam;
-        this.LocatieNaam = spotterProject.LocatieNaam;
-        this.id=spotterProject.id;
+    public ProfessionalProject(ProfessionalProject professionalProject) {
+        this.name = professionalProject.name;
+        this.locationName = professionalProject.locationName;
+        this.id= professionalProject.id;
     }
 
-    public SpotterProject(){
+    public ProfessionalProject(){
         super();
     }
 
@@ -49,20 +49,20 @@ public class SpotterProject implements Serializable{
         this.id = id;
     }
 
-    public String getNaam() {
-        return naam;
+    public String getName() {
+        return name;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
+    public void setName(String naam) {
+        this.name = naam;
     }
 
     public String getLocatie() {
-        return LocatieNaam;
+        return locationName;
     }
 
     public void setLocatie(String locatie) {
-        LocatieNaam = locatie;
+        locationName = locatie;
     }
 
     public float getLatitude() {

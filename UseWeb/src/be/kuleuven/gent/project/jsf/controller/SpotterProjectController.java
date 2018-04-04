@@ -1,6 +1,6 @@
 package be.kuleuven.gent.project.jsf.controller;
 
-import be.kuleuven.gent.project.data.SpotterProject;
+import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 
 import javax.faces.view.ViewScoped;
@@ -17,10 +17,10 @@ public class SpotterProjectController implements Serializable{
     @Inject
     private SpotterProjectManagementEJBLocal spotterProjectEJB;
 
-    private SpotterProject project = new SpotterProject();
+    private ProfessionalProject project = new ProfessionalProject();
     private Long projectId;
 
-    public SpotterProject project(){
+    public ProfessionalProject project(){
         return project;
     }
 
@@ -28,7 +28,7 @@ public class SpotterProjectController implements Serializable{
         //default constructor
     }
 
-    public List<SpotterProject> findAllProjects() {
+    public List<ProfessionalProject> findAllProjects() {
         return spotterProjectEJB.findAllProjects();
     }
 
@@ -44,11 +44,11 @@ public class SpotterProjectController implements Serializable{
         this.projectId = projectId;
     }
 
-    public SpotterProject getProject() {
+    public ProfessionalProject getProject() {
         return project;
     }
 
-    public void setProject(SpotterProject project) {
+    public void setProject(ProfessionalProject project) {
         this.project = project;
     }
 }

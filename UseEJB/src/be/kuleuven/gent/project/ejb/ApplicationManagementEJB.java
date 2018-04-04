@@ -6,7 +6,7 @@ import java.util.List;
 public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
     @Override
-    public LinkedList<LinkedList<Double>> verwerkData(List<LinkedList<Double>> input ) {
+    public LinkedList<LinkedList<Double>> processData(List<LinkedList<Double>> input ) {
         //De lijsten moeten hier omgevormd worden naar het formaat dat het matlab scriptje verwacht
 
 
