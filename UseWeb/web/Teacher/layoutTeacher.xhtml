@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+    <!-- add stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/style.css"></link>
+    <link rel="stylesheet" type="text/css" href="../resources/styleTable.css"></link>
+
+    <!-- enables the use of icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+
+    <!-- add favicon -->
+    <link rel="shortcut icon" href="resources/unicornIcon.ico" type="image/x-icon"></link>
+    <link rel="icon" href="resources/unicornIcon.ico" type="image/x-icon"></link>
+
+    <title>
+        <ui:insert name="title">Default title</ui:insert>
+    </title>
+
+    <ui:insert name="files"></ui:insert>
+
+    <f:view><ui:insert name="meta"></ui:insert></f:view>
+</h:head>
+
+<h:body>
+    <!-- navbar -->
+    <div class="navbar left" id="Navbar">
+        <a href="../index.xhtml" class="navlogo">
+            <img src="../resources/Unicorn_Logo_50.png" alt="Logo" id="logo"></img>
+        </a>
+
+        <a href="home.xhtml" class="navitem">HOME</a>
+        <a href="projecten.xhtml" class="navitem">PROJECTEN</a>
+        <a href="" class="navitem">OVERVIEW</a>
+        <a href="feedback.xhtml" class="navitem">FEEDBACK</a>
+
+        <div class="dropdown right">
+            <button class="dropbtn">
+                <i class="material-icons">person</i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../userStuff/accountSettings.xhtml" class="">ACCOUNT</a>
+                <h:commandButton value="LOGOUT" action="#{userController.logout}"/>
+            </div>
+        </div>
+        <a href="https://iiw.kuleuven.be/english/research/technologycluster/construction" class="right">
+            <i class="material-icons">public</i>
+        </a>
+    </div>
+
+    <!-- Page content -->
+    <div class="content">
+
+        <ui:insert name="content">Default content</ui:insert>
+
+    </div>
+
+</h:body>
+
+</html>
