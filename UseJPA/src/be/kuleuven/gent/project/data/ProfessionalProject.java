@@ -17,7 +17,7 @@ public class ProfessionalProject implements Serializable{
     private String name;
 
     @Column(name = "location", nullable = false)
-    private String locationName;
+    private String location;
 
     @Column(name = "latitude", nullable = false)
     private float latitude;
@@ -27,7 +27,7 @@ public class ProfessionalProject implements Serializable{
 
     public ProfessionalProject(ProfessionalProject professionalProject) {
         this.name = professionalProject.name;
-        this.locationName = professionalProject.locationName;
+        this.location = professionalProject.location;
         this.id= professionalProject.id;
     }
 
@@ -51,12 +51,12 @@ public class ProfessionalProject implements Serializable{
         this.name = naam;
     }
 
-    public String getLocatie() {
-        return locationName;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocatie(String locatie) {
-        locationName = locatie;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public float getLatitude() {

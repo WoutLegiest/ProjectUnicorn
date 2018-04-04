@@ -5,9 +5,14 @@
 
    <context-root>/UseWeb</context-root>
 
-<security-role-mapping>
-    <role-name>ProUser</role-name>
-    <group-name>ProUser</group-name>
-</security-role-mapping>
+    <security-role-mapping>
+        <role-name>ProUser</role-name>
+        <group-name>ProUser</group-name>
+    </security-role-mapping>
+
+    <security-role-mapping>
+        <role-name>Teacher</role-name>
+        <group-name>Teacher</group-name>
+    </security-role-mapping>
 
 </glassfish-web-app>
