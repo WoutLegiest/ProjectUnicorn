@@ -7,6 +7,7 @@ import java.io.Serializable;
 @XmlRootElement
 @Entity
 @Table(name="ProfessionalMeasurement")
+@SecondaryTable(name = "data", pkJoinColumns=@PrimaryKeyJoinColumn(name="idData", referencedColumnName="idData"))
 public class ProfessionalMeasurement implements Serializable {
 
     @Id
@@ -26,12 +27,39 @@ public class ProfessionalMeasurement implements Serializable {
     @Column(name = "description", nullable = false)
     private String description;
 
+    @Column(table = "data", name="xData")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]xData;
+
+    @Column(table = "data", name="yData")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]yData;
+
+    @Column(table = "data", name="zData")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]zData;
+
     public ProfessionalMeasurement(ProfessionalMeasurement professionalMeasurement) {
         this.id=professionalMeasurement.id;
         this.idUser = professionalMeasurement.idUser;
         this.description = professionalMeasurement.description;
         this.idData = professionalMeasurement.idData;
         this.idProject = professionalMeasurement.idProject;
+        this.xData=professionalMeasurement.xData;
+        this.yData=professionalMeasurement.yData;
+        this.zData=professionalMeasurement.zData;
+    }
+
+    public ProfessionalMeasurement(int idProject, String idUser, String description, byte[] xData, byte[] yData, byte[] zData) {
+        this.idProject = idProject;
+        this.idUser = idUser;
+        this.description = description;
+        this.xData = xData;
+        this.yData = yData;
+        this.zData = zData;
     }
 
     public ProfessionalMeasurement(){
@@ -77,5 +105,29 @@ public class ProfessionalMeasurement implements Serializable {
 
     public void setIdProject(int idProject) {
         this.idProject = idProject;
+    }
+
+    public byte[] getxData() {
+        return xData;
+    }
+
+    public void setxData(byte[] xData) {
+        this.xData = xData;
+    }
+
+    public byte[] getyData() {
+        return yData;
+    }
+
+    public void setyData(byte[] yData) {
+        this.yData = yData;
+    }
+
+    public byte[] getzData() {
+        return zData;
+    }
+
+    public void setzData(byte[] zData) {
+        this.zData = zData;
     }
 }

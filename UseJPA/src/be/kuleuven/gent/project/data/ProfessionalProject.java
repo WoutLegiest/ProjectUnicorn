@@ -31,6 +31,13 @@ public class ProfessionalProject implements Serializable{
         this.id= professionalProject.id;
     }
 
+    public ProfessionalProject(String name, float latitude, float longitude, String location) {
+        this.name = name;
+        this.location = location;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
     public ProfessionalProject(){
         super();
     }

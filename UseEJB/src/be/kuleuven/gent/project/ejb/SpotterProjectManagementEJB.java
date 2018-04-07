@@ -59,4 +59,13 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
         }
         return output;
     }
+
+    @Override
+    public ProfessionalProject makeProject(String name,float latitude, float longitude, String location) {
+        ProfessionalProject professionalProject = new ProfessionalProject(name, latitude,longitude,location);
+        em.persist(professionalProject);
+        return professionalProject;
+    }
+
+
 }

@@ -1,12 +1,17 @@
 package be.kuleuven.gent.project.data;
 
+import com.sun.xml.xsom.impl.scd.Iterators;
+
 import javax.persistence.*;
+import javax.websocket.Encoder;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @XmlRootElement
 @Entity
 @Table(name="STEMMeasurement")
+@SecondaryTable(name = "data", pkJoinColumns=@PrimaryKeyJoinColumn(name="idData", referencedColumnName="idData"))
 public class STEMMeasurement implements Serializable{
 
     @Id
@@ -23,11 +28,33 @@ public class STEMMeasurement implements Serializable{
     @Column(name = "student_Group_User_User_LoginName", nullable = false)
     private String userLogin;
 
-    public STEMMeasurement(STEMMeasurement STEMMeasurement){
-        this.id= STEMMeasurement.id;
-        this.userLogin= STEMMeasurement.userLogin;
-        this.idProject = STEMMeasurement.idProject;
-        this.idData = STEMMeasurement.idData;
+
+    @Column(table = "data", name="xData")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private Byte[]xData;
+
+    @Column(table = "data", name="yData")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private Byte[]yData;
+
+    @Column(table = "data", name="zData")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private Byte[]zData;
+
+    public Byte[] getxData() {
+        return xData;
+    }
+
+    public STEMMeasurement(Long idProject, Long idData, String userLogin, Byte[] xData, Byte[] yData, Byte[] zData) {
+        this.idProject = idProject;
+        this.idData = idData;
+        this.userLogin = userLogin;
+        this.xData = xData;
+        this.yData = yData;
+        this.zData = zData;
     }
 
     public STEMMeasurement(){
@@ -64,5 +91,25 @@ public class STEMMeasurement implements Serializable{
 
     public void setIdData(Long idData) {
         this.idData = idData;
+    }
+
+    public void setxData(Byte[] xData) {
+        this.xData = xData;
+    }
+
+    public Byte[] getyData() {
+        return yData;
+    }
+
+    public void setyData(Byte[] yData) {
+        this.yData = yData;
+    }
+
+    public Byte[] getzData() {
+        return zData;
+    }
+
+    public void setzData(Byte[] zData) {
+        this.zData = zData;
     }
 }
