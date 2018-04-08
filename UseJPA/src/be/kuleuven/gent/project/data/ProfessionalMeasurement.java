@@ -22,7 +22,7 @@ public class ProfessionalMeasurement implements Serializable {
     private int idProject;
 
     @Column(name = "proUser_Group_User_User_LoginName", nullable = false)
-    private String idUser;
+    private String loginUser;
 
     @Column(name = "description", nullable = false)
     private String description;
@@ -44,7 +44,7 @@ public class ProfessionalMeasurement implements Serializable {
 
     public ProfessionalMeasurement(ProfessionalMeasurement professionalMeasurement) {
         this.id=professionalMeasurement.id;
-        this.idUser = professionalMeasurement.idUser;
+        this.loginUser = professionalMeasurement.loginUser;
         this.description = professionalMeasurement.description;
         this.idData = professionalMeasurement.idData;
         this.idProject = professionalMeasurement.idProject;
@@ -53,9 +53,9 @@ public class ProfessionalMeasurement implements Serializable {
         this.zData=professionalMeasurement.zData;
     }
 
-    public ProfessionalMeasurement(int idProject, String idUser, String description, byte[] xData, byte[] yData, byte[] zData) {
+    public ProfessionalMeasurement(int idProject, String loginUser, String description, byte[] xData, byte[] yData, byte[] zData) {
         this.idProject = idProject;
-        this.idUser = idUser;
+        this.loginUser = loginUser;
         this.description = description;
         this.xData = xData;
         this.yData = yData;
@@ -75,12 +75,12 @@ public class ProfessionalMeasurement implements Serializable {
         this.id = id;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public String getLoginUser() {
+        return loginUser;
     }
 
-    public void setIdUser(String userID) {
-        this.idUser = userID;
+    public void setLoginUser(String userID) {
+        this.loginUser = userID;
     }
 
     public String getDescription() {

@@ -14,7 +14,7 @@ public class StemProject implements Serializable {
     @Column(name = "id", nullable = false, length = 16)
     private Long id;
 
-    @Column(name = "Teacher_Group_User_User_LoginName", nullable = false)
+    @Column(name = "teacher_Group_User_User_LoginName", nullable = false)
     private String teacherName;
 
     @Column(name = "className", nullable = false)
