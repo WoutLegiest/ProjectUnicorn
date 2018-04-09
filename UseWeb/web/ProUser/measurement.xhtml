@@ -10,19 +10,23 @@
 
 <ui:composition template="layoutProUser.xhtml">
 
-    <ui:define name="title">World map</ui:define>
+    <ui:define name="title">Project</ui:define>
 
-    <ui:define name="files"><script src="jsWorldMap.js"></script></ui:define>
+    <ui:define name="meta">
+        <script src="scripts/highcharts.js" />
+        <script src="scripts/boost.js" />
+        <script src="scripts/exporting.js" />
+    </ui:define>
 
     <ui:define name="content">
 
         <div class="col-12 section left">
 
-            <h1><h:outputLabel value="Feedback"/></h1>
-
-            <p>zever</p>
+            <div id="container" style="height: 400px; max-width: 800px; margin: 0 auto"></div>
 
         </div>
+
+        <script type="text/javascript" src="jsChart.js"/>
     </ui:define>
 
 </ui:composition>
