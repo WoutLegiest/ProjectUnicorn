@@ -51,7 +51,9 @@
             </button>
             <div class="dropdown-content">
                 <a href="../userStuff/accountSettings.xhtml" class="">ACCOUNT</a>
-                <h:commandButton value="LOGOUT" action="#{userController.logout}"/>
+                <h:form>
+                    <h:commandButton value="LOGOUT" action="#{userController.logout}"/>
+                </h:form>
             </div>
         </div>
         <a href="https://iiw.kuleuven.be/english/research/technologycluster/construction" class="right">

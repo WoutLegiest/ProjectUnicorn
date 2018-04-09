@@ -8,6 +8,9 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.Serializable;
 
@@ -25,11 +28,12 @@ public class UserController implements Serializable{
         return "ProUser/hello.faces?faces-redirect=true";
     }
 
+
     public void logout() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         ec.invalidateSession();
         try {
-            ec.redirect(ec.getRequestContextPath() + "/index.faces");
+            ec.redirect(ec.getRequestContextPath() + "/index.xhtml");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -58,9 +58,12 @@
                               rendered="#{not empty request.remoteUser}">
                     ACCOUNT
                 </h:outputLink>
-                <h:commandButton value="LOGOUT"
-                                 action="#{userController.logout}"
-                                 rendered="#{not empty request.remoteUser}"/>
+                <h:form>
+                    <h:commandButton value="LOGOUT"
+                                     action="#{userController.logout}"
+                                     rendered="#{not empty request.remoteUser}"/>
+                </h:form>
+
             </div>
         </div>
         <a href="https://iiw.kuleuven.be/english/research/technologycluster/construction" class="right">
