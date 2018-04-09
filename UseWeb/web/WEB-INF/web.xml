@@ -74,6 +74,12 @@
     </auth-constraint>
   </security-constraint>
 
+  <error-page>
+    <!-- Forbidden directory listing -->
+    <error-code>403</error-code>
+    <location>/userStuff/forbiddenError.xhtml</location>
+  </error-page>
+
 </web-app>
 
 
