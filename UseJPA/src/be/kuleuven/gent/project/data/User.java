@@ -6,8 +6,8 @@ import java.io.Serializable;
 
 @XmlRootElement
 @Entity
-@Table(name="User")
-@SecondaryTable(name="GroupUser", pkJoinColumns=@PrimaryKeyJoinColumn(name="group_LoginName", referencedColumnName="loginName"))
+@Table(name="user")
+@SecondaryTable(name="groupuser", pkJoinColumns=@PrimaryKeyJoinColumn(name="group_LoginName", referencedColumnName="loginName"))
 public class User implements Serializable {
     private static final long serialVersionUID = 4990525852036485337L;
 
@@ -22,13 +22,16 @@ public class User implements Serializable {
     @Column(name = "loginName", nullable = false)
     private String login;
 
+    @Column(table = "groupuser", name = "group_LoginName")
+    private String groupLogin;
+
     @Column(name = "hPassword", nullable = false)
     private String hPassword;
 
     @Column(name = "description")
     private String descripton;
 
-    @Column(table = "GroupUser", name = "groupName")
+    @Column(table = "groupuser", name = "groupName")
     private String group;
 
     @Column(name = "eMail", nullable = false)
@@ -101,5 +104,13 @@ public class User implements Serializable {
 
     public void setDescripton(String descripton) {
         this.descripton = descripton;
+    }
+
+    public String getGroupLogin() {
+        return groupLogin;
+    }
+
+    public void setGroupLogin(String groupLogin) {
+        this.groupLogin = groupLogin;
     }
 }

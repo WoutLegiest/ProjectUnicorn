@@ -45,12 +45,10 @@ public class UserController implements Serializable  {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         String userName = ec.getRemoteUser();
         loggedInUser = userEJB.findPerson(userName);
-        //System.out.println("hhdhd");
     }
 
     public void changeData() {
         userEJB.updateDB(loggedInUser);
-       // System.out.println("jffnff");
     }
 }
 

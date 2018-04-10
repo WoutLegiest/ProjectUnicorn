@@ -66,6 +66,12 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 
 	@Override
 	public void updateDB(User user){
+        /*try {
+            user.sethPassword(Encryption.encodeSHA256(user.gethPassword()));
+        } catch (Exception e) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
+            e.printStackTrace();
+        }*/
 		em.merge(user);
 	}
 
