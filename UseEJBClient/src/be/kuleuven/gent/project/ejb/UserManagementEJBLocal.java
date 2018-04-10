@@ -13,6 +13,8 @@ public interface UserManagementEJBLocal {
 
     String createToken(User user);
 
+    void updateDB(User user);
+
 
 
 

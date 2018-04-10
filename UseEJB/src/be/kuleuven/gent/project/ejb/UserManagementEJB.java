@@ -64,4 +64,9 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 		return generatedString;
 	}
 
+	@Override
+	public void updateDB(User user){
+		em.merge(user);
+	}
+
 }

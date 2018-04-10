@@ -8,26 +8,28 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.Serializable;
 
 
 @Named
 @Stateless
-public class UserController implements Serializable{
+public class UserController implements Serializable  {
 
     private static final long serialVersionUID = 6737147724536164355L;
 
     @Inject
     private UserManagementEJBLocal userEJB;
 
-    public String activateProUser(){
-        return "ProUser/hello.faces?faces-redirect=true";
+    private User loggedInUser;
+
+    public User getLoggedInUser() {
+        return loggedInUser;
     }
 
+    public void setLoggedInUser(User loggedInUser) {
+        this.loggedInUser = loggedInUser;
+    }
 
     public void logout() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
@@ -39,11 +41,16 @@ public class UserController implements Serializable{
         }
     }
 
-    public User getUser() {
+    public void findUser() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         String userName = ec.getRemoteUser();
-        return userEJB.findPerson(userName);
+        loggedInUser = userEJB.findPerson(userName);
+        //System.out.println("hhdhd");
     }
 
+    public void changeData() {
+        userEJB.updateDB(loggedInUser);
+       // System.out.println("jffnff");
+    }
 }
 

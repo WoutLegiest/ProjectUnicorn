@@ -7,7 +7,7 @@ import java.io.Serializable;
 @XmlRootElement
 @Entity
 @Table(name="User")
-@SecondaryTable(name = "GroupUser", pkJoinColumns=@PrimaryKeyJoinColumn(name="group_LoginName", referencedColumnName="loginName"))
+@SecondaryTable(name="GroupUser", pkJoinColumns=@PrimaryKeyJoinColumn(name="group_LoginName", referencedColumnName="loginName"))
 public class User implements Serializable {
     private static final long serialVersionUID = 4990525852036485337L;
 
@@ -28,21 +28,13 @@ public class User implements Serializable {
     @Column(name = "description")
     private String descripton;
 
-    //@ManyToMany
-//	@OneToOne(cascade=CascadeType.ALL)
-//	@JoinTable(
-//			name="Person_Group",
-//			joinColumns={@JoinColumn(name="login", referencedColumnName="login")},
-//			inverseJoinColumns={@JoinColumn(name="idGroup", referencedColumnName="idGroup")})
-
     @Column(table = "GroupUser", name = "groupName")
     private String group;
 
     @Column(name = "eMail", nullable = false)
     private String email;
 
-    public User(User user)
-    {
+    public User(User user) {
         this.id=user.id;
         this.name = user.name;
         this.login = user.login;
