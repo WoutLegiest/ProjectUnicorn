@@ -1,24 +1,28 @@
 package be.kuleuven.gent.project.ejb;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import javax.ejb.Stateless;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
+@Stateless
 public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
     @Override
-    public LinkedList<LinkedList<Double>> processData(List<LinkedList<Double>> input ) throws InterruptedException, ExecutionException {
-        //De lijsten moeten hier omgevormd worden naar het formaat dat het matlab scriptje verwacht
-
-        /*MatlabEngine eng = MatlabEngine.startMatlab();
-        double[] a = {2.0 ,4.0, 6.0};
-        double[] roots = eng.feval("sqrt", a);
-        for (double e: roots) {
-            System.out.println(e);
+    public String processData() throws IOException {
+        ProcessBuilder builder = new ProcessBuilder(
+                "octave","~/Box Sync/IdeaProjects/ProjectUnicorn/UseEJB/HelloWorld.m");
+        builder.redirectErrorStream(true);
+        Process p = builder.start();
+        BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String line;
+        StringBuilder sb = new StringBuilder();
+        while (true) {
+            line = r.readLine();
+            if (line == null) { break; }
+            if(!line.contains("Columns"))
+                sb.append(line);
         }
-        eng.close();*/
-
-
-        return null;
+        return sb.toString();
     }
 }
