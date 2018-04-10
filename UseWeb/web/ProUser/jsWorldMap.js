@@ -38,7 +38,7 @@ function getLatLng(data) {
 
         var json = JSON.parse(ans); //De JSON als string omzetten naar een JSON
 
-        name.push(json.naam);
+        name.push(json.name);
         lat.push(json.latitude);
         lng.push(json.longitude);
 
@@ -77,6 +77,8 @@ function map(name, lat, lng) {
     //var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
     //var flag = '../resources/flag.png';
 
+    var info = [];
+
     //Elk project uit de data weergeven als een marker op de map.
     for (i = 0; i < name.length; i++) {
         marker = new google.maps.Marker({
@@ -85,9 +87,15 @@ function map(name, lat, lng) {
             icon: unicorn
         });
 
+        var index = i + 1;
+
+        info.push('<h3>' + name[i] + '</h3>' +
+            '<p>uitleg over het project</p>' +
+            '<a href="project.xhtml?professionalProject=' + index + '">View project</a>');
+
         google.maps.event.addListener(marker, 'click', (function (marker, i) {
             return function () {
-                infowindow.setContent(name[i]);
+                infowindow.setContent(info[i]);
                 infowindow.open(map, marker);
             }
         })(marker, i));

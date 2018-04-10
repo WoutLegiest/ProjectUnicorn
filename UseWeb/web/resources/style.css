@@ -155,6 +155,11 @@
 	float: right;
 }
 
+.dummyImage {
+	max-height: 300px;
+	max-width: 100%;
+}
+
 #map {
 	display: inline;
 	float: left;
