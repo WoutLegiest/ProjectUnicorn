@@ -16,4 +16,6 @@ Graph ideas:
 https://www.highcharts.com/demo (deze is de beste optie)
 http://www.amcharts.com/demos/multiple-value-axes/
 
+Matlab: 
+https://github.com/jakaplan/matlabcontrol/wiki/Walkthrough
 
