@@ -12,7 +12,5 @@
     <orderEntry type="library" scope="PROVIDED" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="module" module-name="UseEJBClient" />
     <orderEntry type="module" module-name="UseJPA" />
-    <orderEntry type="library" name="json-simple-1.1.1-javadoc" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="lib" level="project" />
   </component>
 </module>

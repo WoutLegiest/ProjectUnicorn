@@ -3,6 +3,7 @@ package be.kuleuven.gent.project.data;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 @XmlRootElement
 @Entity
