@@ -93,7 +93,7 @@
 }
 
 /* Links inside the dropdown */
-.dropdown-content a, input {
+.dropdown-content a, .dropdown-content input {
 	float: none;
 	color: black;
 	background-color: inherit;
@@ -108,7 +108,7 @@
 }
 
 /* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover, input:hover {
+.dropdown-content a:hover, .dropdown-content input:hover {
 	background-color: #ddd;
 }
 

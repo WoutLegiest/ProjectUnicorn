@@ -34,6 +34,12 @@
                 <h:inputSecret id="password" value="#{registerController.usr.hPassword}"
                                required="true" requiredMessage="Please enter password"/>
 
+                <h:outputLabel for="group">Group:</h:outputLabel>
+                <h:selectOneMenu id="group" value="#{registerController.usr.group}">
+                    <f:selectItem itemLabel="ProUser" itemValue="ProUser" />
+                    <f:selectItem itemLabel="Teacher" itemValue="Teacher" />
+                </h:selectOneMenu>
+
                 <h:commandButton action="#{registerController.register}" value="Register"/>
 
             </h:panelGrid>

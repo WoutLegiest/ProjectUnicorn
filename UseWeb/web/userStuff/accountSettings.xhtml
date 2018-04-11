@@ -61,7 +61,12 @@
 
                 <button class="accordion" type="button">Personal</button>
                 <div class="panel">
-                    <p>Lorem ipsum...</p>
+                    <h:outputLabel class="col-3" value="description"></h:outputLabel>
+                    <h:inputTextarea rows="4"
+                                     name="j_description"
+                                     value="#{userController.loggedInUser.descripton}"
+                                     class="right col-9"
+                                     autocomplete="false"/>
                 </div>
 
                 <h:commandButton styleClass="submit"

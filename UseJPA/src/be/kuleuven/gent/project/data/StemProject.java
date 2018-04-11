@@ -14,20 +14,23 @@ public class StemProject implements Serializable {
     @Column(name = "id", nullable = false, length = 16)
     private Long id;
 
-    @Column(name = "teacher_Group_User_User_LoginName", nullable = false)
+    @Column(name = "teacher_User_LoginName", nullable = false)
     private String teacherName;
 
     @Column(name = "className", nullable = false)
     private String className;
 
-    public StemProject(StemProject stemProject) {
-        this.id = stemProject.id;
-        this.teacherName = stemProject.teacherName;
-        this.className = stemProject.className;
-    }
+    @Column(name = "description", nullable = false)
+    private String description;
 
     public StemProject() {
         super();
+    }
+
+    public StemProject(String teacherName, String className, String description) {
+        this.teacherName = teacherName;
+        this.className = className;
+        this.description = description;
     }
 
     public Long getId() {
@@ -42,8 +45,8 @@ public class StemProject implements Serializable {
         return teacherName;
     }
 
-    public void setTeacherName(String teacherNaam) {
-        this.teacherName = teacherNaam;
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 
     public String getClassName() {
@@ -52,5 +55,13 @@ public class StemProject implements Serializable {
 
     public void setClassName(String className) {
         this.className = className;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

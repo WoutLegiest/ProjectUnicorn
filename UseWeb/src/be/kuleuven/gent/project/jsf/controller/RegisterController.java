@@ -74,7 +74,7 @@ public class RegisterController implements Serializable {
     }
 
     public String register() {
-        usr.setGroup("ProUser");
+        System.out.println("test");
         ejb.createUser(usr);
         log.info("New user created with e-mail: " + usr.getLogin() + " and name: " + usr.getName());
         return "regdone";

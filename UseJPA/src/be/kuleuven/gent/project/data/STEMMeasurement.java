@@ -28,6 +28,9 @@ public class STEMMeasurement implements Serializable{
     @Column(name = "student_Group_User_User_LoginName", nullable = false)
     private String userLogin;
 
+    @Column(name = "description", nullable = false)
+    private String description;
+
 
     @Column(table = "data", name="xData")
     @Lob
@@ -111,5 +114,13 @@ public class STEMMeasurement implements Serializable{
 
     public void setzData(Byte[] zData) {
         this.zData = zData;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

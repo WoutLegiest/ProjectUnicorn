@@ -25,6 +25,9 @@ public class ProfessionalProject implements Serializable{
     @Column(name = "longitude", nullable = false)
     private float longitude;
 
+    @Column(name = "description", nullable = false)
+    private String description;
+
     public ProfessionalProject(ProfessionalProject professionalProject) {
         this.name = professionalProject.name;
         this.location = professionalProject.location;
@@ -82,4 +85,11 @@ public class ProfessionalProject implements Serializable{
         this.longitude = longitude;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

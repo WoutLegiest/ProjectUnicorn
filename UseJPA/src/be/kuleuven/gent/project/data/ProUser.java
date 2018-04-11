@@ -4,27 +4,27 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="Teacher")
-public class Teacher implements Serializable {
+@Table(name="ProUser")
+public class ProUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTeacher", nullable = false)
+    @Column(name = "idProUser", nullable = false)
     private Long id;
 
     @OneToOne
     private User user;
 
-    @Column(name = "School", nullable = false)
-    private String school;
+    @Column(name = "Company", nullable = false)
+    private String company;
 
-    public Teacher() {
+    public ProUser() {
         super();
     }
 
-    public Teacher(User user, String school) {
+    public ProUser(User user, String company) {
         this.user = user;
-        this.school = school;
+        this.company = company;
     }
 
     public Long getId() {
@@ -43,11 +43,11 @@ public class Teacher implements Serializable {
         this.user = user;
     }
 
-    public String getSchool() {
-        return school;
+    public String getCompany() {
+        return company;
     }
 
-    public void setSchool(String school) {
-        this.school = school;
+    public void setCompany(String company) {
+        this.company = company;
     }
 }
