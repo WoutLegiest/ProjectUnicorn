@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project.ejb;
 
 import be.kuleuven.gent.project.data.User;
+import be.kuleuven.gent.project.data.UserToken;
 
 import javax.ejb.Local;
 
@@ -11,7 +12,9 @@ public interface UserManagementEJBLocal {
 
     User findPerson(String login);
 
-    String createToken(User user);
+    UserToken createToken(User user);
+
+    UserToken findToken(User user);
 
     void updateDB(User user);
 

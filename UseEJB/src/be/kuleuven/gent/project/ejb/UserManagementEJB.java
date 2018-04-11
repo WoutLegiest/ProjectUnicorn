@@ -55,13 +55,27 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 	}
 
 	@Override
-	public String createToken(User user){
+	public UserToken createToken(User user){
 		byte[] array = new byte[45]; // length is bounded by 45
 		new Random().nextBytes(array);
 		String generatedString = new String(array, Charset.forName("UTF-8"));
-		UserToken userToken= new UserToken(user.getLogin(),generatedString);
+		java.util.Date utilDate = new java.util.Date();
+		java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+
+		UserToken userToken= new UserToken(user.getLogin(),generatedString, sqlDate);
 		em.persist(userToken);
-		return generatedString;
+		return userToken;
+	}
+
+	@Override
+	public UserToken findToken(User user) {
+		Query q = em.createQuery("SELECT p FROM UserToken p WHERE p.loginName = :login");
+		q.setParameter("login", user.getLogin());
+		List<UserToken> userTokens = q.getResultList();
+
+		if(userTokens.size() == 1)
+			return userTokens.get(0);
+		else return null;
 	}
 
 	@Override

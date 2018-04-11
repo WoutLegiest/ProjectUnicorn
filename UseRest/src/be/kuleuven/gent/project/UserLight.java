@@ -1,12 +1,13 @@
 package be.kuleuven.gent.project;
 
+import be.kuleuven.gent.project.data.UserToken;
+
 public class UserLight {
     private long id;
     private String name;
     private String login;
     private String email;
     private String group;
-    private String token;
 
     public UserLight(long id, String name, String login, String email, String group) {
         this.id = id;
@@ -56,11 +57,4 @@ public class UserLight {
         this.email = email;
     }
 
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }
