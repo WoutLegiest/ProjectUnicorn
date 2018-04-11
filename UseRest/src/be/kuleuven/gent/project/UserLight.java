@@ -4,14 +4,16 @@ import be.kuleuven.gent.project.data.UserToken;
 
 public class UserLight {
     private long id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String login;
     private String email;
     private String group;
 
-    public UserLight(long id, String name, String login, String email, String group) {
+    public UserLight(long id, String firstName, String lastName, String login, String email, String group) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.login = login;
         this.email = email;
         this.group= group;
@@ -33,12 +35,20 @@ public class UserLight {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getLogin() {

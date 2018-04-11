@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 
     <!-- add stylesheet -->
@@ -17,32 +18,74 @@
         <h:form>
 
             <h3>Create new account</h3>
-            <h:panelGrid columns="1">
-                <h:outputLabel for="name">Name:</h:outputLabel>
-                <h:inputText id="name" value="#{registerController.usr.name}" required="true"
-                             requiredMessage="Please enter your name"  maxlength="30"/>
 
-                <h:outputLabel for="login">Login:</h:outputLabel>
-                <h:inputText id="login" value="#{registerController.usr.login}" required="true"
-                             requiredMessage="Please enter your login" maxlength="30"/>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <h:outputLabel for="group">Name:</h:outputLabel>
+                <h:inputText id="firstName"
+                             value="#{registerController.usr.firstName}"
+                             required="true"
+                             requiredMessage="Please enter your first name."
+                             a:placeholder="First name..."
+                             maxlength="30"/>
 
-                <h:outputLabel for="email">E-Mail:</h:outputLabel>
-                <h:inputText id="email" value="#{registerController.usr.email}" required="true"
-                             requiredMessage="Please enter your e-mail address"/>
+                <h:inputText id="lastName"
+                             value="#{registerController.usr.lastName}"
+                             required="true"
+                             requiredMessage="Please enter your last name."
+                             a:placeholder="Last name..."
+                             maxlength="30"/>
+            </div>
 
-                <h:outputLabel for="password">Password:</h:outputLabel>
-                <h:inputSecret id="password" value="#{registerController.usr.hPassword}"
-                               required="true" requiredMessage="Please enter password"/>
+            <div class="tab">
+                <h:outputLabel for="group">Contact Info:</h:outputLabel>
+                <h:inputText id="email"
+                             value="#{registerController.usr.email}"
+                             required="true"
+                             requiredMessage="Please enter your e-mail address."
+                             a:placeholder="email..."/>
+            </div>
+
+            <div class="tab">
+                <h:outputLabel for="group">Login Info:</h:outputLabel>
+                <h:inputText id="login"
+                             value="#{registerController.usr.login}"
+                             required="true"
+                             requiredMessage="Please enter your username."
+                             a:placeholder="Username..."
+                             maxlength="30"/>
+
+                <h:inputSecret id="password"
+                               value="#{registerController.usr.hPassword}"
+                               required="true"
+                               requiredMessage="Please enter your password."
+                               a:placeholder="Password..."/>
 
                 <h:outputLabel for="group">Group:</h:outputLabel>
                 <h:selectOneMenu id="group" value="#{registerController.usr.group}">
                     <f:selectItem itemLabel="ProUser" itemValue="ProUser" />
                     <f:selectItem itemLabel="Teacher" itemValue="Teacher" />
                 </h:selectOneMenu>
+            </div>
 
-                <h:commandButton action="#{registerController.register}" value="Register"/>
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    <div id="submit"><h:commandButton action="#{registerController.register}" value="Register"/></div>
 
-            </h:panelGrid>
+                </div>
+            </div>
+
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+            </div>
+
+            <script src="jsRegister.js"/>
+
         </h:form>
 
         <br/>

@@ -29,9 +29,15 @@
 
                 <button class="accordion" type="button">General</button>
                 <div class="panel">
-                    <h:outputLabel class="col-3">Name </h:outputLabel>
-                    <h:inputText name="j_name"
-                                 value="#{userController.loggedInUser.name}"
+                    <h:outputLabel class="col-3" value="First Name"></h:outputLabel>
+                    <h:inputText name="j_firstName"
+                                 value="#{userController.loggedInUser.firstName}"
+                                 class="right col-9"
+                                 autocomplete="false" />
+
+                    <h:outputLabel class="col-3" value="Last Name"></h:outputLabel>
+                    <h:inputText name="j_lastName"
+                                 value="#{userController.loggedInUser.lastName}"
                                  class="right col-9"
                                  autocomplete="false" />
 
@@ -41,7 +47,7 @@
                                  class="right col-9"
                                  autocomplete="false" />-->
 
-                    <h:outputLabel class="col-3">email</h:outputLabel>
+                    <h:outputLabel class="col-3" value="email"></h:outputLabel>
                     <h:inputText name="j_email"
                                  value="#{userController.loggedInUser.email}"
                                  class="right col-9"
@@ -64,6 +70,7 @@
                     <h:outputLabel class="col-3" value="description"></h:outputLabel>
                     <h:inputTextarea rows="4"
                                      name="j_description"
+                                     requiredMessage="description"
                                      value="#{userController.loggedInUser.descripton}"
                                      class="right col-9"
                                      autocomplete="false"/>
@@ -76,7 +83,7 @@
         </div>
 
 
-        <script src="accordion.js"></script>
+        <script src="jsAccordion.js"></script>
 
     </ui:define>
 

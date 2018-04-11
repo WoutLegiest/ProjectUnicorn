@@ -16,8 +16,11 @@ public class User implements Serializable {
     @Column(name = "idUser", nullable = false, length = 16)
     private Long id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "firstName", nullable = false)
+    private String firstName;
+
+    @Column(name = "lastName", nullable = false)
+    private String lastName;
 
     @Column(name = "loginName", nullable = false)
     private String login;
@@ -39,7 +42,8 @@ public class User implements Serializable {
 
     public User(User user) {
         this.id=user.id;
-        this.name = user.name;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
         this.login = user.login;
         this.hPassword = user.hPassword;
         this.email = user.email;
@@ -58,12 +62,20 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getLogin() {

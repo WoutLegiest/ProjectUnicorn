@@ -38,7 +38,7 @@ public class LoginAndRegister {
 
 
         if (user!=null){
-            UserLight userke = new UserLight(user.getId(),user.getName(), user.getLogin(),user.getEmail(), user.getGroup());
+            UserLight userke = new UserLight(user.getId(),user.getFirstName(), user.getLastName(), user.getLogin(),user.getEmail(), user.getGroup());
             if(hPasswd.equals(user.gethPassword())){
                 UserToken userToken = umejbl.findToken(user);
                 if(userToken==null){

@@ -76,7 +76,7 @@ public class RegisterController implements Serializable {
     public String register() {
         System.out.println("test");
         ejb.createUser(usr);
-        log.info("New user created with e-mail: " + usr.getLogin() + " and name: " + usr.getName());
+        log.info("New user created with e-mail: " + usr.getLogin() + " and name: " + usr.getFirstName() + " " + usr.getLastName());
         return "regdone";
     }
 
