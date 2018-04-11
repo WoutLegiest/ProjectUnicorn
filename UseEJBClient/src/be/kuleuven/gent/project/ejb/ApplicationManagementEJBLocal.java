@@ -7,4 +7,6 @@ import java.io.IOException;
 public interface ApplicationManagementEJBLocal {
 
     String processData() throws IOException;
+
+    void maakScript();
 }

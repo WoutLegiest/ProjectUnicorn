@@ -11,7 +11,7 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
     @Override
     public String processData() throws IOException {
         ProcessBuilder builder = new ProcessBuilder(
-                "octave","~/Box Sync/IdeaProjects/ProjectUnicorn/UseEJB/HelloWorld.m");
+                "octave","~/Box Sync/IdeaProjects/ProjectUnicorn/UseEJB/data_processing_example_octave.m");
         builder.redirectErrorStream(true);
         Process p = builder.start();
         BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -25,4 +25,11 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         }
         return sb.toString();
     }
+
+    @Override
+    public void maakScript() {
+
+    }
+
+
 }
