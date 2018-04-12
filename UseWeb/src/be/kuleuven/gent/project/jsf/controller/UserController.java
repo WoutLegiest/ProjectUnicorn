@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project.jsf.controller;
 
 import be.kuleuven.gent.project.data.ProUser;
+import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 
@@ -62,12 +63,20 @@ public class UserController implements Serializable  {
             tag = "organisation";
             organisation = "n.v.t.";
         }
-
-        System.out.println("test");
     }
 
     public void changeData() {
         userEJB.updateDB(loggedInUser);
+
+        if (group.equals("ProUser")) {
+            ProUser proUser = userEJB.findProUser(loggedInUser.getLogin());
+            proUser.setCompany(organisation);
+            userEJB.updateDB(proUser);
+        } else if (group.equals("Teacher")) {
+            Teacher teacher = userEJB.findTeacher(loggedInUser.getLogin());
+            teacher.setSchool(organisation);
+            userEJB.updateDB(teacher);
+        }
     }
 
     public String getOrganisation() {

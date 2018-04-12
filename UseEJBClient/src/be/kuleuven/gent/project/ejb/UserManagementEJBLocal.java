@@ -24,7 +24,7 @@ public interface UserManagementEJBLocal {
 
     UserToken findToken(User user);
 
-    void updateDB(User user);
+    <T> void updateDB(T t);
 
 
 

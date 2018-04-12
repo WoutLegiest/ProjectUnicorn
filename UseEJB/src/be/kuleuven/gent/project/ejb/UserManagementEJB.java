@@ -66,38 +66,29 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     @Override
     public ProUser findProUser(String login) {
 
-		/*Query q = em.createQuery("SELECT p FROM ProUser p WHERE p.user.login LIKE :login");
-		q.setParameter("login", login);
-		List<ProUser> persons = q.getResultList();*/
-
         Query q = em.createNativeQuery("SELECT * FROM ProUser", ProUser.class);
         List<ProUser> persons = q.getResultList();
 
-        System.out.println("hdhdhd");
-
         for (ProUser proUser : persons) {
-            if (proUser.getUser().getLogin() == login) {
+            if (proUser.getUser().getLogin().equals(login)) {
                 return proUser;
             }
         }
         return null;
-
-		/*if(persons.size() == 1)
-			return persons.get(0);
-		else return null;*/
-
     }
 
     @Override
     public Teacher findTeacher(String login) {
 
-        Query q = em.createQuery("SELECT p FROM Teacher p WHERE p.user.login = :login");
-        q.setParameter("login", login);
+        Query q = em.createNativeQuery("SELECT * FROM Teacher", ProUser.class);
         List<Teacher> persons = q.getResultList();
 
-        if (persons.size() == 1)
-            return persons.get(0);
-        else return null;
+        for (Teacher teacher : persons) {
+            if (teacher.getUser().getLogin().equals(login)) {
+                return teacher;
+            }
+        }
+        return null;
 
     }
 
@@ -126,14 +117,14 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     }
 
     @Override
-    public void updateDB(User user) {
+    public <T> void updateDB(T t) {
         /*try {
             user.sethPassword(Encryption.encodeSHA256(user.gethPassword()));
         } catch (Exception e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }*/
-        em.merge(user);
+        em.merge(t);
     }
 
 }
