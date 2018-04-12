@@ -13,6 +13,7 @@ public class ProUser implements Serializable {
     private Long id;
 
     @OneToOne
+    @JoinColumn(name="loginName", nullable = false)
     private User user;
 
     @Column(name = "Company", nullable = false)
@@ -20,6 +21,11 @@ public class ProUser implements Serializable {
 
     public ProUser() {
         super();
+    }
+
+    public ProUser(User user) {
+        this.user = user;
+        this.company = "";
     }
 
     public ProUser(User user, String company) {

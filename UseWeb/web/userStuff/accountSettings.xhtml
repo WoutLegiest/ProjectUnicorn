@@ -62,7 +62,11 @@
 
                 <button class="accordion" type="button">Professional</button>
                 <div class="panel">
-                    <p>Lorem ipsum...</p>
+                    <h:outputLabel class="col-3" value="#{userController.tag}"></h:outputLabel>
+                    <h:inputText name="j_organisation"
+                                 value="#{userController.organisation}"
+                                 class="right col-9"
+                                 autocomplete="false" />
                 </div>
 
                 <button class="accordion" type="button">Personal</button>

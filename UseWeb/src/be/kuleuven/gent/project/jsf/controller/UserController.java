@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project.jsf.controller;
 
+import be.kuleuven.gent.project.data.ProUser;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 
@@ -22,6 +23,9 @@ public class UserController implements Serializable  {
     private UserManagementEJBLocal userEJB;
 
     private User loggedInUser;
+    private String group;
+    private String organisation;
+    private String tag;
 
     public User getLoggedInUser() {
         return loggedInUser;
@@ -45,10 +49,41 @@ public class UserController implements Serializable  {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         String userName = ec.getRemoteUser();
         loggedInUser = userEJB.findPerson(userName);
+
+        group = loggedInUser.getGroup();
+
+        if (group.equals("ProUser")) {
+            tag = "Company";
+            organisation = userEJB.findProUser(userName).getCompany();
+        } else if (group.equals("Teacher")) {
+            tag = "School";
+            organisation = userEJB.findTeacher(userName).getSchool();
+        } else {
+            tag = "organisation";
+            organisation = "n.v.t.";
+        }
+
+        System.out.println("test");
     }
 
     public void changeData() {
         userEJB.updateDB(loggedInUser);
+    }
+
+    public String getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(String organisation) {
+        this.organisation = organisation;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }
 
