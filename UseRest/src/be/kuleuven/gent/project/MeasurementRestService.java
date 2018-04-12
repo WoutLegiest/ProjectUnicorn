@@ -19,18 +19,11 @@ public class MeasurementRestService {
     private ApplicationManagementEJBLocal app;
 
 
-
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     public Response addMeasService(byte[] x, byte[] y, byte[] z) {
 
-        ProfessionalMeasurement pf =app.makePM();
 
-        pf.setxData(x);
-        pf.setyData(y);
-        pf.setzData(z);
-
-        app.addMeaserment(pf);
 
         return null;
     }

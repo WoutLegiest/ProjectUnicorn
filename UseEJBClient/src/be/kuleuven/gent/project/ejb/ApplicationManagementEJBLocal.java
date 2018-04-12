@@ -9,11 +9,13 @@ import java.util.ArrayList;
 @Local
 public interface ApplicationManagementEJBLocal {
 
-    void addMeaserment(ProfessionalMeasurement pf);
+    void addMeaserment(ArrayList<Float> x, ArrayList<Float> y, ArrayList<Float> z, int ProjectId, String UserId,
+                       String description, ArrayList<ArrayList<Float>> result);
 
-    String processData() throws IOException;
+    byte[] toByteArray(ArrayList<Float> dataList);
 
-    String maakScript() throws IOException;
+    ArrayList<ArrayList<Float>> processData(ArrayList<Float> list) throws IOException;
 
-    ProfessionalMeasurement makePM();
+    String maakScript(ArrayList<Float> list) throws IOException;
+
 }
