@@ -3,7 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/genson-1.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.annotation-api-1.3.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/engine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.json.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

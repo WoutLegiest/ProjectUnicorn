@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project;
 
+import be.kuleuven.gent.project.Support.UserLight;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.data.UserToken;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
@@ -21,6 +22,7 @@ public class LoginAndRegister {
     @EJB
     private UserManagementEJBLocal umejbl;
 
+    @Path("/Pro")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public Response userLogin(@HeaderParam("UserCredentials") String userCredentials) {
@@ -37,7 +39,7 @@ public class LoginAndRegister {
         User user = umejbl.findPerson(userName);
 
 
-        if (user!=null){
+        if (user!=null&& user.getGroup().equals("ProUser")){
             UserLight userke = new UserLight(user.getId(),user.getFirstName(), user.getLastName(), user.getLogin(),user.getEmail(), user.getGroup());
             if(hPasswd.equals(user.gethPassword())){
                 UserToken userToken = umejbl.findToken(user);
