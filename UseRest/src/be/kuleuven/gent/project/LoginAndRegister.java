@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.Support.UserLight;
+import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.data.UserToken;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
@@ -14,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.List;
 
 @Path("login")
 @Produces(MediaType.TEXT_PLAIN)
@@ -83,6 +85,15 @@ public class LoginAndRegister {
         }
 
 
+    }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("/all")
+    public Response getAllProjects(){
+        List<User> projects=umejbl.findAllUsers();
+
+        return Response.ok(projects, MediaType.APPLICATION_JSON).build();
     }
 
     private ArrayList<String> contractInformation(String info){

@@ -4,6 +4,7 @@ import be.kuleuven.gent.project.data.ProUser;
 import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.data.UserToken;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -97,6 +98,13 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         }
         return null;
 
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        Query q = em.createNativeQuery("SELECT * FROM User", User.class);
+        List<User> persons = q.getResultList();
+        return persons;
     }
 
     @Override
