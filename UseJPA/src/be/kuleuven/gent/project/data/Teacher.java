@@ -13,6 +13,7 @@ public class Teacher implements Serializable {
     private Long id;
 
     @OneToOne
+    @JoinColumn(name="loginName", nullable = false)
     private User user;
 
     @Column(name = "School", nullable = false)
@@ -20,6 +21,11 @@ public class Teacher implements Serializable {
 
     public Teacher() {
         super();
+    }
+
+    public Teacher(User user) {
+        this.user = user;
+        this.school = "";
     }
 
     public Teacher(User user, String school) {

@@ -78,6 +78,8 @@ public class RegisterController implements Serializable {
         ejb.createUser(usr);
         if (usr.getGroup().equals("ProUser")) {
             ejb.createProUser(usr);
+        } else if (usr.getGroup().equals("Teacher")) {
+            ejb.createTeacher(usr);
         }
 
         log.info("New user created with e-mail: " + usr.getLogin() + " and name: " + usr.getFirstName() + " " + usr.getLastName());

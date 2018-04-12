@@ -51,6 +51,13 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     }
 
     @Override
+    public Teacher createTeacher(User user) {
+        Teacher teacher = new Teacher(user);
+        em.persist(teacher);
+        return teacher;
+    }
+
+    @Override
     public User findPerson(String login) {
 
         Query q = em.createQuery("SELECT p FROM User p WHERE p.login = :login");
@@ -80,7 +87,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     @Override
     public Teacher findTeacher(String login) {
 
-        Query q = em.createNativeQuery("SELECT * FROM Teacher", ProUser.class);
+        Query q = em.createNativeQuery("SELECT * FROM Teacher", Teacher.class);
         List<Teacher> persons = q.getResultList();
 
         for (Teacher teacher : persons) {

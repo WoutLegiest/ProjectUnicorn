@@ -14,6 +14,8 @@ public interface UserManagementEJBLocal {
 
     ProUser createProUser(User user);
 
+    Teacher createTeacher(User user);
+
     User findPerson(String login);
 
     ProUser findProUser(String login);
