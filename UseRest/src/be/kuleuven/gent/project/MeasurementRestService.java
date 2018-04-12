@@ -24,8 +24,7 @@ public class MeasurementRestService {
 
     @EJB
     private ApplicationManagementEJBLocal app;
-
-
+    
 
     @POST
     @Path("/data")
@@ -60,7 +59,7 @@ public class MeasurementRestService {
             }
 
             DataAdapter dataAdapter = new DataAdapter(results.get(0),results.get(1),results.get(2),results.get(3),results.get(4),results.get(5),results.get(6),results.get(7),results.get(8));
-            return Response.ok(jsonInput, MediaType.APPLICATION_JSON).build();
+            return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             return Response.ok(e, MediaType.APPLICATION_JSON).build();
         } catch (IOException e) {

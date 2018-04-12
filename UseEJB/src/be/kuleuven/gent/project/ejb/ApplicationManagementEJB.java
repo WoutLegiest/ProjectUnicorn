@@ -134,7 +134,7 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
 
 
-        sb.append("] \n");
+        sb.append("]; \n");
 
 /*        sb.append("%% Generate data as for example measured by smartphone \n");
         sb.append("% time vector - 10 seconds data \n");
@@ -145,9 +145,9 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         sb.append("f1 = 2; f2 = 8; % two frequencies within the signal \n");
         sb.append("data = sin(2*pi*f1.*t)+0.5.*sin(2*pi*f2.*t); \n");*/
 
-        int t = (int) (list.size()*0.02);
-
-        sb.append("t = 0:0.01:").append(t).append("; \n");
+        sb.append("endData = length(data) -1 ; \n ");
+        sb.append("endData = endData*0.01; \n ");
+        sb.append("t = 0:0.01:endData; \n ");
 
         sb.append("%% Step 1: resample at fixed time step \n");
         sb.append("Fs = 100.; % desired (fixed) sample rate \n");
