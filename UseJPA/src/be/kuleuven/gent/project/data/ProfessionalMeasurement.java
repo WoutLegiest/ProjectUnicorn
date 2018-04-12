@@ -22,7 +22,7 @@ public class ProfessionalMeasurement implements Serializable {
     @Column(name = "professionalProject_id" , nullable = false, length = 11)
     private int idProject;
 
-    @Column(name = "proUser_Group_User_User_LoginName", nullable = false)
+    @Column(name = "proUser_User_LoginName", nullable = false)
     private String loginUser;
 
     @Column(name = "description", nullable = false)
@@ -42,6 +42,51 @@ public class ProfessionalMeasurement implements Serializable {
     @Lob
     @Basic(fetch=FetchType.LAZY)
     private byte[]zData;
+
+    @Column(table = "data", name="result1x")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]result1x;
+
+    @Column(table = "data", name="result1y")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]result1y;
+
+    @Column(table = "data", name="result1z")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]result1z;
+
+    @Column(table = "data", name="result2x")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]result2x;
+
+    @Column(table = "data", name="result2y")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]result2y;
+
+    @Column(table = "data", name="result2z")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]result2z;
+
+    @Column(table = "data", name="freqx")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]freqx;
+
+    @Column(table = "data", name="freqy")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]freqy;
+
+    @Column(table = "data", name="freqz")
+    @Lob
+    @Basic(fetch=FetchType.LAZY)
+    private byte[]freqz;
 
     public ProfessionalMeasurement(ProfessionalMeasurement professionalMeasurement) {
         this.id=professionalMeasurement.id;
@@ -130,5 +175,77 @@ public class ProfessionalMeasurement implements Serializable {
 
     public void setzData(byte[] zData) {
         this.zData = zData;
+    }
+
+    public byte[] getResult1x() {
+        return result1x;
+    }
+
+    public void setResult1x(byte[] result1x) {
+        this.result1x = result1x;
+    }
+
+    public byte[] getResult1y() {
+        return result1y;
+    }
+
+    public void setResult1y(byte[] result1y) {
+        this.result1y = result1y;
+    }
+
+    public byte[] getResult1z() {
+        return result1z;
+    }
+
+    public void setResult1z(byte[] result1z) {
+        this.result1z = result1z;
+    }
+
+    public byte[] getResult2x() {
+        return result2x;
+    }
+
+    public void setResult2x(byte[] result2x) {
+        this.result2x = result2x;
+    }
+
+    public byte[] getResult2y() {
+        return result2y;
+    }
+
+    public void setResult2y(byte[] result2y) {
+        this.result2y = result2y;
+    }
+
+    public byte[] getResult2z() {
+        return result2z;
+    }
+
+    public void setResult2z(byte[] result2z) {
+        this.result2z = result2z;
+    }
+
+    public byte[] getFreqx() {
+        return freqx;
+    }
+
+    public void setFreqx(byte[] freqx) {
+        this.freqx = freqx;
+    }
+
+    public byte[] getFreqy() {
+        return freqy;
+    }
+
+    public void setFreqy(byte[] freqy) {
+        this.freqy = freqy;
+    }
+
+    public byte[] getFreqz() {
+        return freqz;
+    }
+
+    public void setFreqz(byte[] freqz) {
+        this.freqz = freqz;
     }
 }

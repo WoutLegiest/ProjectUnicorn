@@ -19,12 +19,17 @@ data_resampled = interp1(t, data, t_resampled, 'spline');
 t_resampled = t_resampled - t_resampled(1);
 
 
+
 %% Step 2: Compute amplitude spectrum of the signal
 L = length(data_resampled);
 f = Fs*(0:(L/2))/L;
 A2_data = fft(data_resampled); A2 = abs(A2_data/L);
 A_data = A2(1:L/2+1); A_data(2:end-1) = 2*A_data(2:end-1);
 
+maxi = max(A_data);
+k = find(A_data==maxi);
+disp(f(k));
+disp('fase');
 
 disp(A_data);
 disp('fase');
@@ -41,6 +46,11 @@ filter_order = 4;
 data_filtered = filtfilt(b,a,data_resampled);
 A2_data = fft(data_filtered); A2 = abs(A2_data/L);
 A_data = A2(1:L/2+1); A_data(2:end-1) = 2*A_data(2:end-1);
+
+maxi = max(A_data);
+k = find(A_data==maxi);
+disp(f(k));
+disp('fase');
 
 disp('fase');
 disp(A_data);
