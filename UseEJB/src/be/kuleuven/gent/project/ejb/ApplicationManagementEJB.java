@@ -126,11 +126,13 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         sb.append("pkg load signal \n");
 
 
-        sb.append("data = [");
+        sb.append("data = [").append(list.get(0));
 
-        for(float f: list){
-            sb.append(f).append(", ");
+        for (int i = 1; i < list.size(); i++) {
+            sb.append(", ").append(list.get(i));
         }
+
+
 
         sb.append("] \n");
 
