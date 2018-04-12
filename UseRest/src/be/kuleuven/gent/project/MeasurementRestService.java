@@ -48,8 +48,8 @@ public class MeasurementRestService {
                 zDataInput.add(Float.parseFloat(zArray.getString(i)));
             }
             dataInput.add(xDataInput);
-            dataInput.add(xDataInput);
-            dataInput.add(xDataInput);
+            dataInput.add(yDataInput);
+            dataInput.add(zDataInput);
             for (ArrayList<Float> dataList : dataInput){
 
                 ArrayList<ArrayList<Float>> ejbResultList=app.processData(dataList);

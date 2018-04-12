@@ -39,7 +39,7 @@ public class LoginAndRegister {
         User user = umejbl.findPerson(userName);
 
 
-        if (user!=null&& user.getGroup().equals("ProUser")){
+        if (user!=null&& (user.getGroup().equals("ProUser")||user.getGroup().equals("Admin"))){
             UserLight userke = new UserLight(user.getId(),user.getFirstName(), user.getLastName(), user.getLogin(),user.getEmail(), user.getGroup());
             if(hPasswd.equals(user.gethPassword())){
                 UserToken userToken = umejbl.findToken(user);
