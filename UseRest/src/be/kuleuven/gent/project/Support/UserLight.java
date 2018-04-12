@@ -1,4 +1,4 @@
-package be.kuleuven.gent.project;
+package be.kuleuven.gent.project.Support;
 
 import be.kuleuven.gent.project.data.UserToken;
 
