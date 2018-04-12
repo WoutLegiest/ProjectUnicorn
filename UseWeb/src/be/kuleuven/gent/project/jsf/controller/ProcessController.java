@@ -21,7 +21,7 @@ public class ProcessController implements Serializable {
     private String output;
 
     public void verwerk() throws IOException {
-        output=ejb.processData();
+        //output=ejb.processData();
     }
 
     public String getOutput() {
