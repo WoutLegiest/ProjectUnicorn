@@ -73,30 +73,37 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
         String[] onderdelen = s.split("fase");
 
-        String[] data = onderdelen[0].split("\\s+");
-        String[] freq = onderdelen[1].split("\\s+");
-        String[] data2 = onderdelen[2].split("\\s+");
+        float max1 = Float.parseFloat(onderdelen[0]);
+        String[] data = onderdelen[1].split("\\s+");
+        String[] freq = onderdelen[2].split("\\s+");
+        float max2 = Float.parseFloat(onderdelen[3]);
+        String[] data2 = onderdelen[4].split("\\s+");
 
-        ArrayList<Float> lijst_ = new ArrayList<>();
-        ArrayList<Float> freq_ = new ArrayList<>();
-        ArrayList<Float> data2_ = new ArrayList<>();
+        ArrayList<Float> res_sample = new ArrayList<>();
+        ArrayList<Float> freq_list = new ArrayList<>();
+        ArrayList<Float> res_trans = new ArrayList<>();
+
+        res_sample.add(max1);
+        res_trans.add(max2);
+        freq_list.add((float) 0);
 
         for(int i= 1; i<data.length;i++)
-            lijst_.add(Float.parseFloat(data[i]));
+            res_sample.add(Float.parseFloat(data[i]));
 
 
         for(int i= 1; i<freq.length;i++)
-            freq_.add(Float.parseFloat(freq[i]));
+            freq_list.add(Float.parseFloat(freq[i]));
 
 
         for (int i = 1; i < data2.length ; i++)
-            data2_.add(Float.parseFloat(data2[i]));
+            res_trans.add(Float.parseFloat(data2[i]));
 
         ArrayList<ArrayList<Float>> returntje = new ArrayList<>();
 
-        returntje.add(lijst_);
-        returntje.add(freq_);
-        returntje.add(data2_);
+        returntje.add(res_sample);
+        returntje.add(res_trans);
+        returntje.add(freq_list);
+
 
         return returntje;
     }
@@ -154,10 +161,15 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         sb.append("A2_data = fft(data_resampled); A2 = abs(A2_data/L); \n");
         sb.append("A_data = A2(1:L/2+1); A_data(2:end-1) = 2*A_data(2:end-1); \n");
 
+        sb.append("maxi = max(A_data); \n");
+        sb.append("k = find(A_data==maxi); \n");
+        sb.append("disp(f(k)); \n");
+        sb.append("disp('fase'); \n");
+
         sb.append("disp(A_data); \n");
         sb.append("disp('fase'); \n");
         sb.append("disp(f); \n");
-
+        sb.append("disp('fase'); \n");
 
         sb.append("%% Step 3: Apply bandbass filter \n");
         sb.append("% Lowerbound and upperbound cutoff bandpass filter (relative to Nyquist frequency) \n");
@@ -169,6 +181,10 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         sb.append("data_filtered = filtfilt(b,a,data_resampled); \n");
         sb.append("A2_data = fft(data_filtered); A2 = abs(A2_data/L); \n");
         sb.append("A_data = A2(1:L/2+1); A_data(2:end-1) = 2*A_data(2:end-1); \n");
+
+        sb.append("maxi = max(A_data); \n");
+        sb.append("k = find(A_data==maxi); \n");
+        sb.append("disp(f(k)); \n");
 
         sb.append("disp('fase'); \n");
         sb.append("disp(A_data); \n");
