@@ -17,7 +17,6 @@
 
     <div class="form">
         <h:form>
-            <f:event listener="#{registerController.validatePassword}" type="postValidate"/>
 
             <h3>Create new account</h3>
 
@@ -42,7 +41,10 @@
                 <h:inputText id="email"
                              value="#{registerController.usr.email}"
                              required="true"
-                             a:placeholder="Please enter your e-mail address."/>
+                             a:placeholder="Please enter your e-mail address.">
+                    <f:validator validatorId="emailValidator" />
+                    <f:attribute name="email" value="#{email}" />
+                </h:inputText>
                 <h:message for="email" style="color: red;"/>
             </div>
 
@@ -62,11 +64,15 @@
                 <h:inputSecret id="password"
                                value="#{registerController.usr.hPassword}"
                                required="true"
-                               a:placeholder="Please enter your password."/>
+                               a:placeholder="Please enter your password.">
+                    <f:validator validatorId="passwordValidator" />
+                    <f:attribute name="confirmPassword" value="#{confirmPassword}" />
+                </h:inputSecret>
 
                 <h:outputLabel value="Confirm Password:"/>
                 <h:inputSecret id="confirmPassword"
                                required="true"
+                               binding="#{confirmPassword}"
                                a:placeholder="Please confirm your password."/>
                 <h:message for="password" style="color: red;"/>
                 <h:message for="confirmPassword" style="color: red;"/>

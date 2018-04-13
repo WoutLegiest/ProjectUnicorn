@@ -44,40 +44,6 @@ public class RegisterController implements Serializable {
         return "regdone";
     }
 
-    public void validatePassword(ComponentSystemEvent event) {
-
-        FacesContext fc = FacesContext.getCurrentInstance();
-
-        UIComponent components = event.getComponent();
-
-        // get password
-        UIInput uiInputPassword = (UIInput) components.findComponent("password");
-        String password = uiInputPassword.getLocalValue() == null ? ""
-                : uiInputPassword.getLocalValue().toString();
-        String passwordId = uiInputPassword.getClientId();
-        String confirmPasswordId = components.findComponent("confirmPassword").getClientId();
-
-        // get confirm password
-        UIInput uiInputConfirmPassword = (UIInput) components.findComponent("confirmPassword");
-        String confirmPassword = uiInputConfirmPassword.getLocalValue() == null ? ""
-                : uiInputConfirmPassword.getLocalValue().toString();
-
-        // Let required="true" do its job.
-        if (password.isEmpty() || confirmPassword.isEmpty()) {
-            return;
-        }
-
-        if (!password.equals(confirmPassword)) {
-
-            FacesMessage msg = new FacesMessage("Password must match confirm password");
-            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-            fc.addMessage(confirmPasswordId, msg);
-            fc.renderResponse();
-
-        }
-
-    }
-
     public void findAllUsers(){
         users = ejb.findAllUsers();
     }
