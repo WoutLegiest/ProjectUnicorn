@@ -4,8 +4,10 @@ import be.kuleuven.gent.project.data.ProUser;
 import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.data.UserToken;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.ejb.Local;
+import java.util.List;
 
 @Local
 public interface UserManagementEJBLocal {
@@ -21,6 +23,8 @@ public interface UserManagementEJBLocal {
     ProUser findProUser(String login);
 
     Teacher findTeacher(String login);
+
+    List<User> findAllUsers();
 
     UserToken createToken(User user);
 

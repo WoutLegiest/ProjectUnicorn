@@ -3,13 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 
     <!-- add stylesheet -->
     <link rel="stylesheet" type="text/css" href="../resources/styleForm.css"></link>
 
     <title>register</title>
+
+
+    <f:metadata>
+        <f:viewParam name=""></f:viewParam>
+        <f:viewAction action="#{registerControllerController.findAllUsers}" />
+    </f:metadata>
+
 </h:head>
 
 <h:body>
