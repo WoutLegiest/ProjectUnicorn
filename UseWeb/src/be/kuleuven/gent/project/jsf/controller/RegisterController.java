@@ -55,6 +55,7 @@ public class RegisterController implements Serializable {
         String password = uiInputPassword.getLocalValue() == null ? ""
                 : uiInputPassword.getLocalValue().toString();
         String passwordId = uiInputPassword.getClientId();
+        String confirmPasswordId = components.findComponent("confirmPassword").getClientId();
 
         // get confirm password
         UIInput uiInputConfirmPassword = (UIInput) components.findComponent("confirmPassword");
@@ -70,7 +71,7 @@ public class RegisterController implements Serializable {
 
             FacesMessage msg = new FacesMessage("Password must match confirm password");
             msg.setSeverity(FacesMessage.SEVERITY_ERROR);
-            fc.addMessage(passwordId, msg);
+            fc.addMessage(confirmPasswordId, msg);
             fc.renderResponse();
 
         }

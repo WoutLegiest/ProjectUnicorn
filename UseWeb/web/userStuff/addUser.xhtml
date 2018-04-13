@@ -1,5 +1,5 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -17,97 +17,77 @@
 
     <div class="form">
         <h:form>
+            <f:event listener="#{registerController.validatePassword}" type="postValidate"/>
 
             <h3>Create new account</h3>
 
-            <!-- One "tab" for each step in the form: -->
-            <div class="tab">
-                <h:outputLabel for="group">Name:</h:outputLabel>
+            <div class="part">
+                <h:outputLabel value="First Name:"/>
                 <h:inputText id="firstName"
                              value="#{registerController.usr.firstName}"
                              required="true"
-                             requiredMessage="Please enter your first name."
-                             a:placeholder="First name..."
+                             a:placeholder="Please enter your first name."
                              maxlength="30"/>
 
+                <h:outputLabel value="Last Name:"/>
                 <h:inputText id="lastName"
                              value="#{registerController.usr.lastName}"
                              required="true"
-                             requiredMessage="Please enter your last name."
-                             a:placeholder="Last name..."
+                             a:placeholder="Please enter your last name."
                              maxlength="30"/>
             </div>
 
-            <div class="tab">
-                <h:outputLabel for="group">Contact Info:</h:outputLabel>
+            <div class="part">
+                <h:outputLabel value="Email:"/>
                 <h:inputText id="email"
                              value="#{registerController.usr.email}"
                              required="true"
-                             requiredMessage="Please enter your e-mail address."
-                             a:placeholder="email..."/>
+                             a:placeholder="Please enter your e-mail address."/>
+                <h:message for="email" style="color: red;"/>
             </div>
 
-            <div class="tab" id="loginInfo">
-                <!-- register a PostValidateEvent -->
-                <f:event listener="#{registerController.validatePassword}" type="postValidate" />
-
-                <h:outputLabel>Login Info:</h:outputLabel>
-
+            <div class="part">
+                <h:outputLabel value="Username:"/>
                 <h:inputText id="login"
                              value="#{registerController.usr.login}"
                              required="true"
-                             requiredMessage="Please enter your username."
-                             a:placeholder="Username..."
+                             a:placeholder="Please enter your username."
                              maxlength="30"/>
-                <h:message for="login" style="color: red;" />
+                <h:message for="login" style="color: red;"/>
+            </div>
 
+
+            <div class="part">
+                <h:outputLabel value="Password:"/>
                 <h:inputSecret id="password"
                                value="#{registerController.usr.hPassword}"
                                required="true"
-                               requiredMessage="Please enter your password."
-                               a:placeholder="Password..."/>
-                <h:message for="password" style="color: red;"/>
+                               a:placeholder="Please enter your password."/>
 
+                <h:outputLabel value="Confirm Password:"/>
                 <h:inputSecret id="confirmPassword"
                                required="true"
-                               requiredMessage="Please enter your password again."
-                               a:placeholder="Enter your password again"/>
+                               a:placeholder="Please confirm your password."/>
+                <h:message for="password" style="color: red;"/>
+                <h:message for="confirmPassword" style="color: red;"/>
+            </div>
 
-                <h:outputLabel for="group">Group:</h:outputLabel>
+            <div class="part">
+                <h:outputLabel value="Group:"/>
                 <h:selectOneMenu id="group" value="#{registerController.usr.group}">
-                    <f:selectItem itemLabel="ProUser" itemValue="ProUser" />
-                    <f:selectItem itemLabel="Teacher" itemValue="Teacher" />
+                    <f:selectItem itemLabel="ProUser" itemValue="ProUser"/>
+                    <f:selectItem itemLabel="Teacher" itemValue="Teacher"/>
                 </h:selectOneMenu>
             </div>
 
-            <div style="overflow:auto;">
-                <div style="float:right;">
-                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    <div id="submit">
-                        <h:commandButton action="#{registerController.register}" value="Register">
-                            <!--<f:ajax execute="@form" render=":msg"/>-->
-                        </h:commandButton>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Circles which indicates the steps of the form: -->
-            <div style="text-align:center;margin-top:40px;">
-                <span class="step"></span>
-                <span class="step"></span>
-                <span class="step"></span>
-            </div>
-
-            <script src="jsRegister.js"/>
+            <h:commandButton action="#{registerController.register}" value="Register"/>
 
         </h:form>
 
         <br/>
         <br/>
-        <h:link value="I already have an account" outcome="login" />
-        <h:link value="return" outcome="/index" styleClass="fRight" />
+        <h:link value="I already have an account" outcome="login"/>
+        <h:link value="return" outcome="/index" styleClass="fRight"/>
     </div>
 
 
