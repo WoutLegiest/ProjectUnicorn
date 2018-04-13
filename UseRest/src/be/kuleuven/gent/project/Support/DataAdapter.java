@@ -3,6 +3,7 @@ package be.kuleuven.gent.project.Support;
 import java.util.ArrayList;
 
 public class DataAdapter {
+
     private ArrayList<Float>xR1;
     private ArrayList<Float>xR2;
     private ArrayList<Float>xF;

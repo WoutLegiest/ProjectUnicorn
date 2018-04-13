@@ -51,6 +51,9 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
     @Override
     public ArrayList<ArrayList<Float>> processData(ArrayList<Float> list) throws IOException {
 
+        //TODO
+        //Uitfilteren van de data, debuggen en alles controleren ! 
+
         String path = maakScript(list);
 
         //Process aanmaken waarin we

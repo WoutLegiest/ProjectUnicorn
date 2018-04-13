@@ -36,20 +36,24 @@ public class MeasurementRestService {
         ArrayList<Float> xDataInput =new ArrayList<>();
         ArrayList<Float> yDataInput =new ArrayList<>();
         ArrayList<Float> zDataInput =new ArrayList<>();
-        ArrayList<ArrayList>dataInput = new ArrayList<>();
+        ArrayList<ArrayList> dataInput = new ArrayList<>();
+
         try {
             JSONObject inputObject = new JSONObject(jsonInput);
             JSONArray xArray = inputObject.getJSONArray("xData");
             JSONArray yArray = inputObject.getJSONArray("yData");
             JSONArray zArray = inputObject.getJSONArray("zData");
+
             for(int i=0;i<xArray.length();i++){
                 xDataInput.add(Float.parseFloat(xArray.getString(i)));
                 yDataInput.add(Float.parseFloat(yArray.getString(i)));
                 zDataInput.add(Float.parseFloat(zArray.getString(i)));
             }
+
             dataInput.add(xDataInput);
             dataInput.add(yDataInput);
             dataInput.add(zDataInput);
+
             for (ArrayList<Float> dataList : dataInput){
 
                 ArrayList<ArrayList<Float>> ejbResultList=app.processData(dataList);
@@ -58,7 +62,8 @@ public class MeasurementRestService {
                 }
             }
 
-            DataAdapter dataAdapter = new DataAdapter(results.get(0),results.get(1),results.get(2),results.get(3),results.get(4),results.get(5),results.get(6),results.get(7),results.get(8));
+            DataAdapter dataAdapter = new DataAdapter(results.get(0),results.get(1),results.get(2)
+                    ,results.get(3),results.get(4),results.get(5),results.get(6),results.get(7),results.get(8));
             return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             return Response.ok(e, MediaType.APPLICATION_JSON).build();

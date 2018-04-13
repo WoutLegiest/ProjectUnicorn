@@ -4,6 +4,7 @@ import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.User;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -13,6 +14,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+@Stateless
 public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasurementManagementEJBLocal {
 
     @PersistenceContext(unitName="unicorn")
