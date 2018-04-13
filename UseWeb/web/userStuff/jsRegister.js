@@ -1,6 +1,6 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
-check();
+/*check();*/
 
 function showTab(n) {
     // This function will display the specified tab of the form...
@@ -68,7 +68,7 @@ function fixStepIndicator(n) {
     x[n].className += " active";
 }
 
-function check() {
+/*function check() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -102,6 +102,6 @@ function getLogin(data) {
 
         //document.getElementById(i).innerHTML = ans;
     }
-}
+}*/
 
 //source w3schools

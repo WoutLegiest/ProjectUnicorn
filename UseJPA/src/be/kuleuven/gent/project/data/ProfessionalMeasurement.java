@@ -3,7 +3,7 @@ package be.kuleuven.gent.project.data;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Date;
 
 @XmlRootElement
 @Entity
@@ -27,6 +27,9 @@ public class ProfessionalMeasurement implements Serializable {
 
     @Column(name = "description", nullable = false)
     private String description;
+
+    @Column(name = "date", nullable = false)
+    private java.sql.Date date;
 
     @Column(table = "data", name="xData")
     @Lob
@@ -94,6 +97,7 @@ public class ProfessionalMeasurement implements Serializable {
         this.description = professionalMeasurement.description;
         this.idData = professionalMeasurement.idData;
         this.idProject = professionalMeasurement.idProject;
+        this.date = professionalMeasurement.date;
         this.xData=professionalMeasurement.xData;
         this.yData=professionalMeasurement.yData;
         this.zData=professionalMeasurement.zData;
@@ -103,6 +107,16 @@ public class ProfessionalMeasurement implements Serializable {
         this.idProject = idProject;
         this.loginUser = loginUser;
         this.description = description;
+        this.xData = xData;
+        this.yData = yData;
+        this.zData = zData;
+    }
+
+    public ProfessionalMeasurement(int idProject, String loginUser, String description, java.sql.Date date, byte[] xData, byte[] yData, byte[] zData) {
+        this.idProject = idProject;
+        this.loginUser = loginUser;
+        this.description = description;
+        this.date = date;
         this.xData = xData;
         this.yData = yData;
         this.zData = zData;
@@ -151,6 +165,14 @@ public class ProfessionalMeasurement implements Serializable {
 
     public void setIdProject(int idProject) {
         this.idProject = idProject;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(java.sql.Date date) {
+        this.date = date;
     }
 
     public byte[] getxData() {
