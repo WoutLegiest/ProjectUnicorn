@@ -47,7 +47,7 @@ h1 {
     margin-bottom: 15px;
 }
 
-input, textarea {
+input, textarea, span {
     float: none;
     color: black;
     background-color: inherit;

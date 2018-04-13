@@ -3,7 +3,7 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:a="http://xmlns.jcp.org/jsf/passthrough" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
@@ -15,7 +15,7 @@
     <ui:define name="meta">
         <f:metadata>
             <f:viewParam name=""></f:viewParam>
-            <f:viewAction action="#{userController.findUser}" />
+            <f:viewAction action="#{userController.findUser}"/>
         </f:metadata>
     </ui:define>
 
@@ -30,59 +30,59 @@
                 <button class="accordion" type="button">General</button>
                 <div class="panel">
                     <h:outputLabel class="col-3" value="First Name"></h:outputLabel>
-                    <h:inputText name="j_firstName"
+                    <h:inputText name="firstName"
                                  value="#{userController.loggedInUser.firstName}"
                                  class="right col-9"
-                                 autocomplete="false" />
+                                 required="true"
+                                 autocomplete="false"/>
 
                     <h:outputLabel class="col-3" value="Last Name"></h:outputLabel>
-                    <h:inputText name="j_lastName"
+                    <h:inputText name="lastName"
                                  value="#{userController.loggedInUser.lastName}"
                                  class="right col-9"
-                                 autocomplete="false" />
-
-                    <!--<h:outputLabel class="col-3">Login</h:outputLabel>
-                    <h:inputText name="j_login"
-                                 value="#{userController.loggedInUser.login}"
-                                 class="right col-9"
-                                 autocomplete="false" />-->
+                                 required="true"
+                                 autocomplete="false"/>
 
                     <h:outputLabel class="col-3" value="email"></h:outputLabel>
-                    <h:inputText name="j_email"
+                    <h:inputText id="email"
                                  value="#{userController.loggedInUser.email}"
                                  class="right col-9"
-                                 autocomplete="false" />
+                                 required="true"
+                                 autocomplete="false">
+                        <f:validator validatorId="emailValidator"/>
+                        <f:attribute name="email" value="#{email}"/>
+                    </h:inputText>
+                    <h:message for="email" style="color: red;" styleClass="right col-9"/>
 
-                    <!--<h:outputLabel class="col-3">password</h:outputLabel>
-                    <h:inputSecret name="j_password"
-                                   value="#{userController.loggedInUser.hPassword}"
-                                   class="right col-9"
-                                   autocomplete="false" />-->
+
+
                 </div>
 
                 <button class="accordion" type="button">Professional</button>
                 <div class="panel">
                     <h:outputLabel class="col-3" value="#{userController.tag}"></h:outputLabel>
-                    <h:inputText name="j_organisation"
+                    <h:inputText name="organisation"
                                  value="#{userController.organisation}"
                                  class="right col-9"
-                                 autocomplete="false" />
+                                 autocomplete="false"
+                                 a:placeholder="#{userController.tag}"/>
                 </div>
 
                 <button class="accordion" type="button">Personal</button>
                 <div class="panel">
                     <h:outputLabel class="col-3" value="description"></h:outputLabel>
                     <h:inputTextarea rows="4"
-                                     name="j_description"
+                                     name="description"
                                      requiredMessage="description"
                                      value="#{userController.loggedInUser.descripton}"
                                      class="right col-9"
-                                     autocomplete="false"/>
+                                     autocomplete="false"
+                                     a:placeholder="description"/>
                 </div>
 
                 <h:commandButton styleClass="submit"
                                  action="#{userController.changeData}"
-                                 value="Submit" />
+                                 value="Submit"/>
             </h:form>
         </div>
 
