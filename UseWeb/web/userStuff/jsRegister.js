@@ -68,40 +68,4 @@ function fixStepIndicator(n) {
     x[n].className += " active";
 }
 
-/*function check() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var inputData = this.responseText;
-            //document.getElementById("demo").innerHTML = this.responseText;
-
-            getLogin(inputData);
-        }
-    };
-    xhttp.open("GET", "http://localhost:8080/UseWebWeb/rest_unicorn/LoginAndRegister/all", true);
-    xhttp.send();
-}
-
-function getLogin(data) {
-    data = data.slice(0, -1);   //De ']' van de array wegnemen
-    var res = data.split("}");  //De string splitten op '}' omdat een JSON eindigd op een '}'
-    var ans = "";
-
-    var login = [];
-
-    for (var i = 0; i < res.length-1; i++) {
-
-        ans = res[i].concat("}");   //Aan de gesplitte string de '}' terugplaatsen
-        ans = ans.slice(1);         //Het eerste kar weghalen want dat is een ',' of een '['
-
-        //console.log(ans);
-
-        var json = JSON.parse(ans); //De JSON als string omzetten naar een JSON
-
-        login.push(json.username);
-
-        //document.getElementById(i).innerHTML = ans;
-    }
-}*/
-
 //source w3schools

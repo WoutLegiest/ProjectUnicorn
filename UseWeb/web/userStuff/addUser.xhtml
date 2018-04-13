@@ -47,20 +47,31 @@
                              a:placeholder="email..."/>
             </div>
 
-            <div class="tab">
-                <h:outputLabel for="group">Login Info:</h:outputLabel>
+            <div class="tab" id="loginInfo">
+                <!-- register a PostValidateEvent -->
+                <f:event listener="#{registerController.validatePassword}" type="postValidate" />
+
+                <h:outputLabel>Login Info:</h:outputLabel>
+
                 <h:inputText id="login"
                              value="#{registerController.usr.login}"
                              required="true"
                              requiredMessage="Please enter your username."
                              a:placeholder="Username..."
                              maxlength="30"/>
+                <h:message for="login" style="color: red;" />
 
                 <h:inputSecret id="password"
                                value="#{registerController.usr.hPassword}"
                                required="true"
                                requiredMessage="Please enter your password."
                                a:placeholder="Password..."/>
+                <h:message for="password" style="color: red;"/>
+
+                <h:inputSecret id="confirmPassword"
+                               required="true"
+                               requiredMessage="Please enter your password again."
+                               a:placeholder="Enter your password again"/>
 
                 <h:outputLabel for="group">Group:</h:outputLabel>
                 <h:selectOneMenu id="group" value="#{registerController.usr.group}">
@@ -73,7 +84,11 @@
                 <div style="float:right;">
                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                     <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                    <div id="submit"><h:commandButton action="#{registerController.register}" value="Register"/></div>
+                    <div id="submit">
+                        <h:commandButton action="#{registerController.register}" value="Register">
+                            <!--<f:ajax execute="@form" render=":msg"/>-->
+                        </h:commandButton>
+                    </div>
 
                 </div>
             </div>
