@@ -56,15 +56,6 @@ public class SpotterProjectData {
         return Response.ok(protjectTitles, MediaType.APPLICATION_JSON).build();
     }
 
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
-    @Path("/metingen")
-    public Response getMetingenByProject(@HeaderParam("projectid") long projectID){
-        ProfessionalProject professionalProject =spmejbl.findProject(projectID);
-        List<ProfessionalMeasurement>spottermeringen=semejbl.findAllMeasurementsByProject(professionalProject);
-        return Response.ok(spottermeringen, MediaType.APPLICATION_JSON).build();
-    }
-
     @PUT
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/newProject")
