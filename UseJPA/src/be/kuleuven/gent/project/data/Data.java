@@ -9,10 +9,10 @@ import java.io.Serializable;
 @Table(name="Data")
 public class Data implements Serializable {
 
-    @Column(name ="IdData", nullable = false)
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id private Long id;
-
+    @Column(name ="IdData", nullable = false)
+    private Long id;
 
     @Column(name="xData", nullable = false)
     @Lob

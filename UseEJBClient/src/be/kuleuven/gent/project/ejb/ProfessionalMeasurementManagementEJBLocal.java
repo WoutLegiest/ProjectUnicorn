@@ -19,6 +19,7 @@ public interface ProfessionalMeasurementManagementEJBLocal {
 
     public ProfessionalMeasurement makeMeasurement(ProUser proUser, ProfessionalProject professionalProject, Data data, String description, java.sql.Date date);
 
+    ProfessionalMeasurement findMeasurementById(Long id);
 
     public byte[] toByteArray(ArrayList<Float> dataList);
 

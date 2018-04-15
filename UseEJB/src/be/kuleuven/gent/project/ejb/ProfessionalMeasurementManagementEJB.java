@@ -51,12 +51,23 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
     @Override
     public ProfessionalMeasurement makeMeasurement(ProUser proUser, ProfessionalProject professionalProject, Data data, String description, java.sql.Date date) {
 
-
         ProfessionalMeasurement professionalMeasurement = new ProfessionalMeasurement(data, professionalProject, proUser, description, date);
 
         em.persist(professionalMeasurement);
 
         return professionalMeasurement;
+    }
+
+    @Override
+    public ProfessionalMeasurement findMeasurementById(Long id){
+        StringBuilder query = new StringBuilder();
+        query.append("SELECT m FROM ProfessionalMeasurement m WHERE m.id = ");
+        query.append(id);
+        TypedQuery<ProfessionalMeasurement> q =
+                em.createQuery(query.toString() , ProfessionalMeasurement.class);
+
+        if (q.getResultList().size() != 1) return null;
+        return q.getResultList().get(0);
     }
 
 
@@ -91,6 +102,4 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
         Collections.reverse(data);
         return data;
     }
-
-
 }
