@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layoutTeacher.xhtml">
+    <ui:define name="title">Project</ui:define>
+
+    <ui:define name="content">
+
+        <div class="col-12 section left">
+
+            <h1>New Project</h1>
+
+            <h:form>
+
+                <h3>Create new account</h3>
+
+                <h:outputLabel value="Class Name:"/>
+                <h:inputText id="className"
+                             value="#{stemProjectController.project.className}"
+                             required="true"
+                             a:placeholder="Class Name."
+                             maxlength="30"/>
+
+                <h:outputLabel value="Description:"/>
+                <h:inputTextarea id="description"
+                                 rows="4"
+                                 value="#{stemProjectController.project.description}"
+                                 required="true"
+                                 a:placeholder="Description" />
+
+                <h:outputLabel value="Number of groups:"/>
+                <h:inputText id="groups"
+                             value="#{stemProjectController.numberOfGroups}"
+                             required="true"
+                             a:placeholder="Amount of groups"
+                             maxlength="30"/>
+
+                <h:commandButton action="#{stemProjectController.newProject}" value="Submit"/>
+
+            </h:form>
+
+
+        </div>
+    </ui:define>
+
+</ui:composition>
+</html>

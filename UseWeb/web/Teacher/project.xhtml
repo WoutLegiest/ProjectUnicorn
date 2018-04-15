@@ -12,24 +12,24 @@
 
     <ui:define name="title">Project</ui:define>
 
-    <!--<ui:define name="meta">
+    <ui:define name="meta">
         <f:metadata>
-            <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}" />
-            <f:viewAction action="#{spotterProjectController.findProject}" />
+            <f:viewParam name="stemProject" value="#{stemProjectController.projectId}" />
+            <f:viewAction action="#{stemProjectController.findProject}" />
         </f:metadata>
-    </ui:define>-->
+    </ui:define>
 
     <ui:define name="content">
 
         <div class="col-12 section left">
 
-            <!--<h1><h:outputLabel value="#{spotterProjectController.project.name}"/></h1>
+            <h1><h:outputLabel value="#{stemProjectController.project.className}"/></h1>
 
-            <p><h:outputLabel value="#{spotterProjectController.project.location}"/></p>
+            <h3><h:outputLabel value="#{stemProjectController.project.teacher.user.getFullName}"/></h3>
 
-            <div id="map"></div>
+            <p><h:outputLabel value="#{spotterProjectController.project.description}"/></p>
 
-            <p>Hier komt een tabel met meetwaarden</p>-->
+            <p>Hier komt een tabel met meetwaarden</p>
 
         </div>
 

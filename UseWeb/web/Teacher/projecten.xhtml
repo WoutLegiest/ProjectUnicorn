@@ -15,8 +15,10 @@
         <div class="col-12 section left">
 
             <h1>Projecten</h1>
+            
+            <h:commandButton action="newProject" value="New Project"/>
 
-            <!--<h:dataTable value="#{spotterProjectController.findAllProjects()}" var="p"
+            <h:dataTable value="#{stemProjectController.findAllProjectsByTeacher()}" var="p"
                          styleClass="projects-table"
                          headerClass="projects-table-header"
                          rowClasses="projects-table-odd-row,projects-table-even-row"
@@ -28,21 +30,16 @@
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Project Name</f:facet>
-                    <h:outputText value="#{p.name}"/>
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Location</f:facet>
-                    <h:outputText value="#{p.location}"/>
+                    <f:facet name="header">Class</f:facet>
+                    <h:outputText value="#{p.className}"/>
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <a href="project.xhtml?professionalProject=#{p.id}">View project</a>
+                    <a href="project.xhtml?stemProject=#{p.id}">View project</a>
                 </h:column>
 
-            </h:dataTable>-->
+            </h:dataTable>
         </div>
     </ui:define>
 

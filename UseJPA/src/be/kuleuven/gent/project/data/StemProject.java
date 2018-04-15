@@ -14,8 +14,9 @@ public class StemProject implements Serializable {
     @Column(name = "id", nullable = false, length = 16)
     private Long id;
 
-    @Column(name = "teacher_User_LoginName", nullable = false)
-    private String teacherName;
+    @ManyToOne
+    @JoinColumn(name = "teacher_LoginName", nullable = false)
+    private Teacher teacher;
 
     @Column(name = "className", nullable = false)
     private String className;
@@ -27,8 +28,8 @@ public class StemProject implements Serializable {
         super();
     }
 
-    public StemProject(String teacherName, String className, String description) {
-        this.teacherName = teacherName;
+    public StemProject(Teacher teacher, String className, String description) {
+        this.teacher = teacher;
         this.className = className;
         this.description = description;
     }
@@ -41,12 +42,12 @@ public class StemProject implements Serializable {
         this.id = id;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public String getClassName() {
