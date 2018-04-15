@@ -1,14 +1,13 @@
 package be.kuleuven.gent.project.ejb;
 
+import be.kuleuven.gent.project.data.Data;
 import be.kuleuven.gent.project.data.ProfessionalMeasurement;
-import com.sun.xml.xsom.impl.scd.Iterators;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 @Stateless
 public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
@@ -22,13 +21,11 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
         ProfessionalMeasurement pm = new ProfessionalMeasurement();
 
-        pm.setxData(toByteArray(x));
-        pm.setyData(toByteArray(y));
-        pm.setzData(toByteArray(z));
+
 
         pm.setDescription(description);
-        pm.setIdProject(ProjectId);
-        pm.setLoginUser(loginName);
+        //pm.setIdProject(ProjectId);
+        //pm.setLoginUser(loginName);
 
         em.persist(pm);
 
@@ -212,6 +209,30 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
         return sb_path.toString();
 
+    }
+
+    @Override
+    public Data makeDataObject(ArrayList<ArrayList<Float>> input, ArrayList<ArrayList<Float>> results) {
+
+        Data data = new Data();
+
+        data.setxData(toByteArray(input.get(0)));
+        data.setyData(toByteArray(input.get(1)));
+        data.setzData(toByteArray(input.get(2)));
+
+        data.setResult1x(toByteArray(results.get(0)));
+        data.setResult2x(toByteArray(results.get(1)));
+        data.setFreqx(toByteArray(results.get(2)));
+        data.setResult1y(toByteArray(results.get(3)));
+        data.setResult2y(toByteArray(results.get(4)));
+        data.setFreqy(toByteArray(results.get(5)));
+        data.setResult1z(toByteArray(results.get(6)));
+        data.setResult2z(toByteArray(results.get(7)));
+        data.setFreqz(toByteArray(results.get(8)));
+
+        em.persist(data);
+
+        return data;
     }
 
 }

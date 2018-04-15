@@ -196,4 +196,8 @@ public class Data implements Serializable {
     public void setFreqz(byte[] freqz) {
         this.freqz = freqz;
     }
+
+    public Long getId() {
+        return id;
+    }
 }

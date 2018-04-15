@@ -1,6 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
+import be.kuleuven.gent.project.data.Data;
 
 import javax.ejb.Local;
 import java.io.IOException;
@@ -17,5 +17,7 @@ public interface ApplicationManagementEJBLocal {
     ArrayList<ArrayList<Float>> processData(ArrayList<Float> list) throws IOException;
 
     String maakScript(ArrayList<Float> list) throws IOException;
+
+    Data makeDataObject(ArrayList<ArrayList<Float>> input, ArrayList<ArrayList<Float>> results);
 
 }

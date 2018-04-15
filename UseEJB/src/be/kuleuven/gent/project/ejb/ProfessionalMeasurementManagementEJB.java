@@ -56,7 +56,7 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
         byte[] yDataByte= toByteArray(yData);
         byte[] zDataByte= toByteArray(zData);
 
-        ProfessionalMeasurement professionalMeasurement = new ProfessionalMeasurement(idProject, idUser, description, xDataByte, yDataByte, zDataByte);
+        //ProfessionalMeasurement professionalMeasurement = new ProfessionalMeasurement(idProject, idUser, description, xDataByte, yDataByte, zDataByte);
         return null;
     }
 

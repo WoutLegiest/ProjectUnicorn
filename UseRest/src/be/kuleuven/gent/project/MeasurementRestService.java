@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.Support.DataAdapter;
+import be.kuleuven.gent.project.data.Data;
 import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.ejb.ApplicationManagementEJBLocal;
 import org.glassfish.admin.amx.annotation.Param;
@@ -27,16 +28,16 @@ public class MeasurementRestService {
     
 
     @POST
-    @Path("/data")
+    @Path("/data_process")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
     public Response analyzeData(String jsonInput)  {
-        ArrayList<ArrayList> results = new ArrayList<>();
+        ArrayList<ArrayList<Float>> results = new ArrayList<>();
 
         ArrayList<Float> xDataInput =new ArrayList<>();
         ArrayList<Float> yDataInput =new ArrayList<>();
         ArrayList<Float> zDataInput =new ArrayList<>();
-        ArrayList<ArrayList> dataInput = new ArrayList<>();
+        ArrayList<ArrayList<Float>> dataInput = new ArrayList<>();
 
         try {
             JSONObject inputObject = new JSONObject(jsonInput);
@@ -61,15 +62,25 @@ public class MeasurementRestService {
                     results.add(ejbresult);
                 }
             }
+            Data data=app.makeDataObject(dataInput,results);
 
-            DataAdapter dataAdapter = new DataAdapter(results.get(0),results.get(1),results.get(2)
-                    ,results.get(3),results.get(4),results.get(5),results.get(6),results.get(7),results.get(8));
-            return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
+
+            return Response.ok(data, MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             return Response.ok(e, MediaType.APPLICATION_JSON).build();
         } catch (IOException e) {
             return Response.ok(e, MediaType.APPLICATION_JSON).build();
         }
     }
+
+    @POST
+    @Path("/measurement_registration")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response registerMeasurement(String jsonInput)  {
+        return null;
+    }
+
+
 }
 
