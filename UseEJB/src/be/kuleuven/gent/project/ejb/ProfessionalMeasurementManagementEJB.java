@@ -1,8 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
-import be.kuleuven.gent.project.data.ProfessionalProject;
-import be.kuleuven.gent.project.data.User;
+import be.kuleuven.gent.project.data.*;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -51,14 +49,17 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
     }
 
     @Override
-    public ProfessionalMeasurement makeMeasurement(int idProject, String idUser, String description, ArrayList<Float>xData, ArrayList<Float>yData, ArrayList<Float>zData) {
-        byte[] xDataByte= toByteArray(xData);
-        byte[] yDataByte= toByteArray(yData);
-        byte[] zDataByte= toByteArray(zData);
+    public ProfessionalMeasurement makeMeasurement(ProUser proUser, ProfessionalProject professionalProject, Data data, String description, java.sql.Date date) {
 
-        //ProfessionalMeasurement professionalMeasurement = new ProfessionalMeasurement(idProject, idUser, description, xDataByte, yDataByte, zDataByte);
-        return null;
+
+        ProfessionalMeasurement professionalMeasurement = new ProfessionalMeasurement(data, professionalProject, proUser, description, date);
+
+        em.persist(professionalMeasurement);
+
+        return professionalMeasurement;
     }
+
+
 
     @Override
     public byte[] toByteArray(ArrayList<Float> dataList) {

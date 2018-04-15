@@ -46,6 +46,14 @@ public class ProfessionalMeasurement implements Serializable {
         this.date = professionalMeasurement.date;
     }
 
+    public ProfessionalMeasurement(Data data, ProfessionalProject professionalProject, ProUser proUser, String description, java.sql.Date date) {
+        this.data = data;
+        this.professionalProject = professionalProject;
+        this.proUser = proUser;
+        this.description = description;
+        this.date = date;
+    }
+
     public Long getId() {
 
         return id;

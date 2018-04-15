@@ -1,8 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.ProfessionalProject;
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
-import be.kuleuven.gent.project.data.User;
+import be.kuleuven.gent.project.data.*;
 import com.sun.xml.xsom.impl.scd.Iterators;
 
 import javax.ejb.Local;
@@ -19,7 +17,8 @@ public interface ProfessionalMeasurementManagementEJBLocal {
 
     List<ProfessionalMeasurement> findAllMeasurementsByUser(User user);
 
-    public ProfessionalMeasurement makeMeasurement(int idProject, String idUser, String description, ArrayList<Float> xData, ArrayList<Float>yData, ArrayList<Float>zData);
+    public ProfessionalMeasurement makeMeasurement(ProUser proUser, ProfessionalProject professionalProject, Data data, String description, java.sql.Date date);
+
 
     public byte[] toByteArray(ArrayList<Float> dataList);
 
