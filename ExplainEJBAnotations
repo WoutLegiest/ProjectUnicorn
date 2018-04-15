@@ -1,0 +1,9 @@
+A @ViewScoped bean lives exactly as long as a JSF view. It usually starts with a fresh new GET request, or with a navigation action, 
+and will then live as long as the enduser submits any POST form in the view to an action method which returns null or void (and thus navigates back to the same view). Once you refresh the page, or return a non-null string (even an empty string!) navigation outcome, then the view scope will end.
+
+A @RequestScoped bean lives exactly as long a HTTP request. It will thus be garbaged by end of every request 
+and recreated on every new request, hereby losing all changed properties.
+
+A @ViewScoped bean is thus particularly more useful in rich Ajax-enabled views which needs to remember the (changed) 
+view state across Ajax requests. A @RequestScoped one would be recreated on every Ajax request and thus 
+fail to remember all changed view state. Note that a @ViewScoped bean does not share any data among different browser tabs/windows in the same session like as a @SessionScoped bean. Every view has its own unique @ViewScoped bean.
