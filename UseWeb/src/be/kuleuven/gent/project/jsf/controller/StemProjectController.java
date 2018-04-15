@@ -40,7 +40,8 @@ public class StemProjectController {
     }
 
     public String newProject(){
-        stemProjectEJB.createProject(project, findTeacher(), numberOfGroups);
+        project.setTeacher(findTeacher());
+        stemProjectEJB.createProject(project, numberOfGroups);
         return "projecten";
     }
 
