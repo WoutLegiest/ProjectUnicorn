@@ -33,6 +33,35 @@
 
             <a href="measurement.xhtml">test chart</a>
 
+            <h:dataTable value="#{spotterProjectController.findAllMeasurements()}"
+                         var="p"
+                         styleClass="projects-table"
+                         headerClass="projects-table-header"
+                         rowClasses="projects-table-odd-row,projects-table-even-row"
+            >
+
+                <h:column>
+                    <f:facet name="header">Nr</f:facet>
+                    <h:outputText value="#{p.id}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Project Name</f:facet>
+                    <h:outputText value="#{p.professionalProject.name}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Location</f:facet>
+                    <h:outputText value="#{p.proUser}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <a href="project.xhtml?professionalProject=#{p.id}">View project</a>
+                </h:column>
+
+            </h:dataTable>
+
         </div>
 
         <script type="text/javascript">

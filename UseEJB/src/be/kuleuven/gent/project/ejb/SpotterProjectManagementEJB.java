@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
+import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 
 import javax.ejb.Stateless;
@@ -33,6 +34,19 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
     @Override
     public ProfessionalProject findProject(long id){
         return em.find(ProfessionalProject.class, id);
+    }
+
+    @Override
+    public List<ProfessionalMeasurement> findAllMeasurements(Long projectId){
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("SELECT p FROM ProfessionalMeasurement p ");
+        queryBuilder.append("WHERE p.professionalProject_id = ");
+        queryBuilder.append(projectId);
+
+        TypedQuery<ProfessionalMeasurement> q =
+                em.createQuery(queryBuilder.toString(), ProfessionalMeasurement.class);
+        return q.getResultList();
     }
 
     @Override

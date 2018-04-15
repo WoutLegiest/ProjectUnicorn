@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project.jsf.controller;
 
+import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 
@@ -34,6 +35,10 @@ public class SpotterProjectController implements Serializable{
 
     public void findProject() {
         project = spotterProjectEJB.findProject(projectId);
+    }
+
+    public List<ProfessionalMeasurement> findAllMeasurements() {
+        return spotterProjectEJB.findAllMeasurements(projectId);
     }
 
     public Long getProjectId() {

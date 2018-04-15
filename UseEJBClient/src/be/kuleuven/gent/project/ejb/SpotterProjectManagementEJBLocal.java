@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
+import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 
 import javax.ejb.Local;
@@ -9,12 +10,14 @@ import java.util.List;
 @Local
 public interface SpotterProjectManagementEJBLocal {
 
-    public List<ProfessionalProject> findAllProjects();
+    List<ProfessionalProject> findAllProjects();
 
     ProfessionalProject findProject(long id);
 
-    public List<String> projectByLocations(float latitude, float longitude);
+    List<ProfessionalMeasurement> findAllMeasurements(Long projectId);
 
-    public ProfessionalProject makeProject(String name,float latitude, float longitude, String location);
+    List<String> projectByLocations(float latitude, float longitude);
+
+    ProfessionalProject makeProject(String name,float latitude, float longitude, String location);
 
 }
