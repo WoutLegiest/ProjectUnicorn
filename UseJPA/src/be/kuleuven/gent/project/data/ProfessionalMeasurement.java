@@ -19,11 +19,13 @@ public class ProfessionalMeasurement implements Serializable {
     @JoinColumn(name="idData", nullable = false)
     private Data data;
 
-    @Column(name = "professionalProject_id" , nullable = false, length = 11)
-    private int idProject;
+    @ManyToOne
+    @JoinColumn(name = "professionalProject_id" , nullable = false)
+    private ProfessionalProject professionalProject;
 
-    @Column(name = "proUser_User_LoginName", nullable = false)
-    private String loginUser;
+    @OneToOne
+    @JoinColumn(name = "loginName", nullable = false)
+    private ProUser proUser;
 
     @Column(name = "description", nullable = false)
     private String description;
@@ -31,25 +33,17 @@ public class ProfessionalMeasurement implements Serializable {
     @Column(name = "date", nullable = false)
     private java.sql.Date date;
 
-    public ProfessionalMeasurement(ProfessionalMeasurement professionalMeasurement) {
-        this.id=professionalMeasurement.id;
-        this.loginUser = professionalMeasurement.loginUser;
-        this.description = professionalMeasurement.description;
-        this.data = professionalMeasurement.data;
-        this.idProject = professionalMeasurement.idProject;
-        this.date = professionalMeasurement.date;
-    }
-
-    public ProfessionalMeasurement(Data data, int idProject, String loginUser, String description, java.sql.Date date) {
-        this.data = data;
-        this.idProject = idProject;
-        this.loginUser = loginUser;
-        this.description = description;
-        this.date = date;
-    }
-
     public ProfessionalMeasurement(){
         super();
+    }
+
+    public ProfessionalMeasurement(ProfessionalMeasurement professionalMeasurement) {
+        this.id=professionalMeasurement.id;
+        this.proUser = professionalMeasurement.proUser;
+        this.description = professionalMeasurement.description;
+        this.data = professionalMeasurement.data;
+        this.professionalProject = professionalMeasurement.professionalProject;
+        this.date = professionalMeasurement.date;
     }
 
     public Long getId() {
@@ -61,12 +55,12 @@ public class ProfessionalMeasurement implements Serializable {
         this.id = id;
     }
 
-    public String getLoginUser() {
-        return loginUser;
+    public ProUser getProUser() {
+        return proUser;
     }
 
-    public void setLoginUser(String userID) {
-        this.loginUser = userID;
+    public void setProUser(ProUser proUser) {
+        this.proUser = proUser;
     }
 
     public String getDescription() {
@@ -85,12 +79,12 @@ public class ProfessionalMeasurement implements Serializable {
         this.data = data;
     }
 
-    public int getIdProject() {
-        return idProject;
+    public ProfessionalProject getProfessionalProject() {
+        return professionalProject;
     }
 
-    public void setIdProject(int idProject) {
-        this.idProject = idProject;
+    public void setProfessionalProject(ProfessionalProject professionalProject) {
+        this.professionalProject = professionalProject;
     }
 
     public Date getDate() {

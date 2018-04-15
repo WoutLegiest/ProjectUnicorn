@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @XmlRootElement
 @Entity
-@Table(name="ProfessionalMeasurement")
+@Table(name="Data")
 public class Data implements Serializable {
 
     @Id
