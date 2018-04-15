@@ -11,7 +11,7 @@ function initMap(callback) {
             getLatLng(inputData);
         }
     };
-    xhttp.open("GET", "http://localhost:8080/UseWebWeb/rest_unicorn/SpotterProjectData/all", true);
+    xhttp.open("GET", "http://localhost:8080/UseWebWeb/rest_unicorn/ProfProjectData/all", true);
     xhttp.send();
 }
 
