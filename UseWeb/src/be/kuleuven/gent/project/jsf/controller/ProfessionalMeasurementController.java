@@ -6,10 +6,11 @@ import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named
 @ViewScoped
-public class ProfessionalMeasurementController {
+public class ProfessionalMeasurementController implements Serializable {
 
     private static final long serialVersionUID = 6737147724536164355L;
 
