@@ -9,6 +9,8 @@ import java.io.Serializable;
 @Table(name="Data")
 public class Data implements Serializable {
 
+
+    private static final long serialVersionUID = -5271552396228466318L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="IdData", nullable = false)

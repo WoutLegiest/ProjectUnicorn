@@ -29,24 +29,28 @@ public class MeasurementRestService {
     //Put voor Used to create a resource, or overwrite it. While you specify the resources new URL.
     //Post voor Used to modify and update a resource
 
-    @Inject
+    @EJB
     private ApplicationManagementEJBLocal app;
-    @Inject
+
+    @EJB
     private UserManagementEJBLocal userManagementEJBLocal;
-    @Inject
+
+    @EJB
     private SpotterProjectManagementEJBLocal spotterProjectManagementEJBLocal;
-    @Inject
+
+    @EJB
     private DataManagementEJBLocal dataManagementEJBLocal;
-    @Inject
+
+    @EJB
     private ProfessionalMeasurementManagementEJBLocal professionalMeasurementManagementEJBLocal;
 
-    
 
     @POST
     @Path("/data_process")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
     public Response analyzeData(String jsonInput)  {
+
         ArrayList<ArrayList<Float>> results = new ArrayList<>();
 
         ArrayList<Float> xDataInput =new ArrayList<>();
@@ -77,8 +81,8 @@ public class MeasurementRestService {
                     results.add(ejbresult);
                 }
             }
-            Data data=app.makeDataObject(dataInput,results);
 
+            Data data=app.makeDataObject(dataInput,results);
 
             return Response.ok(data, MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
@@ -114,11 +118,9 @@ public class MeasurementRestService {
             Data data = dataManagementEJBLocal.findData(dataID);
             professionalMeasurementManagementEJBLocal.makeMeasurement(proUser,professionalProject,data,description,dateSql);
 
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
 
         return null;
     }
