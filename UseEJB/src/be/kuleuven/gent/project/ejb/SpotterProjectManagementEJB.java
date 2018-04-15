@@ -41,7 +41,7 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
 
         StringBuilder queryBuilder = new StringBuilder();
         queryBuilder.append("SELECT p FROM ProfessionalMeasurement p ");
-        queryBuilder.append("WHERE p.professionalProject_id = ");
+        queryBuilder.append("WHERE p.professionalProject.id = ");
         queryBuilder.append(projectId);
 
         TypedQuery<ProfessionalMeasurement> q =

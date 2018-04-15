@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Data implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name ="IdData", nullable = false)
     private Long id;
 
