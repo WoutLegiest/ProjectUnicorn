@@ -85,7 +85,7 @@ public class MeasurementRestService {
             Data data=app.makeDataObject(dataInput,results);
 
             DataAdapter dataAdapter = new DataAdapter(data.getId(),data );
-            dataAdapter.setId(data.getId());
+            //dataAdapter.setId(data.getId());
             return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             return Response.ok(e, MediaType.APPLICATION_JSON).build();
@@ -101,11 +101,11 @@ public class MeasurementRestService {
     public Response registerMeasurement(String jsonInput)  {
         try {
             JSONObject jsonObject = new JSONObject(jsonInput);
-            long projectID = jsonObject.getLong("projectId");
-            long dataID = jsonObject.getLong("dataID");
-            String login = jsonObject.getString("login");
+            long projectID = jsonObject.getLong("professionalProject_id");
+            long dataID = jsonObject.getLong("idData");
+            String login = jsonObject.getString("proUser_User_LoginName");
             String description = jsonObject.getString("description");
-            String dateString = jsonObject.getString("date");
+            String dateString = jsonObject.getString("datum");
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             java.util.Date parsed = null;
             try {
@@ -118,13 +118,12 @@ public class MeasurementRestService {
             ProUser proUser = userManagementEJBLocal.findProUser(login);
             ProfessionalProject professionalProject= spotterProjectManagementEJBLocal.findProject(projectID);
             Data data = dataManagementEJBLocal.findData(dataID);
-            professionalMeasurementManagementEJBLocal.makeMeasurement(proUser,professionalProject,data,description,dateSql);
-
+            ProfessionalMeasurement professionalMeasurement = professionalMeasurementManagementEJBLocal.makeMeasurement(proUser,professionalProject,data,description,dateSql);
+            return Response.ok(professionalMeasurement,MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             e.printStackTrace();
+            return Response.ok(e,MediaType.APPLICATION_JSON).build();
         }
-
-        return null;
     }
 
 
