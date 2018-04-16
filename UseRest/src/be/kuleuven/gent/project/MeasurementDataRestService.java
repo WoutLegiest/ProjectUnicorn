@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("ProfMeausermentData")
+@Path("ProfMeasurementData")
 @Produces(MediaType.TEXT_PLAIN)
 public class MeasurementDataRestService {
 
@@ -35,8 +35,8 @@ public class MeasurementDataRestService {
     @Path("/all")
     public Response getMetingenByProject(@HeaderParam("projectid") long projectID){
         ProfessionalProject professionalProject =spmejbl.findProject(projectID);
-        List<ProfessionalMeasurement> spottermeringen=semejbl.findAllMeasurementsByProject(professionalProject);
-        return Response.ok(spottermeringen, MediaType.APPLICATION_JSON).build();
+        List<ProfessionalMeasurement> spotterMeasurements=semejbl.findAllMeasurementsByProject(professionalProject);
+        return Response.ok(spotterMeasurements, MediaType.APPLICATION_JSON).build();
     }
 
     @GET

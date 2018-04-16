@@ -85,7 +85,7 @@ public class MeasurementRestService {
             Data data=app.makeDataObject(dataInput,results);
 
             DataAdapter dataAdapter = new DataAdapter(data.getId(),data );
-            //dataAdapter.setId(data.getId());
+            dataAdapter.setId(data.getId());
             return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             return Response.ok(e, MediaType.APPLICATION_JSON).build();

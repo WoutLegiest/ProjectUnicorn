@@ -1,19 +1,35 @@
+function rest() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var inputData = this.responseText;
+            //document.getElementById("demo").innerHTML = this.responseText;
+
+            getData(inputData);
+        }
+    };
+    xhttp.open("GET", "http://localhost:8080/UseWebWeb/rest_unicorn/ProfProjectData/all", true);
+    xhttp.send();
+}
+
+
 function getData(n) {
     var arr = [],
         i,
         x;
     for (
-        i = 0, x = i*20;
+        i = 0, x = i * 20;
         i < n;
         i = i + 1, x = x + 20
     ) {
-        var ran = (Math.random()*10 + Math.random()*10 + Math.random()*10)/30
+        var ran = (Math.random() * 10 + Math.random() * 10 + Math.random() * 10) / 30
         var time = toTime(x);
         arr.push([
             time,
-            2 * (ran-0.5) + Math.sin(i * ran)
+            2 * (ran - 0.5) + Math.sin(i * ran)
         ]);
     }
+
     return arr;
 }
 
@@ -21,10 +37,11 @@ function toTime(x) {
     var str = x.toString();
     var time;
     if (x > 1000) {
-        time =  str.slice(0, -3) + "s " + str.slice(-3) + "ms";
+        time = str.slice(0, -3) + "s " + str.slice(-3) + "ms";
     } else {
         time = str + " ms";
-    } return time;
+    }
+    return time;
 }
 
 var n = 500,
@@ -88,11 +105,11 @@ Highcharts.chart('container', {
         data: xData,
         lineWidth: 0.5,
         name: 'Data points on x axis'
-    },{
+    }, {
         data: yData,
         lineWidth: 1,
         name: 'Data points on y axis'
-    },{
+    }, {
         data: zData,
         lineWidth: 1,
         name: 'Data points on z axis'
