@@ -12,7 +12,6 @@ public class Student implements Serializable {
     @Column(name = "user_LoginName", nullable = false)
     private String loginName;
 
-
     public Student(Student student)
     {
         this.loginName =student.loginName;

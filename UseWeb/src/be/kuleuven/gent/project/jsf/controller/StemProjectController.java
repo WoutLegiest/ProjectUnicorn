@@ -4,8 +4,11 @@ import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.StemProject;
 import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
+import be.kuleuven.gent.project.ejb.StemProjectManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -13,7 +16,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
-@ViewScoped
+@Stateless
 public class StemProjectController {
 
     @Inject

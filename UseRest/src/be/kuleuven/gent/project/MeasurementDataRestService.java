@@ -23,11 +23,11 @@ import java.util.List;
 @Produces(MediaType.TEXT_PLAIN)
 public class MeasurementDataRestService {
 
-    @Inject
+    @EJB
     private SpotterProjectManagementEJBLocal spmejbl;
-    @Inject
+    @EJB
     private ProfessionalMeasurementManagementEJBLocal semejbl;
-    @Inject
+    @EJB
     private UserManagementEJBLocal umejbl;
 
     @GET

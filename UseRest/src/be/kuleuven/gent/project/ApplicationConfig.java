@@ -24,7 +24,6 @@ public class ApplicationConfig extends Application {
 		c.add(ParameterRestService.class);
 		c.add(LoginAndRegister.class);
 		c.add(ContentTypesRestService.class);
-		c.add(ResponseRestService.class);
 		c.add(SpotterProjectData.class);
 		c.add(MeasurementRestService.class);
 		c.add(MeasurementDataRestService.class);

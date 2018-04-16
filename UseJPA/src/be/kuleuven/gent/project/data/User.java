@@ -51,6 +51,12 @@ public class User implements Serializable {
         this.descripton = user.descripton;
     }
 
+    public User(String login, String hPassword, String group) {
+        this.login = this.groupLogin = login;
+        this.hPassword = hPassword;
+        this.group = group;
+    }
+
     public User(){
         super();
     }

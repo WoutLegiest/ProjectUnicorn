@@ -19,6 +19,7 @@ public class SpotterProjectData {
 
     @EJB
     private SpotterProjectManagementEJBLocal spmejbl;
+    @EJB
     private ProfessionalMeasurementManagementEJBLocal semejbl;
 
     @GET

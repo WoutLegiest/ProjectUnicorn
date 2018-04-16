@@ -70,8 +70,6 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
         return q.getResultList().get(0);
     }
 
-
-
     @Override
     public byte[] toByteArray(ArrayList<Float> dataList) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

@@ -1,9 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.ProUser;
-import be.kuleuven.gent.project.data.Teacher;
-import be.kuleuven.gent.project.data.User;
-import be.kuleuven.gent.project.data.UserToken;
+import be.kuleuven.gent.project.data.*;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.ejb.Stateless;
@@ -57,6 +54,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         em.persist(teacher);
         return teacher;
     }
+
 
     @Override
     public User findPerson(String login) {
