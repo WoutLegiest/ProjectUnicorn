@@ -51,8 +51,8 @@
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Location</f:facet>
-                    <h:outputText value="#{p.proUser}"/>
+                    <f:facet name="header">User</f:facet>
+                    <h:outputText value="#{p.proUser.user.getFullName}"/>
                 </h:column>
 
                 <h:column>

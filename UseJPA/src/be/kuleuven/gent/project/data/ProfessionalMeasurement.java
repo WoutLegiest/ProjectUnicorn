@@ -19,10 +19,12 @@ public class ProfessionalMeasurement implements Serializable {
     @JoinColumn(name="idData", nullable = false)
     private Data data;
 
+    @Id
     @ManyToOne
     @JoinColumn(name = "professionalProject_id" , nullable = false)
     private ProfessionalProject professionalProject;
 
+    @Id
     @OneToOne
     @JoinColumn(name = "loginName", nullable = false)
     private ProUser proUser;

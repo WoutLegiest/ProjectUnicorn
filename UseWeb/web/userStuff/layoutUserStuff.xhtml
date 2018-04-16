@@ -40,10 +40,10 @@
             <img src="../resources/Unicorn_Logo_50.png" alt="Logo" id="logo"></img>
         </a>
 
-        <a href="../ProUser/home.xhtml" class="navitem">HOME</a>
-        <a href="../ProUser/projects.xhtml" class="navitem">PROJECTEN</a>
-        <a href="../ProUser/worldMap.xhtml" class="navitem">WORLD MAP</a>
-        <a href="../ProUser/feedback.xhtml" class="navitem">FEEDBACK</a>
+        <a href="../index.xhtml" class="navitem">START</a>
+        <a href="../#{userController.loggedInUser.group}/home.xhtml" class="navitem">HOME</a>
+        <a href="../#{userController.loggedInUser.group}/projects.xhtml" class="navitem">PROJECTEN</a>
+
 
         <div class="dropdown right">
             <button class="dropbtn">
