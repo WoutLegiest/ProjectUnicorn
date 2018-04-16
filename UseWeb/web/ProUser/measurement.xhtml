@@ -54,6 +54,10 @@
         </div>
 
         <script type="text/javascript" src="scripts/jsChart.js"/>
+
+        <h:outputScript>
+            getDataFromREST("#{professionalMeasurementController.measurementId}");
+        </h:outputScript>
     </ui:define>
 
 </ui:composition>

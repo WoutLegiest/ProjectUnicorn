@@ -1,12 +1,15 @@
 package be.kuleuven.gent.project;
 
+import be.kuleuven.gent.project.Support.DataAdapter;
 import be.kuleuven.gent.project.Support.UserLight;
+import be.kuleuven.gent.project.data.Data;
 import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
+import com.owlike.genson.Genson;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
@@ -16,6 +19,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +54,17 @@ public class MeasurementDataRestService {
 
         List<ProfessionalMeasurement> spottermeringen=semejbl.findAllMeasurementsByUser(user);
         return Response.ok(spottermeringen, MediaType.APPLICATION_JSON).build();
+    }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("/data")
+    public Response getDataByMeasurement(@HeaderParam("measurementId") long measurementId){
+        ProfessionalMeasurement spotterMeasurement = semejbl.findMeasurementById(measurementId);
+        Data data = spotterMeasurement.getData(); //Byte data
+        DataAdapter dataAdapter = new DataAdapter(data.getId(), data);
+
+        return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
     }
 
     private ArrayList<String> contractInformation(String info){

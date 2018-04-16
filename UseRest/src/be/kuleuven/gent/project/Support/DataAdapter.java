@@ -84,6 +84,30 @@ public class DataAdapter {
         this.id = id;
     }
 
+    public ArrayList<Float> getxData() {
+        return xData;
+    }
+
+    public void setxData(ArrayList<Float> xData) {
+        this.xData = xData;
+    }
+
+    public ArrayList<Float> getyData() {
+        return yData;
+    }
+
+    public void setyData(ArrayList<Float> yData) {
+        this.yData = yData;
+    }
+
+    public ArrayList<Float> getzData() {
+        return zData;
+    }
+
+    public void setzData(ArrayList<Float> zData) {
+        this.zData = zData;
+    }
+
     public ArrayList<Float> getxR1() {
         return xR1;
     }
