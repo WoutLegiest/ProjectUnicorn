@@ -43,9 +43,15 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
         queryBuilder.append("WHERE p.professionalProject.id = ");
         queryBuilder.append(projectId);
 
-        TypedQuery<ProfessionalMeasurement> q =
-                em.createQuery(queryBuilder.toString(), ProfessionalMeasurement.class);
-        return q.getResultList();
+        TypedQuery<ProfessionalMeasurement> q = em.createQuery(queryBuilder.toString(), ProfessionalMeasurement.class);
+
+        List <ProfessionalMeasurement> test;
+
+        test = q.getResultList();
+        return test;
+
+
+        //return q.getResultList();
     }
 
     @Override

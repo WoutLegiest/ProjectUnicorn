@@ -21,7 +21,7 @@ public class ProfessionalMeasurement implements Serializable {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "professionalProject_id" , nullable = false)
+    @JoinColumn(name = "professionalProjectId" , nullable = false)
     private ProfessionalProject professionalProject;
 
     @Id
