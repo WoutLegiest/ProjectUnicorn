@@ -20,14 +20,12 @@ public class ApplicationConfig extends Application {
 
 	public ApplicationConfig() {
 		HashSet<Class<?>> c = new HashSet<>();
-		c.add(BasicRestService.class);
-		c.add(ParameterRestService.class);
 		c.add(LoginAndRegister.class);
-		c.add(ContentTypesRestService.class);
 		c.add(SpotterProjectData.class);
 		c.add(MeasurementRestService.class);
 		c.add(MeasurementDataRestService.class);
 		c.add(DataRestService.class);
+		c.add(ProjectRestService.class);
 
 		classes = Collections.unmodifiableSet(c);
 	}

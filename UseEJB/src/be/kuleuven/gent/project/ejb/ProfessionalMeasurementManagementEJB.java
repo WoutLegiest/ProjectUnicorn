@@ -71,6 +71,16 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
     }
 
     @Override
+    public ProfessionalProject makeProject(String name, String location, float latitude, float longitude, String desc){
+
+        ProfessionalProject project = new ProfessionalProject(name, location,latitude,longitude,desc);
+        em.persist(project);
+
+        return project;
+    }
+
+
+    @Override
     public byte[] toByteArray(ArrayList<Float> dataList) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream out = new DataOutputStream(baos);

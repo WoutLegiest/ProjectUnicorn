@@ -17,11 +17,13 @@ public interface ProfessionalMeasurementManagementEJBLocal {
 
     List<ProfessionalMeasurement> findAllMeasurementsByUser(User user);
 
-    public ProfessionalMeasurement makeMeasurement(ProUser proUser, ProfessionalProject professionalProject, Data data, String description, java.sql.Date date);
+    ProfessionalMeasurement makeMeasurement(ProUser proUser, ProfessionalProject professionalProject, Data data, String description, java.sql.Date date);
+
+    ProfessionalProject makeProject(String name, String location, float latitude, float longitude, String desc);
 
     ProfessionalMeasurement findMeasurementById(Long id);
 
-    public byte[] toByteArray(ArrayList<Float> dataList);
+    byte[] toByteArray(ArrayList<Float> dataList);
 
-    public ArrayList<Float> toArrayList(byte[] dataByteArray);
+    ArrayList<Float> toArrayList(byte[] dataByteArray);
 }
