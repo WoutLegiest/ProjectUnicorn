@@ -45,13 +45,7 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
 
         TypedQuery<ProfessionalMeasurement> q = em.createQuery(queryBuilder.toString(), ProfessionalMeasurement.class);
 
-        List <ProfessionalMeasurement> test;
-
-        test = q.getResultList();
-        return test;
-
-
-        //return q.getResultList();
+        return q.getResultList();
     }
 
     @Override

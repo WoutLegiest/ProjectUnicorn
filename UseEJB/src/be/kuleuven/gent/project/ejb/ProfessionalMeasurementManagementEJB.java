@@ -31,20 +31,26 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
     @Override
     public List<ProfessionalMeasurement> findAllMeasurementsByProject(ProfessionalProject professionalProject) {
         StringBuilder query = new StringBuilder();
-        query.append("SELECT m FROM ProfessionalMeasurement m WHERE m.idProject = ");
+        query.append("SELECT m FROM ProfessionalMeasurement m ");
+        query.append("WHERE m.professionalProject.id = ");
         query.append(professionalProject.getId());
-        TypedQuery<ProfessionalMeasurement> q =
-                em.createQuery(query.toString() , ProfessionalMeasurement.class);
+
+        TypedQuery<ProfessionalMeasurement> q = em.createQuery(query.toString() , ProfessionalMeasurement.class);
+
         return q.getResultList();
     }
 
     @Override
     public List<ProfessionalMeasurement> findAllMeasurementsByUser(User user) {
-        StringBuilder query = new StringBuilder();
-        query.append("SELECT m FROM ProfessionalMeasurement m WHERE m.loginUser = ");
-        query.append(user.getLogin());
-        TypedQuery<ProfessionalMeasurement> q =
-                em.createQuery(query.toString() , ProfessionalMeasurement.class);
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("SELECT p FROM ProfessionalMeasurement p ");
+        queryBuilder.append("WHERE p.proUser.user.login = '");
+        queryBuilder.append(user.getLogin());
+        queryBuilder.append("'");
+
+        TypedQuery<ProfessionalMeasurement> q = em.createQuery(queryBuilder.toString(), ProfessionalMeasurement.class);
+
         return q.getResultList();
     }
 

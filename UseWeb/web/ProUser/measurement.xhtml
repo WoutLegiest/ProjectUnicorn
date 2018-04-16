@@ -18,7 +18,7 @@
         <script src="scripts/exporting.js"/>
 
         <f:metadata>
-            <f:viewParam name="professionalProject" value="#{professionalMeasurementController.measurementId}"/>
+            <f:viewParam name="measurement" value="#{professionalMeasurementController.measurementId}"/>
             <f:viewAction action="#{professionalMeasurementController.findMeasurement}"/>
         </f:metadata>
 
@@ -33,12 +33,11 @@
             </h1>
 
             <h3>
-                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.proUser.user.firstName}"/>
-                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.proUser.user.lastName}"/>
+                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.proUser.user.getFullName()}"/>
             </h3> <br/>
 
             <h5>
-                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.date.toString}"/>
+                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.date}"/>
             </h5> <br/>
 
             <p>
