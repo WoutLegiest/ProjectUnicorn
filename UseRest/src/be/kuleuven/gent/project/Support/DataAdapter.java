@@ -1,8 +1,23 @@
 package be.kuleuven.gent.project.Support;
 
+import be.kuleuven.gent.project.data.Data;
+import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
+
+import javax.inject.Inject;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DataAdapter {
+
+    private long id;
+
+    private ArrayList<Float>xData;
+    private ArrayList<Float>yData;
+    private ArrayList<Float>zData;
+
 
     private ArrayList<Float>xR1;
     private ArrayList<Float>xR2;
@@ -18,7 +33,8 @@ public class DataAdapter {
     public DataAdapter() {
     }
 
-    public DataAdapter(ArrayList<Float> xR1, ArrayList<Float> xR2, ArrayList<Float> xF, ArrayList<Float> yR1, ArrayList<Float> yR2, ArrayList<Float> yF, ArrayList<Float> zR1, ArrayList<Float> zR2, ArrayList<Float> zF) {
+    public DataAdapter(long id,ArrayList<Float> xR1, ArrayList<Float> xR2, ArrayList<Float> xF, ArrayList<Float> yR1, ArrayList<Float> yR2, ArrayList<Float> yF, ArrayList<Float> zR1, ArrayList<Float> zR2, ArrayList<Float> zF) {
+        this.id=id;
         this.xR1 = xR1;
         this.xR2 = xR2;
         this.xF = xF;
@@ -28,6 +44,44 @@ public class DataAdapter {
         this.zR1 = zR1;
         this.zR2 = zR2;
         this.zF = zF;
+    }
+
+    public DataAdapter(long id, ArrayList<ArrayList<Float>> input){
+
+        this.id=id;
+        this.xR1=input.get(0);
+        this.xR2=input.get(1);
+        this.xF=input.get(2);
+        this.yR1=input.get(3);
+        this.yR2=input.get(4);
+        this.yF=input.get(5);
+        this.zR1=input.get(6);
+        this.zR2=input.get(7);
+        this.zF=input.get(8);
+    }
+
+    public DataAdapter(long id, Data data){
+        this.id=id;
+        this.xData=toArrayList(data.getxData());
+        this.yData=toArrayList(data.getyData());
+        this.zData=toArrayList(data.getzData());
+        this.xR1=toArrayList(data.getResult1x());
+        this.xR2=toArrayList(data.getResult2x());
+        this.xF=toArrayList(data.getFreqx());
+        this.yR1=toArrayList(data.getResult1y());
+        this.yR2=toArrayList(data.getResult2y());
+        this.yF=toArrayList(data.getFreqy());
+        this.zR1=toArrayList(data.getResult1z());
+        this.zR2=toArrayList(data.getResult2z());
+        this.zF=toArrayList(data.getFreqz());
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public ArrayList<Float> getxR1() {
@@ -100,5 +154,21 @@ public class DataAdapter {
 
     public void setzF(ArrayList<Float> zF) {
         this.zF = zF;
+    }
+
+    public ArrayList<Float> toArrayList(byte[] dataByteArray)  {
+        ByteArrayInputStream bais = new ByteArrayInputStream(dataByteArray);
+        DataInputStream in = new DataInputStream(bais);
+        ArrayList<Float> data = new ArrayList<>();
+        try {
+            while (in.available() > 0) {
+                String element = in.readUTF();
+                data.add(Float.parseFloat(element));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Collections.reverse(data);
+        return data;
     }
 }

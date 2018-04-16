@@ -233,6 +233,9 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         data.setFreqz(toByteArray(results.get(8)));
 
         em.persist(data);
+        em.flush();
+
+
 
         return data;
     }
