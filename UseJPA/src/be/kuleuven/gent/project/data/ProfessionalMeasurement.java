@@ -57,7 +57,6 @@ public class ProfessionalMeasurement implements Serializable {
     }
 
     public Long getId() {
-
         return id;
     }
 

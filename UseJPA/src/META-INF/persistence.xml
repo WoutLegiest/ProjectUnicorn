@@ -11,8 +11,11 @@
 		<class>be.kuleuven.gent.project.data.ProfessionalProject</class>
 		<class>be.kuleuven.gent.project.data.Teacher</class>
 		<class>be.kuleuven.gent.project.data.Student</class>
+		<class>be.kuleuven.gent.project.data.ProUser</class>
 		<class>be.kuleuven.gent.project.data.STEMMeasurement</class>
         <class>be.kuleuven.gent.project.data.StemProject</class>
+		<class>be.kuleuven.gent.project.data.Data</class>
+		<class>be.kuleuven.gent.project.data.UserToken</class>
 
 		<properties>
 			<!--  tables will be created only if they do not exist. Use for production

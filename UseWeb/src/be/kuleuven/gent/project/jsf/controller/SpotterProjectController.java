@@ -7,7 +7,7 @@ import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.io.Serializable;
+import java.io.*;
 import java.util.List;
 
 @Named
@@ -38,6 +38,7 @@ public class SpotterProjectController implements Serializable{
     }
 
     public List<ProfessionalMeasurement> findAllMeasurements() {
+
         return spotterProjectEJB.findAllMeasurements(projectId);
     }
 

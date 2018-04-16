@@ -28,7 +28,7 @@ public class DataAdapter {
     private ArrayList<Float>zR1;
     private ArrayList<Float>zR2;
     private ArrayList<Float>zF;
-
+    
 
     public DataAdapter() {
     }

@@ -236,7 +236,6 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
         em.flush();
 
 
-
         return data;
     }
 
