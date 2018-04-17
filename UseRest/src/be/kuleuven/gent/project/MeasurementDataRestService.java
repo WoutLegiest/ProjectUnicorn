@@ -46,7 +46,7 @@ public class MeasurementDataRestService {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/own")
-    public Response getMetingenByUser(@HeaderParam("userCredentials") String userCredentials){
+    public Response getMetingenByUser(@HeaderParam("UserCredentials") String userCredentials){
         ArrayList<String> credentials = contractInformation(userCredentials);
         String username=credentials.get(0);
 
