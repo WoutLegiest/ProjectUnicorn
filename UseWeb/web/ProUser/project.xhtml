@@ -29,10 +29,6 @@
 
             <div id="map"></div>
 
-            <p>Hier komt een tabel met meetwaarden</p>
-
-            <a href="measurement.xhtml">test chart</a>
-
             <h:dataTable value="#{spotterProjectController.findAllMeasurements()}"
                          var="p"
                          styleClass="projects-table"
@@ -42,12 +38,7 @@
 
                 <h:column>
                     <f:facet name="header">Nr</f:facet>
-                    <h:outputText value="#{p.id}"/>
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Project Name</f:facet>
-                    <h:outputText value="#{p.professionalProject.name}"/>
+                    <h:outputText value="#{p.date}"/>
                 </h:column>
 
                 <h:column>
@@ -57,7 +48,11 @@
 
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <a href="measurement.xhtml?measurement=#{p.id}">View measurement</a>
+                    <div class="btn">
+                        <h:outputLink value="measurement.xhtml?measurement=#{p.id}">
+                            View measurement
+                        </h:outputLink>
+                    </div>
                 </h:column>
 
             </h:dataTable>

@@ -39,7 +39,11 @@
 
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <a href="project.xhtml?professionalProject=#{p.id}">View project</a>
+                    <div class="btn">
+                        <h:outputLink value="project.xhtml?professionalProject=#{p.id}">
+                            View project
+                        </h:outputLink>
+                    </div>
                 </h:column>
 
             </h:dataTable>

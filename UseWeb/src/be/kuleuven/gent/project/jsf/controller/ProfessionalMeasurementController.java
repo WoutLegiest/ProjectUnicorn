@@ -35,6 +35,16 @@ public class ProfessionalMeasurementController implements Serializable {
         return professionalMeasurementEJB.findAllMeasurementsByUser(user);
     }
 
+    public String editMeasurement(){
+        userController.findUser();
+        if (userController.getLoggedInUser().getLogin().equals(professionalMeasurement.getProUser().getUser().getLogin())){
+            professionalMeasurementEJB.updateDB(professionalMeasurement);
+            return "ownMeasurements";
+        } else return "home";
+
+
+    }
+
     public ProfessionalMeasurement getProfessionalMeasurement() {
         return professionalMeasurement;
     }

@@ -8,7 +8,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:composition template="layoutUserStuff.xhtml">
+<ui:composition template="layoutProUser.xhtml">
 
     <ui:define name="title">Settings</ui:define>
 
@@ -25,6 +25,9 @@
 
             <h1>Account settings</h1>
 
+            <br />
+            <br />
+
             <h:form>
 
                 <h:outputLabel class="col-3" value="description"></h:outputLabel>
@@ -37,8 +40,8 @@
                                  a:placeholder="description"/>
 
 
-                <h:commandButton styleClass="submit"
-                                 action="#{userController.changeData}"
+                <h:commandButton styleClass="submit col-12"
+                                 action="#{professionalMeasurementController.editMeasurement}"
                                  value="Submit"/>
             </h:form>
         </div>
