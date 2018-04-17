@@ -6,10 +6,8 @@ import be.kuleuven.gent.project.data.ProUser;
 import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.ejb.*;
-import org.glassfish.admin.amx.annotation.Param;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -30,20 +28,19 @@ public class MeasurementRestService {
     //Post voor Used to modify and update a resource
 
     @EJB
-    private ApplicationManagementEJBLocal app;
+    private MeasurementManagementEJBLocal app;
 
     @EJB
     private UserManagementEJBLocal userManagementEJBLocal;
 
     @EJB
-    private SpotterProjectManagementEJBLocal spotterProjectManagementEJBLocal;
+    private ProfessionalProjectManagementEJBLocal professionalProjectManagementEJBLocal;
 
     @EJB
     private DataManagementEJBLocal dataManagementEJBLocal;
 
     @EJB
     private ProfessionalMeasurementManagementEJBLocal professionalMeasurementManagementEJBLocal;
-
 
     @POST
     @Path("/data_process")
@@ -82,7 +79,7 @@ public class MeasurementRestService {
                 }
             }
 
-            Data data=app.makeDataObject(dataInput,results);
+            Data data=dataManagementEJBLocal.makeDataObject(dataInput,results);
 
             DataAdapter dataAdapter = new DataAdapter(data.getId(),data );
             dataAdapter.setId(data.getId());
@@ -116,7 +113,7 @@ public class MeasurementRestService {
             }
             Date dateSql = new Date(parsed.getTime());
             ProUser proUser = userManagementEJBLocal.findProUser(login);
-            ProfessionalProject professionalProject= spotterProjectManagementEJBLocal.findProject(projectID);
+            ProfessionalProject professionalProject= professionalProjectManagementEJBLocal.findProject(projectID);
             Data data = dataManagementEJBLocal.findData(dataID);
             ProfessionalMeasurement professionalMeasurement = professionalMeasurementManagementEJBLocal.makeMeasurement(proUser,professionalProject,data,description,dateSql);
             return Response.ok(professionalMeasurement,MediaType.APPLICATION_JSON).build();

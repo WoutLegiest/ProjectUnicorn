@@ -6,10 +6,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 @Stateless
@@ -20,12 +16,6 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
 
     public ProfessionalMeasurementManagementEJB() {
         //default constructor
-    }
-
-    @Override
-    public boolean processExperiment(List<LinkedList<Double>> input) {
-
-        return false;
     }
 
     @Override
@@ -77,43 +67,9 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
     }
 
     @Override
-    public ProfessionalProject makeProject(String name, String location, float latitude, float longitude, String desc){
+    public <T> void updateDB(T t) {
 
-        ProfessionalProject project = new ProfessionalProject(name, location,latitude,longitude,desc);
-        em.persist(project);
-
-        return project;
+        em.merge(t);
     }
 
-
-    @Override
-    public byte[] toByteArray(ArrayList<Float> dataList) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        DataOutputStream out = new DataOutputStream(baos);
-        for (float dataElement : dataList) {
-            try {
-                out.writeUTF(String.valueOf(dataElement));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return baos.toByteArray();
-    }
-
-    @Override
-    public ArrayList<Float> toArrayList(byte[] dataByteArray)  {
-        ByteArrayInputStream bais = new ByteArrayInputStream(dataByteArray);
-        DataInputStream in = new DataInputStream(bais);
-        ArrayList<Float> data = new ArrayList<>();
-        try {
-            while (in.available() > 0) {
-                String element = in.readUTF();
-                data.add(Float.parseFloat(element));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Collections.reverse(data);
-        return data;
-    }
 }

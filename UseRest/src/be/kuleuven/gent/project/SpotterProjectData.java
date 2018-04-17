@@ -1,9 +1,8 @@
 package be.kuleuven.gent.project;
 
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
-import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
+import be.kuleuven.gent.project.ejb.ProfessionalProjectManagementEJBLocal;
 import com.owlike.genson.Genson;
 
 import javax.ejb.EJB;
@@ -18,7 +17,7 @@ import java.util.List;
 public class SpotterProjectData {
 
     @EJB
-    private SpotterProjectManagementEJBLocal spmejbl;
+    private ProfessionalProjectManagementEJBLocal spmejbl;
     @EJB
     private ProfessionalMeasurementManagementEJBLocal semejbl;
 

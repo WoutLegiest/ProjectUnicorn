@@ -4,8 +4,6 @@ import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
 
-import javax.ejb.StatefulTimeout;
-import javax.ejb.Stateless;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;

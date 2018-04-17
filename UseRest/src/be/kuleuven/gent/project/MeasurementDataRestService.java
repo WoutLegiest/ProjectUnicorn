@@ -1,25 +1,21 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.Support.DataAdapter;
-import be.kuleuven.gent.project.Support.UserLight;
 import be.kuleuven.gent.project.data.Data;
 import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
-import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
+import be.kuleuven.gent.project.ejb.ProfessionalProjectManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
-import com.owlike.genson.Genson;
 
 import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +24,7 @@ import java.util.List;
 public class MeasurementDataRestService {
 
     @EJB
-    private SpotterProjectManagementEJBLocal spmejbl;
+    private ProfessionalProjectManagementEJBLocal spmejbl;
     @EJB
     private ProfessionalMeasurementManagementEJBLocal semejbl;
     @EJB

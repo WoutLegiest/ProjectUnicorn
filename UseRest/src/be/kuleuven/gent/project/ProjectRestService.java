@@ -1,7 +1,7 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.data.ProfessionalProject;
-import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
+import be.kuleuven.gent.project.ejb.ProfessionalProjectManagementEJBLocal;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 public class ProjectRestService {
 
     @EJB
-    private ProfessionalMeasurementManagementEJBLocal pmEJB;
+    private ProfessionalProjectManagementEJBLocal ppEJB;
 
     @POST
     @Path("/project_registration")
@@ -35,7 +35,7 @@ public class ProjectRestService {
             String description = jsonObject.getString("description");
 
 
-            ProfessionalProject profProject = pmEJB.makeProject(name, location, latitude, longitude, description);
+            ProfessionalProject profProject = ppEJB.makeProject(name, location, latitude, longitude, description);
 
             return Response.ok(profProject,MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {

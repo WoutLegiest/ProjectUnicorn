@@ -13,7 +13,6 @@ import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
 
-
 @Named
 @Stateless
 public class UserController implements Serializable  {

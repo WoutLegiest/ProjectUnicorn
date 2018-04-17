@@ -1,57 +1,20 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.Data;
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnitUtil;
 import java.io.*;
 import java.util.ArrayList;
 
 @Stateless
-public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
+public class MeasurementManagementEJB implements MeasurementManagementEJBLocal {
 
     @PersistenceContext(unitName="unicorn")
     private EntityManager em;
 
     @Override
-    public void addMeaserment(ArrayList<Float> x, ArrayList<Float> y, ArrayList<Float> z, int ProjectId, String loginName,
-                              String description, ArrayList<ArrayList<Float>> result){
-
-        ProfessionalMeasurement pm = new ProfessionalMeasurement();
-
-
-
-        pm.setDescription(description);
-        //pm.setIdProject(ProjectId);
-        //pm.setLoginUser(loginName);
-
-        em.persist(pm);
-
-    }
-
-    @Override
-    public byte[] toByteArray(ArrayList<Float> dataList) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        DataOutputStream out = new DataOutputStream(baos);
-        for (float dataElement : dataList) {
-            try {
-                out.writeUTF(String.valueOf(dataElement));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return baos.toByteArray();
-    }
-
-    @Override
     public ArrayList<ArrayList<Float>> processData(ArrayList<Float> list) throws IOException {
-
-        //TODO
-        //Uitfilteren van de data, debuggen en alles controleren ! 
 
         String path = maakScript(list);
 
@@ -134,8 +97,6 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
             sb.append(", ").append(list.get(i));
         }
 
-
-
         sb.append("]; \n");
 
 /*        sb.append("%% Generate data as for example measured by smartphone \n");
@@ -213,30 +174,5 @@ public class ApplicationManagementEJB implements ApplicationManagementEJBLocal {
 
     }
 
-    @Override
-    public Data makeDataObject(ArrayList<ArrayList<Float>> input, ArrayList<ArrayList<Float>> results) {
-
-        Data data = new Data();
-
-        data.setxData(toByteArray(input.get(0)));
-        data.setyData(toByteArray(input.get(1)));
-        data.setzData(toByteArray(input.get(2)));
-
-        data.setResult1x(toByteArray(results.get(0)));
-        data.setResult2x(toByteArray(results.get(1)));
-        data.setFreqx(toByteArray(results.get(2)));
-        data.setResult1y(toByteArray(results.get(3)));
-        data.setResult2y(toByteArray(results.get(4)));
-        data.setFreqy(toByteArray(results.get(5)));
-        data.setResult1z(toByteArray(results.get(6)));
-        data.setResult2z(toByteArray(results.get(7)));
-        data.setFreqz(toByteArray(results.get(8)));
-
-        em.persist(data);
-        em.flush();
-
-
-        return data;
-    }
 
 }

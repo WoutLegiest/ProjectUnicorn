@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Stateless
-public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBLocal{
+public class ProfessionalProjectManagementEJB implements ProfessionalProjectManagementEJBLocal {
 
     @PersistenceContext(unitName="unicorn")
     private EntityManager em;
@@ -19,7 +19,7 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
     /**
      * Default constructor.
      */
-    public SpotterProjectManagementEJB() {
+    public ProfessionalProjectManagementEJB() {
         //Auto-generated constructor stub
     }
 
@@ -74,10 +74,12 @@ public class SpotterProjectManagementEJB implements SpotterProjectManagementEJBL
     }
 
     @Override
-    public ProfessionalProject makeProject(String name,float latitude, float longitude, String location) {
-        ProfessionalProject professionalProject = new ProfessionalProject(name, latitude,longitude,location);
-        em.persist(professionalProject);
-        return professionalProject;
+    public ProfessionalProject makeProject(String name, String location, float latitude, float longitude, String desc){
+
+        ProfessionalProject project = new ProfessionalProject(name, location,latitude,longitude,desc);
+        em.persist(project);
+
+        return project;
     }
 
 

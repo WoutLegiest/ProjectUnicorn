@@ -1,7 +1,5 @@
 package be.kuleuven.gent.project.Support;
 
-import be.kuleuven.gent.project.data.UserToken;
-
 public class UserLight {
     private long id;
     private String firstName;

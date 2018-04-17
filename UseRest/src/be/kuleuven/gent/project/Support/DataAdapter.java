@@ -1,9 +1,7 @@
 package be.kuleuven.gent.project.Support;
 
 import be.kuleuven.gent.project.data.Data;
-import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
 
-import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;

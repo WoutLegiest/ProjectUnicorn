@@ -1,13 +1,16 @@
 package be.kuleuven.gent.project.ejb;
 
 import be.kuleuven.gent.project.data.*;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.xml.bind.DatatypeConverter;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
@@ -30,7 +33,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     @Override
     public User createUser(User user) {
         try {
-            user.sethPassword(Encryption.encodeSHA256(user.gethPassword()));
+            user.sethPassword(encodeSHA256(user.gethPassword()));
         } catch (Exception e) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
@@ -39,6 +42,13 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         em.persist(user);
 
         return user;
+    }
+
+    public String encodeSHA256(String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        md.update(password.getBytes("UTF-8"));
+        byte[] digest = md.digest();
+        return DatatypeConverter.printBase64Binary(digest).toString();
     }
 
     @Override
@@ -54,7 +64,6 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         em.persist(teacher);
         return teacher;
     }
-
 
     @Override
     public User findPerson(String login) {
@@ -129,14 +138,12 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         else return null;
     }
 
+    //public boolean checkTokenOnDate(String login)
+    //Zoek token en als datum ouder is al ne dag, false teruggeven
+
     @Override
     public <T> void updateDB(T t) {
-        /*try {
-            user.sethPassword(Encryption.encodeSHA256(user.gethPassword()));
-        } catch (Exception e) {
-            Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
-            e.printStackTrace();
-        }*/
+
         em.merge(t);
     }
 

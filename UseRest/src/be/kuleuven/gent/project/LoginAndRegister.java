@@ -1,7 +1,6 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.Support.UserLight;
-import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.data.UserToken;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;

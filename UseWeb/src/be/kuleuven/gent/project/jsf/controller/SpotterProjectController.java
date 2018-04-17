@@ -2,7 +2,7 @@ package be.kuleuven.gent.project.jsf.controller;
 
 import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
-import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
+import be.kuleuven.gent.project.ejb.ProfessionalProjectManagementEJBLocal;
 
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
@@ -16,7 +16,7 @@ public class SpotterProjectController implements Serializable{
     private static final long serialVersionUID = 6737147724536164355L;
 
     @Inject
-    private SpotterProjectManagementEJBLocal spotterProjectEJB;
+    private ProfessionalProjectManagementEJBLocal spotterProjectEJB;
 
     private ProfessionalProject project = new ProfessionalProject();
     private Long projectId;

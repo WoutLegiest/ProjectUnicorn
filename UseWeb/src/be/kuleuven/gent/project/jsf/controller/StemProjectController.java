@@ -1,23 +1,22 @@
 package be.kuleuven.gent.project.jsf.controller;
 
-import be.kuleuven.gent.project.data.ProfessionalProject;
 import be.kuleuven.gent.project.data.StemProject;
 import be.kuleuven.gent.project.data.Teacher;
-import be.kuleuven.gent.project.ejb.SpotterProjectManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.StemProjectManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named
 @Stateless
-public class StemProjectController {
+public class StemProjectController implements Serializable {
+
+    private static final long serialVersionUID = 7922795361382672937L;
 
     @Inject
     private StemProjectManagementEJBLocal stemProjectEJB;

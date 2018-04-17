@@ -1,6 +1,5 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.StemProject;
 import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.data.User;
