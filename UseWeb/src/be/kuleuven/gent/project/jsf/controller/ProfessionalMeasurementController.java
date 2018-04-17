@@ -41,8 +41,6 @@ public class ProfessionalMeasurementController implements Serializable {
             professionalMeasurementEJB.updateDB(professionalMeasurement);
             return "ownMeasurements";
         } else return "home";
-
-
     }
 
     public ProfessionalMeasurement getProfessionalMeasurement() {

@@ -68,7 +68,6 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
 
     @Override
     public <T> void updateDB(T t) {
-
         em.merge(t);
     }
 

@@ -168,7 +168,7 @@
 	margin-bottom: 30px;
 }
 
-.submit {
+/*.submit {
 	border: none;
 	color: white;
 	padding: 14px 28px;
@@ -181,6 +181,24 @@
 .submit:hover {
 	background: #0b7dda;
 }
+
+input, textarea, span {
+	float: none;
+	color: black;
+	background-color: inherit;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	border-width: 0;
+	font-size: inherit;
+	width: 100%;
+	font-family: inherit;
+}
+
+input:hover {
+	background-color: #ddd;
+}*/
 
 @media only screen and (max-width: 768px) {
 	/* For mobile phones: */

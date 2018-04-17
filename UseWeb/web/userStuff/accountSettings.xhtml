@@ -29,21 +29,21 @@
 
                 <button class="accordion" type="button">General</button>
                 <div class="panel">
-                    <h:outputLabel class="col-3" value="First Name"></h:outputLabel>
+                    <h:outputLabel class="col-3" value="First Name" />
                     <h:inputText name="firstName"
                                  value="#{userController.loggedInUser.firstName}"
                                  class="right col-9"
                                  required="true"
                                  autocomplete="false"/>
 
-                    <h:outputLabel class="col-3" value="Last Name"></h:outputLabel>
+                    <h:outputLabel class="col-3" value="Last Name" />
                     <h:inputText name="lastName"
                                  value="#{userController.loggedInUser.lastName}"
                                  class="right col-9"
                                  required="true"
                                  autocomplete="false"/>
 
-                    <h:outputLabel class="col-3" value="email"></h:outputLabel>
+                    <h:outputLabel class="col-3" value="email" />
                     <h:inputText id="email"
                                  value="#{userController.loggedInUser.email}"
                                  class="right col-9"
@@ -53,8 +53,6 @@
                         <f:attribute name="email" value="#{email}"/>
                     </h:inputText>
                     <h:message for="email" style="color: red;" styleClass="right col-9"/>
-
-
 
                 </div>
 

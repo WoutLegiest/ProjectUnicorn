@@ -82,5 +82,10 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         return project;
     }
 
+    @Override
+    public <T> void updateDB(T t) {
+        em.merge(t);
+    }
+
 
 }

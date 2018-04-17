@@ -23,14 +23,23 @@
 
         <div class="col-12">
 
-            <h1>Account settings</h1>
+            <h1>
+                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.professionalProject.name}"/>
+            </h1>
 
-            <br />
+            <h3>
+                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.proUser.user.getFullName()}"/>
+            </h3> <br/>
+
+            <h5>
+                <h:outputLabel value="#{professionalMeasurementController.professionalMeasurement.date}"/>
+            </h5> <br/>
             <br />
 
             <h:form>
 
-                <h:outputLabel class="col-3" value="description"></h:outputLabel>
+                <h:outputLabel class="col-3"
+                               value="description" />
                 <h:inputTextarea rows="4"
                                  name="description"
                                  requiredMessage="description"

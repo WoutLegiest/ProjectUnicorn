@@ -42,6 +42,11 @@ public class SpotterProjectController implements Serializable{
         return spotterProjectEJB.findAllMeasurements(projectId);
     }
 
+    public String editProject(){
+        spotterProjectEJB.updateDB(project);
+        return "projects";
+    }
+
     public Long getProjectId() {
         return projectId;
     }
