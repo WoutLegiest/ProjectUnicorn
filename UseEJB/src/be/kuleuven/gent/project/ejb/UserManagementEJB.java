@@ -66,6 +66,13 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     }
 
     @Override
+    public Student createStudent(User user, String school, String klas, int grNr){
+        Student student = new Student(user, school, klas, grNr);
+        em.persist(student);
+        return student;
+    }
+
+    @Override
     public User findPerson(String login) {
 
         Query q = em.createQuery("SELECT p FROM User p WHERE p.login = :login");

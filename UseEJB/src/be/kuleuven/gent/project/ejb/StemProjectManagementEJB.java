@@ -26,23 +26,26 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
     }
 
     @Override
-    public void createProject(StemProject sp, int aantal) {
+    public void createProject(StemProject sp,int aantal) {
 
         String school = sp.getTeacher().getSchool();
-        String username = null;
+        String klas = sp.getClassName();
 
         for (int i = 0; i < aantal ; i++) {
 
-            username.concat(school);
-            username.concat(".student.");
-            username.concat(String.valueOf(i+1));
+            StringBuilder sb = new StringBuilder();
+
+            sb.append(school);
+            sb.append(".student.");
+            sb.append(klas);
+            sb.append(".");
+            sb.append(String.valueOf(i+1));
 
 
-            User user = new User(username,username,"student");
+            User user = new User(sb.toString(),sb.toString(),"student");
 
             userman.createUser(user);
-
-
+            userman.createStudent(user, school,klas,i);
 
             //Aanpassen JPA
 

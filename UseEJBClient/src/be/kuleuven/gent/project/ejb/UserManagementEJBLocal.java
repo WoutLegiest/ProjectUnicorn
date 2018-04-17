@@ -1,9 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
-import be.kuleuven.gent.project.data.ProUser;
-import be.kuleuven.gent.project.data.Teacher;
-import be.kuleuven.gent.project.data.User;
-import be.kuleuven.gent.project.data.UserToken;
+import be.kuleuven.gent.project.data.*;
 
 import javax.ejb.Local;
 import java.util.List;
@@ -16,6 +13,8 @@ public interface UserManagementEJBLocal {
     ProUser createProUser(User user);
 
     Teacher createTeacher(User user);
+
+    Student createStudent(User user, String school, String klas, int grNr);
 
     User findPerson(String login);
 
