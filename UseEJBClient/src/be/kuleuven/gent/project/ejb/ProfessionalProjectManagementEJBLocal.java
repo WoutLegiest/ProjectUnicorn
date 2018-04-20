@@ -20,4 +20,6 @@ public interface ProfessionalProjectManagementEJBLocal {
     ProfessionalProject makeProject(String name, String location, float latitude, float longitude, String desc);
 
     <T> void updateDB(T t);
+
+    void deleteProject(ProfessionalProject project);
 }

@@ -71,4 +71,10 @@ public class ProfessionalMeasurementManagementEJB implements ProfessionalMeasure
         em.merge(t);
     }
 
+    @Override
+    public void deleteMeasurement(ProfessionalMeasurement measurement){
+        ProfessionalMeasurement detachedMeasurement = em.merge(measurement);
+        em.remove(detachedMeasurement);
+    }
+
 }

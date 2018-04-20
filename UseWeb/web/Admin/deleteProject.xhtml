@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <!-- add stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../resources/styleForm.css"></link>
+
+    <title>
+        <ui:insert name="title">Login</ui:insert>
+    </title>
+
+    <f:metadata>
+        <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}"/>
+        <f:viewAction action="#{spotterProjectController.findProject}"/>
+    </f:metadata>
+</h:head>
+
+<h:body>
+
+    <div class="form">
+
+        <h1>Are you sure you want to delete this project?</h1>
+
+        <h3><h:outputLabel value="#{spotterProjectController.project.name}"/></h3>
+
+        <p><h:outputLabel value="#{spotterProjectController.project.location}"/></p>
+
+
+        <h:form>
+
+            <h:commandButton styleClass="submit col-5"
+                             action="#{spotterProjectController.deleteProject}"
+                             value="Yes"/>
+
+            <h:commandButton styleClass="submit col-5"
+                             action="projects?faces-redirect=true;"
+                             value="No"/>
+
+        </h:form>
+
+    </div>
+
+</h:body>
+
+
+</html>

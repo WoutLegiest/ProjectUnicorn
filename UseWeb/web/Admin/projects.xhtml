@@ -39,14 +39,20 @@
 
                 <h:column>
                     <f:facet name="header">Action</f:facet>
+
                     <div class="btn">
-                        <h:outputLink value="../ProUser/project.xhtml?professionalProject=#{p.id}">
+                        <h:outputLink value="viewProject.xhtml?professionalProject=#{p.id}">
                             View project
                         </h:outputLink>
                     </div>
                     <div class="btn">
                         <h:outputLink value="editProject.xhtml?professionalProject=#{p.id}">
                             Edit project
+                        </h:outputLink>
+                    </div>
+                    <div class="btn">
+                        <h:outputLink value="deleteProject.xhtml?professionalProject=#{p.id}">
+                            Delete project
                         </h:outputLink>
                     </div>
                 </h:column>

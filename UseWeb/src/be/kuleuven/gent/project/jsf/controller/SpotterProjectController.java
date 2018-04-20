@@ -18,7 +18,7 @@ public class SpotterProjectController implements Serializable{
     @Inject
     private ProfessionalProjectManagementEJBLocal spotterProjectEJB;
 
-    private ProfessionalProject project = new ProfessionalProject();
+    private ProfessionalProject project;
     private Long projectId;
 
     public ProfessionalProject project(){
@@ -44,7 +44,12 @@ public class SpotterProjectController implements Serializable{
 
     public String editProject(){
         spotterProjectEJB.updateDB(project);
-        return "projects";
+        return "projects?faces-redirect=true;";
+    }
+
+    public String deleteProject(){
+        spotterProjectEJB.deleteProject(project);
+        return "projects?faces-redirect=true;";
     }
 
     public Long getProjectId() {

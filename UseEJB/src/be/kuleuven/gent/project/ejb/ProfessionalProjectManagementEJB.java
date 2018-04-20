@@ -87,5 +87,19 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         em.merge(t);
     }
 
+    @Override
+    public void deleteProject(ProfessionalProject project) {
+        List<ProfessionalMeasurement> measurementsOfProject = findAllMeasurements(project.getId());
+
+        for (ProfessionalMeasurement measurement : measurementsOfProject) {
+            ProfessionalMeasurement detachedMeasurement = em.merge(measurement);
+            em.remove(detachedMeasurement);
+        }
+
+        //https://stackoverflow.com/questions/7218715/delete-database-rows-with-ejb-3-0
+        ProfessionalProject detachedProject = em.merge(project);
+        em.remove(detachedProject);
+    }
+
 
 }

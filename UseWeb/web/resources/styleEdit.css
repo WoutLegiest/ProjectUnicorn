@@ -1,0 +1,40 @@
+form .submit {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    background-color: #3ba2fb;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+form .submit:hover {
+    background: #0b7dda;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+form input, form textarea, form span {
+    float: none;
+    color: black;
+    background-color: inherit;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-width: 0;
+    font-size: inherit;
+    width: 100%;
+    font-family: inherit;
+}
+
+form input:hover {
+    background-color: #ddd;
+}
+
+form label {
+    float: left;
+    padding: 12px 0;
+}

@@ -17,4 +17,6 @@ public interface ProfessionalMeasurementManagementEJBLocal {
     ProfessionalMeasurement findMeasurementById(Long id);
 
     <T> void updateDB(T t);
+
+    void deleteMeasurement(ProfessionalMeasurement measurement);
 }

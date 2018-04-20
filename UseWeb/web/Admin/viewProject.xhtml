@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layoutAdmin.xhtml">
+
+    <ui:define name="title">Project</ui:define>
+
+    <ui:define name="meta">
+        <f:metadata>
+            <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}" />
+            <f:viewAction action="#{spotterProjectController.findProject}" />
+        </f:metadata>
+    </ui:define>
+
+    <ui:define name="content">
+
+        <div class="col-12 section left">
+
+            <h1><h:outputLabel value="#{spotterProjectController.project.name}"/></h1>
+
+            <p><h:outputLabel value="#{spotterProjectController.project.location}"/></p>
+
+            <div id="map"></div>
+
+            <h:dataTable value="#{spotterProjectController.findAllMeasurements()}"
+                         var="p"
+                         styleClass="projects-table"
+                         headerClass="projects-table-header"
+                         rowClasses="projects-table-odd-row,projects-table-even-row"
+            >
+
+                <h:column>
+                    <f:facet name="header">Nr</f:facet>
+                    <h:outputText value="#{p.date}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">User</f:facet>
+                    <h:outputText value="#{p.proUser.user.getFullName()}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <div class="btn">
+                        <h:outputLink value="../ProUser/measurement.xhtml?measurement=#{p.id}">
+                            View measurement
+                        </h:outputLink>
+                    </div>
+                    <div class="btn">
+                        <h:outputLink value="../ProUser/editMeasurement.xhtml?measurement=#{p.id}">
+                            Edit measurement
+                        </h:outputLink>
+                    </div>
+                    <div class="btn">
+                        <h:outputLink value="../ProUser/deleteMeasurement.xhtml?measurement=#{p.id}">
+                            Delete measurement
+                        </h:outputLink>
+                    </div>
+                </h:column>
+
+            </h:dataTable>
+
+        </div>
+
+        <script type="text/javascript">
+            function initMap() {
+                //Custom markers
+                var unicorn = '../resources/unicornMarker.png';
+                var unicornPink = '../resources/unicornMarkerPink.png';
+                var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
+
+                var name = "#{spotterProjectController.project.name}";
+                var latitude = parseFloat("#{spotterProjectController.project().latitude}");
+                var longitude = parseFloat("#{spotterProjectController.project().longitude}");
+                var uluru = {lat: latitude, lng: longitude};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 17,
+                    center: uluru
+                });
+
+                var infowindow = new google.maps.InfoWindow();
+
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map,
+                    icon: unicornRoyalBlue
+                });
+
+                google.maps.event.addListener(marker, 'click', (function(marker) {
+                    return function() {
+                        infowindow.setContent(name);
+                        infowindow.open(map, marker);
+                    }
+                })(marker));
+            }
+        </script>
+        <script type="text/javascript"
+                        async="1"
+                        defer="1"
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-_LoQNtoB_ZatWcLYg35NIQ0PWJoQsM0&amp;callback=initMap">
+        </script>
+    </ui:define>
+
+</ui:composition>
+</html>
