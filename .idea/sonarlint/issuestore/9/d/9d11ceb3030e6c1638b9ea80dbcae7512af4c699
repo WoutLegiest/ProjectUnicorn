@@ -1,0 +1,8 @@
+
+gsquid:S1192"FDefine a constant instead of duplicating this literal "login" 3 times.(¦á»•úÿÿÿÿ8’×˜ç®,
+csquid:UselessImportCheck"5Remove this unused import 'java.nio.charset.Charset'.(ü¶ØŸýÿÿÿÿ8É›Ì÷¬,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8’×˜ç®,
+Esquid:S2140")Use "java.util.Random.nextInt()" instead.(ææñÛ8’×˜ç®,
+€squid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "persons".(Øñ´üýÿÿÿÿ8’×˜ç®,
+gsquid:S1858"K"printBase64Binary" returns a string, there's no need to call "toString()".(Ú»Û¬8’×˜ç®,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï«Œ€þÿÿÿÿ8’×˜ç®,

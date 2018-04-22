@@ -1,0 +1,38 @@
+
+squid:S1319"nThe type of the "xR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ê³ç8úÌÒÍ¬,
+squid:S1319"mThe type of the "xF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+‹squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(äœÁq8úÌÒÍ¬,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(û´Ê¢üÿÿÿÿ8úÌÒÍ¬,
+‰squid:S1319"mThe type of the "yF" object should be an interface such as "List" rather than the implementation "ArrayList".(­óÈô8úÌÒÍ¬,
+Œsquid:UselessImportCheck"cRemove this unused import 'be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal'.(Å×ÁÂ8ÂĞëí¬,
+Šsquid:S1319"nThe type of the "zR2" object should be an interface such as "List" rather than the implementation "ArrayList".(È¥ŒÂ8úÌÒÍ¬,
+squid:S1319"nThe type of the "xR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+squid:S1319"nThe type of the "zR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+squid:S1319"nThe type of the "xR1" object should be an interface such as "List" rather than the implementation "ArrayList".(’Åî÷ıÿÿÿÿ8úÌÒÍ¬,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Æá™†şÿÿÿÿ8ÂĞëí¬,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰áÉ´8úÌÒÍ¬,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÂĞëí¬,
+Jsquid:S1068")Remove this unused "yData" private field.(˜Óşäúÿÿÿÿ8İÛí¬,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¿ıİ±8úÌÒÍ¬,
+Jsquid:S1068")Remove this unused "zData" private field.(ÃŞìÑÿÿÿÿÿ8±—øí¬,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(©ÖÃ£8úÌÒÍ¬,
+squid:S1319"nThe type of the "zR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+Šsquid:S1319"nThe type of the "yR1" object should be an interface such as "List" rather than the implementation "ArrayList".(ñ¤©8úÌÒÍ¬,
+squid:S1319"mThe type of the "zF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¤ªşÁıÿÿÿÿ8úÌÒÍ¬,
+Šsquid:S1319"nThe type of the "zR1" object should be an interface such as "List" rather than the implementation "ArrayList".(ê­£8úÌÒÍ¬,
+tsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(°ÉÅ­8úÌÒÍ¬,
+squid:S1319"mThe type of the "xF" object should be an interface such as "List" rather than the implementation "ArrayList".(ßÿâÂúÿÿÿÿ8úÌÒÍ¬,
+squid:S1319"nThe type of the "yR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÿìÓ¿8úÌÒÍ¬,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(®Ïúÿÿÿÿ8úÌÒÍ¬,
+Jsquid:S1068")Remove this unused "xData" private field.(¶ÍÕüÿÿÿÿ8ÚÿÚí¬,
+Šsquid:S1319"nThe type of the "yR2" object should be an interface such as "List" rather than the implementation "ArrayList".(¿¬¤8úÌÒÍ¬,
+Šsquid:S1319"nThe type of the "xR2" object should be an interface such as "List" rather than the implementation "ArrayList".(¨–µÚ8úÌÒÍ¬,
+Œsquid:S1319"pThe type of the "input" object should be an interface such as "List" rather than the implementation "ArrayList".(†‡ü³8ìåİÍ¬,
+squid:S1319"mThe type of the "yF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+squid:S1319"nThe type of the "yR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,
+Ysquid:UselessImportCheck"0Remove this unused import 'javax.inject.Inject'.(ì–íÔ8ÂĞëí¬,
+‰squid:S1319"mThe type of the "zF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ï¼·»8úÌÒÍ¬,
+dsquid:S00107"BConstructor has 10 parameters, which is greater than 7 authorized.(Ÿ°ÎÌıÿÿÿÿ8úÌÒÍ¬,

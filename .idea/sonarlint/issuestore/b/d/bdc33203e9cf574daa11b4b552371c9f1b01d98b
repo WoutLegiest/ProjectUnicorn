@@ -1,0 +1,7 @@
+
+Esquid:S1481")Remove this unused "json" local variable.(Ê¾8Šè¨Ï«,
+Tsquid:S1854"8Remove this useless assignment to local variable "json".(Ê¾8Šè¨Ï«,
+Fsquid:S1481"+Remove this unused "genson" local variable.(Ö¾Îs8Šè¨Ï«,
+Usquid:S1854":Remove this useless assignment to local variable "genson".(Ö¾Îs8Šè¨Ï«,
+^squid:S1854"=Remove this useless assignment to local variable "userToken".(Î÷İ¥øÿÿÿÿ8½í®,
+Xsquid:S1854"=Remove this useless assignment to local variable "userToken".(·…İ78½í®,
