@@ -8,6 +8,9 @@ public class UserLight {
     private String email;
     private String group;
 
+    public UserLight() {
+    }
+
     public UserLight(long id, String firstName, String lastName, String login, String email, String group) {
         this.id = id;
         this.firstName = firstName;
