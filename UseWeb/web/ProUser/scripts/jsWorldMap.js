@@ -46,9 +46,7 @@ function getLatLng(data) {
     }
 
     /*var x = document.getElementById("test");
-
     x.innerHTML = data;
-
     console.log(ans);
     console.log(lat);
     console.log(lng);*/

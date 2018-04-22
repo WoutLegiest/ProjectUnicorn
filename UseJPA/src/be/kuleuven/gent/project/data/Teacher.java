@@ -7,11 +7,13 @@ import java.io.Serializable;
 @Table(name="Teacher")
 public class  Teacher implements Serializable {
 
-    @Id
+    private static final long serialVersionUID = 8790057009352490441L;
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idTeacher", nullable = false)
     private Long id;
 
+    @Id
     @OneToOne
     @JoinColumn(name="loginName", nullable = false)
     private User user;

@@ -1,8 +1,11 @@
 package be.kuleuven.gent.project;
 
+import be.kuleuven.gent.project.data.ProfessionalMeasurement;
 import be.kuleuven.gent.project.data.ProfessionalProject;
+import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.ejb.ProfessionalMeasurementManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.ProfessionalProjectManagementEJBLocal;
+import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
 import com.owlike.genson.Genson;
 
 import javax.ejb.EJB;
@@ -20,6 +23,8 @@ public class SpotterProjectData {
     private ProfessionalProjectManagementEJBLocal spmejbl;
     @EJB
     private ProfessionalMeasurementManagementEJBLocal semejbl;
+    @EJB
+    private UserManagementEJBLocal umejbl;
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -48,12 +53,12 @@ public class SpotterProjectData {
     @Path("/titles")
     public Response getAllProjectsNames(){
         List<ProfessionalProject> projects=spmejbl.findAllProjects();
-        List<String> protjectTitles = new ArrayList<>();
+        List<String> projectTitles = new ArrayList<>();
         for(ProfessionalProject pp : projects){
-            protjectTitles.add(pp.getName());
+            projectTitles.add(pp.getName());
         }
 
-        return Response.ok(protjectTitles, MediaType.APPLICATION_JSON).build();
+        return Response.ok(projectTitles, MediaType.APPLICATION_JSON).build();
     }
 
     @PUT

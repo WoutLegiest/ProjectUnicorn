@@ -54,6 +54,8 @@
                     </h:inputText>
                     <h:message for="email" style="color: red;" styleClass="right col-9"/>
 
+                    <h:outputLabel class="col-3" value="Password" />
+                    <h:commandButton class="col-9" value="Change Password" action="changePassword?faces-redirect=true;" />
                 </div>
 
                 <button class="accordion" type="button">Professional</button>
@@ -83,9 +85,7 @@
                                  value="Submit"/>
             </h:form>
         </div>
-
-
-        <h:outputScript src="jsAccordion.js"></h:outputScript>
+        <script src="jsAccordion.js"></script>
 
     </ui:define>
 

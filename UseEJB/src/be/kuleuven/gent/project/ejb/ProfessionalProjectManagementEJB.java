@@ -7,9 +7,13 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * EJB voor het beheren van een professioneel project
+ */
 @Stateless
 public class ProfessionalProjectManagementEJB implements ProfessionalProjectManagementEJBLocal {
 
@@ -23,6 +27,10 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         //Auto-generated constructor stub
     }
 
+    /**
+     * Alle projecten worden opgehaald uit de databank
+     * @return een lijst met alle projecten
+     */
     @Override
     public List<ProfessionalProject> findAllProjects() {
         TypedQuery<ProfessionalProject> q =
@@ -30,11 +38,21 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         return q.getResultList();
     }
 
+    /**
+     * Een project vinden op basis van zijn ID
+     * @param id De long ID
+     * @return Het betreffende project
+     */
     @Override
     public ProfessionalProject findProject(long id){
         return em.find(ProfessionalProject.class, id);
     }
 
+    /**
+     * Alle metingen van een project worden gezocht op basis van een projectID
+     * @param projectId De long ID
+     * @return een lijst van alle professionele metingen die bij dat project horen
+     */
     @Override
     public List<ProfessionalMeasurement> findAllMeasurements(Long projectId){
 
@@ -48,6 +66,12 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         return q.getResultList();
     }
 
+    /**
+     * Een project wordt gezocht op basis van zijn ligging
+     * @param latitude De breedtegraad van het project
+     * @param longitude De lengtegraad van het project
+     * @return Een lijst met daarin de namen van de projecten die er dichtbij liggen
+     */
     @Override
     public List<String> projectByLocations(float latitude, float longitude) {
 
@@ -73,6 +97,15 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         return output;
     }
 
+    /**
+     * Een nieuw project object aanmaken en toevoegen aan de database
+     * @param name Naam van het project
+     * @param location beschrijving van de locatie
+     * @param latitude De breedtegraad
+     * @param longitude De lengtegraad
+     * @param desc beschrijving van het project
+     * @return het gemaakte project object
+     */
     @Override
     public ProfessionalProject makeProject(String name, String location, float latitude, float longitude, String desc){
 
@@ -82,11 +115,20 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         return project;
     }
 
+    /**
+     * Methode op project objecten een te pakken in de database
+     * @param t
+     * @param <T>
+     */
     @Override
     public <T> void updateDB(T t) {
         em.merge(t);
     }
 
+    /**
+     * Voor het verwijderen van een professioneel project
+     * @param project het te verwijderen project
+     */
     @Override
     public void deleteProject(ProfessionalProject project) {
         List<ProfessionalMeasurement> measurementsOfProject = findAllMeasurements(project.getId());
@@ -100,6 +142,4 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         ProfessionalProject detachedProject = em.merge(project);
         em.remove(detachedProject);
     }
-
-
 }

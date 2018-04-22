@@ -33,29 +33,29 @@ public class MeasurementDataRestService {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/all")
-    public Response getMetingenByProject(@HeaderParam("projectid") long projectID){
-        ProfessionalProject professionalProject =spmejbl.findProject(projectID);
-        List<ProfessionalMeasurement> spotterMeasurements=semejbl.findAllMeasurementsByProject(professionalProject);
+    public Response getMeasurementsByProject(@HeaderParam("projectId") long projectID) {
+        ProfessionalProject professionalProject = spmejbl.findProject(projectID);
+        List<ProfessionalMeasurement> spotterMeasurements = semejbl.findAllMeasurementsByProject(professionalProject);
         return Response.ok(spotterMeasurements, MediaType.APPLICATION_JSON).build();
     }
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/own")
-    public Response getMetingenByUser(@HeaderParam("UserCredentials") String userCredentials){
+    public Response getMeasurementsByUser(@HeaderParam("UserCredentials") String userCredentials) {
         ArrayList<String> credentials = contractInformation(userCredentials);
-        String username=credentials.get(0);
+        String username = credentials.get(0);
 
         User user = umejbl.findPerson(username);
 
-        List<ProfessionalMeasurement> spottermeringen=semejbl.findAllMeasurementsByUser(user);
-        return Response.ok(spottermeringen, MediaType.APPLICATION_JSON).build();
+        List<ProfessionalMeasurement> spotterMeasurements = semejbl.findAllMeasurementsByUser(user);
+        return Response.ok(spotterMeasurements, MediaType.APPLICATION_JSON).build();
     }
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/data")
-    public Response getDataByMeasurement(@HeaderParam("measurementId") long measurementId){
+    public Response getDataByMeasurement(@HeaderParam("measurementId") long measurementId) {
         ProfessionalMeasurement spotterMeasurement = semejbl.findMeasurementById(measurementId);
         Data data = spotterMeasurement.getData(); //Byte data
         DataAdapter dataAdapter = new DataAdapter(data.getId(), data);
@@ -63,24 +63,24 @@ public class MeasurementDataRestService {
         return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
     }
 
-    private ArrayList<String> contractInformation(String info){
-        String userName=null;
+    private ArrayList<String> contractInformation(String info) {
+        String userName = null;
         String tokenObj;
-        int i=0;
-        boolean doorgaan=true;
-        while(doorgaan){
+        int i = 0;
+        boolean doorgaan = true;
+        while (doorgaan) {
             char ch = info.charAt(i);
-            if(ch==':'){
-                userName=info.substring(0,i );
-                doorgaan=false;
+            if (ch == ':') {
+                userName = info.substring(0, i);
+                doorgaan = false;
             }
             i++;
         }
-        tokenObj=info.substring(i,info.length());
-        String date= tokenObj.substring(0,10);
+        tokenObj = info.substring(i, info.length());
+        String date = tokenObj.substring(0, 10);
         String token = tokenObj.substring(11);
 
-        ArrayList<String> output =  new ArrayList<>();
+        ArrayList<String> output = new ArrayList<>();
         output.add(userName);
         output.add(date);
         output.add(token);
