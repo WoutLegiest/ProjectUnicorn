@@ -115,6 +115,19 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     }
 
     @Override
+    public Student findStudent(String login) {
+        Query q = em.createNativeQuery("SELECT * FROM Teacher", Student.class);
+        List<Student> persons = q.getResultList();
+
+        for (Student student : persons) {
+            if (student.getUser().getLogin().equals(login)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public List<User> findAllUsers() {
         Query q = em.createNativeQuery("SELECT * FROM User", User.class);
         List<User> persons = q.getResultList();

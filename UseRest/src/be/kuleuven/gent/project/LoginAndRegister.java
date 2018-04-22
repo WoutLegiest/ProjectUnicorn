@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.Support.UserLight;
+import be.kuleuven.gent.project.data.Student;
 import be.kuleuven.gent.project.data.User;
 import be.kuleuven.gent.project.data.UserToken;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
@@ -26,7 +27,7 @@ public class LoginAndRegister {
     @Path("/Pro")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public Response userLogin(@HeaderParam("UserCredentials") String userCredentials) {
+    public Response proUserLogin(@HeaderParam("UserCredentials") String userCredentials) {
 
         ArrayList<String> info= contractInformation(userCredentials);
 
@@ -46,6 +47,45 @@ public class LoginAndRegister {
                 UserToken userToken = umejbl.findToken(user);
                 if(userToken==null){
                     userToken =umejbl.createToken(user);
+                }
+                return Response.ok(userke,MediaType.APPLICATION_JSON).build();
+            }else {
+                String mislukt = "Inloggen mislukt: wachtwoord fout";
+                json.append(genson.serialize(mislukt));
+                return Response.ok(json.toString(),MediaType.APPLICATION_JSON).build();
+            }
+        } else {
+            String mislukt = "Inloggen mislukt: usernaam bestaat niet";
+            json.append(genson.serialize(mislukt));
+            return Response.ok(json.toString(),MediaType.APPLICATION_JSON).build();
+        }
+
+
+    }
+
+    @Path("/Student")
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response userLogin(@HeaderParam("UserCredentials") String userCredentials) {
+
+        ArrayList<String> info= contractInformation(userCredentials);
+
+        String userName = info.get(0);
+        String hPasswd = info.get(1);
+
+
+        StringBuilder json =new StringBuilder();
+        Genson genson = new Genson();
+
+        Student student = umejbl.findStudent(userName);
+
+
+        if (student!=null&& (student.getUser().getGroup().equals("Student"))){
+            UserLight userke = new UserLight(student.getId(),student.getFirstName(), student.getLastName(), student.getLogin(),student.getEmail(), student.getGroup());
+            if(hPasswd.equals(student.gethPassword())){
+                UserToken userToken = umejbl.findToken(student);
+                if(userToken==null){
+                    userToken =umejbl.createToken(student);
                 }
                 return Response.ok(userke,MediaType.APPLICATION_JSON).build();
             }else {
@@ -117,14 +157,6 @@ public class LoginAndRegister {
     }
 
 
-    /*
-    @GET
-    public Boolean getBasicService()
-    {
-        System.out.println("get basic service");
-        return true;
-    }
-    */
 
 
 }

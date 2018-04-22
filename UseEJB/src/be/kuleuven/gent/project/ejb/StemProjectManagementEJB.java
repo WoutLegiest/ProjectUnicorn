@@ -56,6 +56,8 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
 
     }
 
+
+
     @Override
     public List<StemProject> findAllProjectsByTeacher(Teacher t) {
         StringBuilder query = new StringBuilder();
