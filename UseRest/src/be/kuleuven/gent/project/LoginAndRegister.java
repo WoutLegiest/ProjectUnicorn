@@ -81,11 +81,11 @@ public class LoginAndRegister {
 
 
         if (student!=null&& (student.getUser().getGroup().equals("Student"))){
-            UserLight userke = new UserLight(student.getId(),student.getFirstName(), student.getLastName(), student.getLogin(),student.getEmail(), student.getGroup());
-            if(hPasswd.equals(student.gethPassword())){
-                UserToken userToken = umejbl.findToken(student);
+            UserLight userke = new UserLight(student.getUser().getId(),student.getUser().getFirstName(), student.getUser().getLastName(), student.getUser().getLogin(),student.getUser().getEmail(), student.getUser().getGroup());
+            if(hPasswd.equals(student.getUser().gethPassword())){
+                UserToken userToken = umejbl.findToken(student.getUser());
                 if(userToken==null){
-                    userToken =umejbl.createToken(student);
+                    userToken =umejbl.createToken(student.getUser());
                 }
                 return Response.ok(userke,MediaType.APPLICATION_JSON).build();
             }else {
