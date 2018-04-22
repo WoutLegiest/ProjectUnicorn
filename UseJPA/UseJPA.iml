@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="EclipseLink" />
         <datasource-mapping>
-          <factory-entry name="unicorn" value="7644ed57-f26f-44d3-a41b-f8e59d4a426a" />
+          <factory-entry name="unicorn" value="66c7fc35-5100-4e5f-9952-45819cc359a8" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>

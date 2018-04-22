@@ -22,6 +22,8 @@ public interface UserManagementEJBLocal {
 
     Teacher findTeacher(String login);
 
+    Student findStudent(String login);
+
     List<User> findAllUsers();
 
     UserToken createToken(User user);
