@@ -7,6 +7,9 @@ import javax.persistence.PersistenceContext;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * De EJB waarbij een meting binnen komt en dan wordt verwerkt door deze EJB 
+ */
 @Stateless
 public class MeasurementManagementEJB implements MeasurementManagementEJBLocal {
 

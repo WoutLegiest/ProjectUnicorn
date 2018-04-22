@@ -9,17 +9,32 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Een EJB die zorgt dat we met Data objecten kunnen werken
+ */
 @Stateless
 public class DataManagementEJB implements DataManagementEJBLocal {
 
     @PersistenceContext(unitName="unicorn")
     private EntityManager em;
 
+    /**
+     * Methode om data te vinden op basis van een ID nummer
+     * @param id ID nummer die wordt meegegeven
+     * @return De bijhorende data wordt terug gegeven
+     */
     @Override
     public Data findData(long id) {
         return em.find(Data.class, id);
     }
 
+    /**
+     * Een methode die een Data object zal maken op basis van een input array en een results array.
+     * Hij zet de ArrayList om naar een byte array, gebruikt {@link #toByteArray(ArrayList)}. Deze byte array kan worden opgeslagen in de database .
+     * @param input Er wordt een ArrayList-ArrayList(Float) verwacht, dit zijn de gemeten waarden
+     * @param results Dit is ook een ArrayList-ArrayList(Float), maar hierin zitten de resulaten van de verwerking door Octave
+     * @return Het gemaakte Data object wordt teruggegeven
+     */
     @Override
     public Data makeDataObject(ArrayList<ArrayList<Float>> input, ArrayList<ArrayList<Float>> results) {
 
@@ -46,6 +61,11 @@ public class DataManagementEJB implements DataManagementEJBLocal {
         return data;
     }
 
+    /**
+     * Methode die de input omzet naar een byte array
+     * @param dataList ArrayList van Float die wordt omgezet
+     * @return het equivalent van de ArrayList in byte array
+     */
     @Override
     public byte[] toByteArray(ArrayList<Float> dataList) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -60,6 +80,11 @@ public class DataManagementEJB implements DataManagementEJBLocal {
         return baos.toByteArray();
     }
 
+    /**
+     * Methode die een byte array om gaat zetten naar een ArrayList van Float
+     * @param dataByteArray een byte array
+     * @return het equivalent van de byte array in ArrayList van Float
+     */
     @Override
     public ArrayList<Float> toArrayList(byte[] dataByteArray)  {
         ByteArrayInputStream bais = new ByteArrayInputStream(dataByteArray);
