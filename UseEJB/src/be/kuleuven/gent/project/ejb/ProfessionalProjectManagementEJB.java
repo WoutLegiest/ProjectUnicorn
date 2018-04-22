@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -100,6 +101,4 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
         ProfessionalProject detachedProject = em.merge(project);
         em.remove(detachedProject);
     }
-
-
 }

@@ -14,7 +14,7 @@ import java.util.List;
 @Stateless
 public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
 
-    //Methode om de verschillende studetent groepen te creeen, automatisch en deze dan te weergeven op de teacher pagina
+    //Methode om de verschillende studeten groepen te creeen, automatisch en deze dan te weergeven op de teacher pagina
 
     @PersistenceContext(unitName="unicorn")
     private EntityManager em;
@@ -49,20 +49,15 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
 
             //Aanpassen JPA
 
-
-
         }
-
-
     }
-
-
 
     @Override
     public List<StemProject> findAllProjectsByTeacher(Teacher t) {
         StringBuilder query = new StringBuilder();
-        query.append("SELECT m FROM stemproject m WHERE m.teacher_LoginName = ");
+        query.append("SELECT m FROM StemProject m WHERE m.teacher.user.login = '");
         query.append(t.getUser().getLogin());
+        query.append("'");
         TypedQuery<StemProject> q =
                 em.createQuery(query.toString() , StemProject.class);
         return q.getResultList();

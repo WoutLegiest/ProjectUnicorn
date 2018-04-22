@@ -44,7 +44,7 @@ public class StemProjectController implements Serializable {
     public String newProject(){
         project.setTeacher(findTeacher());
         stemProjectEJB.createProject(project, numberOfGroups);
-        return "projecten";
+        return "projects";
     }
 
     public StemProject getProject() {

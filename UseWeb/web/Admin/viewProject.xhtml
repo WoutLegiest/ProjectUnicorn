@@ -73,8 +73,6 @@
             function initMap() {
                 //Custom markers
                 var unicorn = '../resources/unicornMarker.png';
-                var unicornPink = '../resources/unicornMarkerPink.png';
-                var unicornRoyalBlue = '../resources/unicornMarkerRoyalBlue.png';
 
                 var name = "#{spotterProjectController.project.name}";
                 var latitude = parseFloat("#{spotterProjectController.project().latitude}");
@@ -91,7 +89,7 @@
                 var marker = new google.maps.Marker({
                     position: uluru,
                     map: map,
-                    icon: unicornRoyalBlue
+                    icon: unicorn
                 });
 
                 google.maps.event.addListener(marker, 'click', (function(marker) {
