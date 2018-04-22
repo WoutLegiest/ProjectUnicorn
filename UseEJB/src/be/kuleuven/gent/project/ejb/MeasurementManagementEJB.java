@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 /**
- * De EJB waarbij een meting binnen komt en dan wordt verwerkt door deze EJB 
+ * De EJB waarbij een meting binnen komt en dan wordt verwerkt door deze EJB
  */
 @Stateless
 public class MeasurementManagementEJB implements MeasurementManagementEJBLocal {
@@ -16,6 +16,14 @@ public class MeasurementManagementEJB implements MeasurementManagementEJBLocal {
     @PersistenceContext(unitName="unicorn")
     private EntityManager em;
 
+    /**
+     * Gebruikt {@link #maakScript(ArrayList)} om het script op te bouwen.
+     * Het teruggeven pad wordt gebruikt in de ProcessBuilder om Octave via de terminal aan te spreken. De uitkomst van het script
+     * wordt via een BufferedReader opgeslaan. Deze wordt dan verwerkt tot een ArrayList van Float
+     * @param list De te analyseren ArrayList
+     * @return Een ArrayList van ArrayList van Float, er worden meerdere ArrayList doorgegeven die de resulaten bevatten
+     * @throws IOException
+     */
     @Override
     public ArrayList<ArrayList<Float>> processData(ArrayList<Float> list) throws IOException {
 
@@ -76,6 +84,13 @@ public class MeasurementManagementEJB implements MeasurementManagementEJBLocal {
         return returntje;
     }
 
+    /**
+     * Stelt het octave script op mbv van een StringBuilder. De input wordt omgevormd tot een Octave vector
+     * en wordt hard in het document gezet. Slaat dit script lokaal op in een .m file.
+     * @param list Eén Arraylist wordt gebruikt om in het script te steken.
+     * @return Het pad waar het script staat wordt teruggegeven
+     * @throws IOException
+     */
     @Override
     public String maakScript(ArrayList<Float> list) throws IOException {
 

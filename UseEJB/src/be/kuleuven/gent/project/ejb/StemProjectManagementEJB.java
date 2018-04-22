@@ -11,6 +11,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
+/**
+ * EJB om StemProjecten te beheren
+ */
 @Stateless
 public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
 
@@ -22,9 +25,17 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
     @Inject
     private UserManagementEJBLocal userman;
 
+    /**
+     * Default constructor
+     */
     public StemProjectManagementEJB() {
     }
 
+    /**
+     * Er worden een aantal gebruiker aangemaakt indivduele projecten. Deze worden op de database gezet
+     * @param sp
+     * @param aantal Het aantal groepjes
+     */
     @Override
     public void createProject(StemProject sp,int aantal) {
 
@@ -57,7 +68,11 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
     }
 
 
-
+    /**
+     * Alle projecten worden gezocht van een bepaalde leerkracht
+     * @param t De leerkracht object
+     * @return De lijst met al de StemProjecten die hij/zij opvolgd
+     */
     @Override
     public List<StemProject> findAllProjectsByTeacher(Teacher t) {
         StringBuilder query = new StringBuilder();
