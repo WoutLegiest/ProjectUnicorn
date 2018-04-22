@@ -25,4 +25,8 @@
     <orderEntry type="module" module-name="UseEJBClient" />
     <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
   </component>
+  <component name="sonarModuleSettings">
+    <option name="localAnalysisScripName" value="&lt;PROJECT&gt;" />
+    <option name="serverName" value="&lt;PROJECT&gt;" />
+  </component>
 </module>

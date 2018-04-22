@@ -11,6 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
@@ -88,29 +89,25 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     @Override
     public ProUser findProUser(String login) {
 
-        Query q = em.createNativeQuery("SELECT * FROM ProUser", ProUser.class);
+        Query q = em.createQuery("SELECT p FROM ProUser p WHERE p.user.login =: login", ProUser.class);
+        q.setParameter("login", login);
         List<ProUser> persons = q.getResultList();
 
-        for (ProUser proUser : persons) {
-            if (proUser.getUser().getLogin().equals(login)) {
-                return proUser;
-            }
-        }
-        return null;
+        if (persons.size() == 1)
+            return persons.get(0);
+        else return null;
     }
 
     @Override
     public Teacher findTeacher(String login) {
 
-        Query q = em.createNativeQuery("SELECT * FROM Teacher", Teacher.class);
+        Query q = em.createQuery("SELECT p FROM Teacher p WHERE p.user.login = : login", Teacher.class);
+        q.setParameter("login", login);
         List<Teacher> persons = q.getResultList();
 
-        for (Teacher teacher : persons) {
-            if (teacher.getUser().getLogin().equals(login)) {
-                return teacher;
-            }
-        }
-        return null;
+        if (persons.size() == 1)
+            return persons.get(0);
+        else return null;
 
     }
 
@@ -148,6 +145,26 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         if (userTokens.size() == 1)
             return userTokens.get(0);
         else return null;
+    }
+
+    public boolean checkTokenOnDate(String login){
+        Query q = em.createQuery("SELECT p FROM UserToken p WHERE p.loginName = : login", UserToken.class);
+        q.setParameter("login", login);
+        List<UserToken> userTokens = q.getResultList();
+
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+
+        if (userTokens.size() == 1){
+            java.sql.Date tokenDate = userTokens.get(0).getDate();
+
+            if(sqlDate.compareTo(tokenDate)==0)
+                return true;
+            else if (sqlDate.compareTo(tokenDate)<0)
+                return false;
+
+        }
+            return false;
     }
 
     //public boolean checkTokenOnDate(String login)
