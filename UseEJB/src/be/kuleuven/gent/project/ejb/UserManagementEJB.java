@@ -89,31 +89,36 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     @Override
     public ProUser findProUser(String login) {
 
-        Query q = em.createQuery("SELECT p FROM ProUser p WHERE p.user.login =: login", ProUser.class);
-        q.setParameter("login", login);
+        Query q = em.createNativeQuery("SELECT * FROM ProUser", ProUser.class);
         List<ProUser> persons = q.getResultList();
 
-        if (persons.size() == 1)
-            return persons.get(0);
-        else return null;
+        for (ProUser proUser : persons) {
+            if (proUser.getUser().getLogin().equals(login)) {
+                return proUser;
+            }
+        }
+        return null;
     }
 
     @Override
     public Teacher findTeacher(String login) {
 
-        Query q = em.createQuery("SELECT p FROM Teacher p WHERE p.user.login = : login", Teacher.class);
-        q.setParameter("login", login);
+        Query q = em.createNativeQuery("SELECT * FROM Teacher", Teacher.class);
         List<Teacher> persons = q.getResultList();
 
-        if (persons.size() == 1)
-            return persons.get(0);
-        else return null;
+        for (Teacher teacher : persons) {
+            if (teacher.getUser().getLogin().equals(login)) {
+                return teacher;
+            }
+        }
+        return null;
 
     }
 
     @Override
     public Student findStudent(String login) {
-        Query q = em.createNativeQuery("SELECT * FROM Teacher", Student.class);
+
+        Query q = em.createNativeQuery("SELECT * FROM Student", Teacher.class);
         List<Student> persons = q.getResultList();
 
         for (Student student : persons) {
@@ -122,6 +127,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
             }
         }
         return null;
+
     }
 
     @Override
