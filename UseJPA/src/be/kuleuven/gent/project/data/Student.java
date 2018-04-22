@@ -7,11 +7,12 @@ import java.io.Serializable;
 @Table(name="Student")
 public class Student implements Serializable {
 
-    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idStudent", nullable = false)
     private long idStudent;
 
+    @Id
     @OneToOne
     @JoinColumn(name="user_LoginName", nullable = false)
     private User user;
