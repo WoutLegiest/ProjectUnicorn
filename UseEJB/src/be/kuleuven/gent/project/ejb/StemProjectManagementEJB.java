@@ -1,5 +1,6 @@
 package be.kuleuven.gent.project.ejb;
 
+import be.kuleuven.gent.project.data.STEMMeasurement;
 import be.kuleuven.gent.project.data.StemProject;
 import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.data.User;
@@ -83,6 +84,30 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
                 em.createQuery(query.toString() , StemProject.class);
         return q.getResultList();
     }
+
+    @Override
+    public List<STEMMeasurement> findAllMeasurementsByStudent(User u) {
+        StringBuilder query = new StringBuilder();
+        query.append("SELECT m FROM STEMMeasurement m WHERE m.student.user.login = '");
+        query.append(u.getLogin());
+        query.append("'");
+        TypedQuery<STEMMeasurement> q =
+                em.createQuery(query.toString() , STEMMeasurement.class);
+        return q.getResultList();
+    }
+
+    @Override
+    public StemProject findProjectByUser(User user) {
+        StringBuilder query = new StringBuilder();
+        query.append("SELECT m FROM StemProject m WHERE m.student.user.login = '");
+        query.append(user.getLogin());
+        query.append("'");
+        TypedQuery<StemProject> q =
+                em.createQuery(query.toString() , StemProject.class);
+
+        return q.getResultList().get(0);
+    }
+
 
     //Methode aanmaken student projecten
 

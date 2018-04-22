@@ -18,12 +18,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/StemProjectManagementEJBLocal.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/UserManagementEJBLocal.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/LoginAndRegister.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/StemMeasurementRestService.java">
           <value>
             <set />
           </value>
