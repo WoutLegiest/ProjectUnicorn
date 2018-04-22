@@ -8,6 +8,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * In een STEMMeasurement object houden de info bij van een meting. Zo wordt de data van de meting bijgehouden door de idData op te slaan
+ * en het bovenliggende project, waarbij de meting is aangesloten, opgeslaan door de idProject.
+ * Dit object is specifiek voor STEM metingen te doen
+ */
 @XmlRootElement
 @Entity
 @Table(name="STEMMeasurement")

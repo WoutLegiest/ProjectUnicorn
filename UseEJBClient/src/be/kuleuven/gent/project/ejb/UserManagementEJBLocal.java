@@ -7,6 +7,9 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+/**
+ * Interface waarmee we een UserManagementEJB kunnen aanmaken
+ */
 @Local
 public interface UserManagementEJBLocal {
 

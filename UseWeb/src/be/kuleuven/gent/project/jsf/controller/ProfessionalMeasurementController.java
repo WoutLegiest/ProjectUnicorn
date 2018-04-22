@@ -10,6 +10,10 @@ import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Deze controller wordt aangesproken door de webpaginas. De controller zal op zijn beurt de correcte EJB aanroepen.
+ * De controller wordt gebruikt voor het beheer van de Professionele metingen
+ */
 @Named
 @ViewScoped
 public class ProfessionalMeasurementController implements Serializable {
@@ -25,16 +29,27 @@ public class ProfessionalMeasurementController implements Serializable {
     private ProfessionalMeasurement professionalMeasurement = new ProfessionalMeasurement();
     private Long measurementId;
 
+    /**
+     * Voor het vinden van een meting
+     */
     public void findMeasurement(){
         professionalMeasurement = professionalMeasurementEJB.findMeasurementById(measurementId);
     }
 
+    /**
+     * Het vinden van alle metingen van één gebruiker. De ProfessionalMeasurementEJB en userController worden gebruikt.
+     * @return De lijst van professionele metingen wordt teruggegeven
+     */
     public List<ProfessionalMeasurement> findAllMeasurementsByUser() {
         userController.findUser();
         User user = userController.getLoggedInUser();
         return professionalMeasurementEJB.findAllMeasurementsByUser(user);
     }
 
+    /**
+     * Voor het aanpassen van een meting, professionalMeasurementEJB wordt gebruikt
+     * @return Een link naar de volgende pagina
+     */
     public String editMeasurement(){
         int userCheck = checkUser();
         if (userCheck == 0){
@@ -47,6 +62,10 @@ public class ProfessionalMeasurementController implements Serializable {
         return "ownMeasurements?faces-redirect=true;";
     }
 
+    /**
+     * Voor het verwijderen van een meting, professionalMeasurementEJB wordt gebruikt
+     * @return Een link naar de volgende pagina
+     */
     public String deleteMeasurement(){
         int userCheck = checkUser();
         if (userCheck == 0){
@@ -59,12 +78,21 @@ public class ProfessionalMeasurementController implements Serializable {
         return "ownMeasurements?faces-redirect=true;";
     }
 
+    /**
+     * Omleiding van een gebruiker
+     * @return De link naar de volgende pagina
+     */
     public String redirectUser(){
         int userCheck = checkUser();
         if (userCheck == 2) return "/Admin/projects?faces-redirect=true;";
         return "projects?faces-redirect=true;";
     }
 
+    /**
+     * Het controleren van een gebruiker. Er wordt gecontroleerd of de gebruiker een Admin is, een proUser die een bijhorende meting heeft gedaan
+     * of een andere proUser.
+     * @return een int die het type van de gebruiker weerspiegeld
+     */
     public int checkUser(){
         userController.findUser();
         User loggedInUser = userController.getLoggedInUser();
@@ -78,7 +106,8 @@ public class ProfessionalMeasurementController implements Serializable {
         return 1;
     }
 
-    public ProfessionalMeasurement getProfessionalMeasurement() {
+
+    public ProfessionalMeasurement getProfessionalMeasurement(){
         return professionalMeasurement;
     }
 

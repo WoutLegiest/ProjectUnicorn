@@ -5,6 +5,9 @@ import be.kuleuven.gent.project.data.Data;
 import javax.ejb.Local;
 import java.util.ArrayList;
 
+/**
+ * Interface waarmee we een DataManagementEJB kunnen aanmaken
+ */
 @Local
 public interface DataManagementEJBLocal {
 

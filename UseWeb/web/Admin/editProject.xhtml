@@ -14,8 +14,8 @@
 
     <ui:define name="meta">
         <f:metadata>
-            <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}" />
-            <f:viewAction action="#{spotterProjectController.findProject}" />
+            <f:viewParam name="professionalProject" value="#{professionalProjectController.projectId}" />
+            <f:viewAction action="#{professionalProjectController.findProject}" />
         </f:metadata>
     </ui:define>
 
@@ -33,28 +33,28 @@
                 <h:outputLabel styleClass="col-3"
                                value="Project name" />
                 <h:inputText styleClass="right col-9"
-                             value="#{spotterProjectController.project.name}"
+                             value="#{professionalProjectController.project.name}"
                              required="true"
                              a:placeholder="project name" />
 
                 <h:outputLabel styleClass="col-3"
                                value="Latitude" />
                 <h:inputText styleClass="right col-9"
-                             value="#{spotterProjectController.project.latitude}"
+                             value="#{professionalProjectController.project.latitude}"
                              required="true"
                              a:placeholder="latitude" />
 
                 <h:outputLabel styleClass="col-3"
                                value="Longitude" />
                 <h:inputText styleClass="right col-9"
-                             value="#{spotterProjectController.project.longitude}"
+                             value="#{professionalProjectController.project.longitude}"
                              required="true"
                              a:placeholder="longitude" />
 
                 <h:outputLabel styleClass="col-3"
                                value="Location" />
                 <h:inputText styleClass="right col-9"
-                             value="#{spotterProjectController.project.location}"
+                             value="#{professionalProjectController.project.location}"
                              required="true"
                              a:placeholder="location" />
 
@@ -63,13 +63,13 @@
                 <h:inputTextarea rows="4"
                                  name="description"
                                  requiredMessage="description"
-                                 value="#{spotterProjectController.project.description}"
+                                 value="#{professionalProjectController.project.description}"
                                  class="right col-9"
                                  autocomplete="false"
                                  a:placeholder="description"/>
 
                 <h:commandButton styleClass="submit col-12"
-                                 action="#{spotterProjectController.editProject}"
+                                 action="#{professionalProjectController.editProject}"
                                  value="Submit"/>
             </h:form>
         </div>

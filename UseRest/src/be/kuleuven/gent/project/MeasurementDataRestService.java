@@ -19,6 +19,9 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Een Rest service voor het verwerken van alle Professionele Metingen
+ */
 @Path("ProfMeasurementData")
 @Produces(MediaType.TEXT_PLAIN)
 public class MeasurementDataRestService {
@@ -30,6 +33,12 @@ public class MeasurementDataRestService {
     @EJB
     private UserManagementEJBLocal umejbl;
 
+    /**
+     * Alle metingen van een specifiek project worden opgevraagd. Het gebruikt ProfessionalProjectManagementEJB en
+     * ProfessionalMeasurementManagementEJB
+     * @param projectID een project ID voor het zoeken
+     * @return Response, in JSON vorm, van alle metingen
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/all")
@@ -39,6 +48,12 @@ public class MeasurementDataRestService {
         return Response.ok(spotterMeasurements, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * Voor het ophalen van alle metingen door een bepaalde gebruiker.
+     * Gebruikt UserManagementEJB en ProfessionalMeasurementManagementEJB
+     * @param userCredentials De gevens van de gebruiker
+     * @return Response, in JSON vorm, van alle metingen
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/own")
@@ -52,6 +67,11 @@ public class MeasurementDataRestService {
         return Response.ok(spotterMeasurements, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * Vraag de Data op van een bepaalde meting. Gebruikt ProfessionalMeasurementManagementEJB
+     * @param measurementId De ID van de meting
+     * @return Response, in JSON vorm, van de Data. Er wordt gebruikt gemaakt van de DataAdapter
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/data")
@@ -63,6 +83,11 @@ public class MeasurementDataRestService {
         return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * Haalt info uit de doorgegeven string
+     * @param info string waaruit de informatie wordt gehaald
+     * @return De eigenschaooen van de user worden in een lijst doorgegeven
+     */
     private ArrayList<String> contractInformation(String info) {
         String userName = null;
         String tokenObj;

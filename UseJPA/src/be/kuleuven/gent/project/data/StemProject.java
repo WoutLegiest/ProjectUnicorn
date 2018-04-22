@@ -4,6 +4,11 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+/**
+ * Dit StemProject object is gemaakt om een Stem Project aan te maken. Dit bevat algemene info over het project en de
+ * ID van dit project is dan te vinden in de STEMMeasurement objecten. Anders dan de professionele objecten bevatten deze projecten
+ * ook een klasnaam en een leekracht.
+ */
 @XmlRootElement
 @Entity
 @Table(name = "StemProject")

@@ -4,6 +4,11 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+/**
+ * Object die een profesioneel project zal bijhouden. De ID van dit object zal terug te vinden zijn als attribuut
+ * van een ProfessionalMeaserment object. Dit object bevat voor de rest veel info over het project, zoals de lengte- en breedtegraad en
+ * info en beschrijvingen over de locatie
+ */
 @XmlRootElement
 @Entity
 @Table(name="ProfessionalProject")

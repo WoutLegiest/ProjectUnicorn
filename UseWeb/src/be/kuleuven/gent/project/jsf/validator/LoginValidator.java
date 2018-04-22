@@ -12,6 +12,9 @@ import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import java.util.List;
 
+/**
+ * Deze validator controleert of de opgegeven loginNaam niet als is gebruikt door een andere gebruiker
+ */
 @FacesValidator("loginValidator")
 public class LoginValidator implements Validator {
 

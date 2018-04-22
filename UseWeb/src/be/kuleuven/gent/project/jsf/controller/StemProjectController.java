@@ -12,6 +12,10 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
+/**
+ * Deze controller wordt aangesproken door de webpaginas. De controller zal op zijn beurt de correcte EJB aanroepen.
+ * De controller dient om alle StemProjecten te beheren
+ */
 @Named
 @Stateless
 public class StemProjectController implements Serializable {
@@ -31,16 +35,27 @@ public class StemProjectController implements Serializable {
     public StemProjectController() {
     }
 
+    /**
+     * Vinden van welke Teacher er is ingelogd
+     * @return Het teacher object dat is ingelogd
+     */
     public Teacher findTeacher(){
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         String teacherLogin = ec.getRemoteUser();
         return userEJB.findTeacher(teacherLogin);
     }
 
+    /**
+     * Vinden van alle projecten die bij een bepaalde leerkracht horen. Gebruikt de StemProjectManagementEJB
+     */
     public void findAllProjectsByTeacher(){
         stemProjectEJB.findAllProjectsByTeacher(findTeacher());
     }
 
+    /**
+     * Aanmaken van een nieuw project, gebruikt de StemProjectManagementEJB
+     * @return Een string "projects"
+     */
     public String newProject(){
         project.setTeacher(findTeacher());
         stemProjectEJB.createProject(project, numberOfGroups);

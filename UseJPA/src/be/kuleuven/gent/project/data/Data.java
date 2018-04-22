@@ -4,6 +4,10 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+/**
+ * In het object Data worden de waarden van de metingen en de verwerkingen van de metingen opgeslaan.  Ze worden opgeslaan in een byte array.
+ * We gebruiken de ID als primaire key
+ */
 @XmlRootElement
 @Entity
 @Table(name="Data")

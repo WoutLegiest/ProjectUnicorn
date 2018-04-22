@@ -1,5 +1,8 @@
 package be.kuleuven.gent.project.Support;
 
+/**
+ * Een lichtere versie van de gebruiker, gebruikt in de applicatie
+ */
 public class UserLight {
     private long id;
     private String firstName;

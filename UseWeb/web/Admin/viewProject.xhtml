@@ -14,8 +14,8 @@
 
     <ui:define name="meta">
         <f:metadata>
-            <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}" />
-            <f:viewAction action="#{spotterProjectController.findProject}" />
+            <f:viewParam name="professionalProject" value="#{professionalProjectController.projectId}" />
+            <f:viewAction action="#{professionalProjectController.findProject}" />
         </f:metadata>
     </ui:define>
 
@@ -23,13 +23,13 @@
 
         <div class="col-12 section left">
 
-            <h1><h:outputLabel value="#{spotterProjectController.project.name}"/></h1>
+            <h1><h:outputLabel value="#{professionalProjectController.project.name}"/></h1>
 
-            <p><h:outputLabel value="#{spotterProjectController.project.location}"/></p>
+            <p><h:outputLabel value="#{professionalProjectController.project.location}"/></p>
 
             <div id="map"></div>
 
-            <h:dataTable value="#{spotterProjectController.findAllMeasurements()}"
+            <h:dataTable value="#{professionalProjectController.findAllMeasurements()}"
                          var="p"
                          styleClass="projects-table"
                          headerClass="projects-table-header"

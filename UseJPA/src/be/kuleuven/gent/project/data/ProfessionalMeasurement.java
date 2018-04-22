@@ -5,6 +5,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Een ProfessionalMeasurement object is een meting. Deze meting bevat een Data object en info over de meting.
+ * De attributen van dit object staan hieronder opgesomd
+ */
 @XmlRootElement
 @Entity
 @Table(name="ProfessionalMeasurement")

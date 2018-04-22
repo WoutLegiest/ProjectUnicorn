@@ -10,6 +10,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * Deze controller wordt aangesproken door de webpaginas. De controller zal op zijn beurt de correcte EJB aanroepen.
+ * De controller dient op nieuwe gebruiker aan te maken
+ */
 @Named
 @ViewScoped
 public class RegisterController implements Serializable {
@@ -25,6 +29,10 @@ public class RegisterController implements Serializable {
 
     private User usr = new User();
 
+    /**
+     * Voor het registeren van een gebruiker. Gebruikt de UserManagementEJB op de users aan te maken.
+     * @return
+     */
     public String register() {
 
         ejb.createUser(usr);
@@ -38,6 +46,9 @@ public class RegisterController implements Serializable {
         return "regdone";
     }
 
+    /**
+     * Deze gebruikt de UserManagementEJB om alle gebruiker te zoeken.
+     */
     public void findAllUsers(){
         users = ejb.findAllUsers();
     }

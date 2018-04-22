@@ -8,6 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Een Adapter om de data die binnenkomt van de applicatie op een goede manier te werken.
+ */
 public class DataAdapter {
 
     private long id;
@@ -15,7 +18,6 @@ public class DataAdapter {
     private ArrayList<Float>xData;
     private ArrayList<Float>yData;
     private ArrayList<Float>zData;
-
 
     private ArrayList<Float>xR1;
     private ArrayList<Float>xR2;

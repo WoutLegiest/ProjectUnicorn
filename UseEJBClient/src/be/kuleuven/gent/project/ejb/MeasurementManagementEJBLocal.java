@@ -4,6 +4,9 @@ import javax.ejb.Local;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Interface waarmee we een MeasurementManagementEJB kunnen aanmaken
+ */
 @Local
 public interface MeasurementManagementEJBLocal {
 

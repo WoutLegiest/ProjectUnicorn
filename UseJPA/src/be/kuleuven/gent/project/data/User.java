@@ -4,6 +4,10 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
+/**
+ * Dit is het basis object voor een gebruiker in op te slaan. Hierin worden alle informatie
+ * opgeslaan die voor iederen gebruiker van toepassing zijn.
+ */
 @XmlRootElement
 @Entity
 @Table(name="user")
@@ -11,7 +15,7 @@ import java.io.Serializable;
 public class User implements Serializable {
     private static final long serialVersionUID = 4990525852036485337L;
 
-    //@Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idUser", nullable = false, length = 16)
     private Long id;

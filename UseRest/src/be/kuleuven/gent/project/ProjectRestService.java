@@ -13,12 +13,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+/**
+ * EJB controller voor het aanmaken van een project
+ */
 @Path("project_service")
 public class ProjectRestService {
 
     @EJB
     private ProfessionalProjectManagementEJBLocal ppEJB;
 
+    /**
+     * Er wordt een project aangemaakt en op de database gezet
+     * @param jsonInput De input data uit de applicatie
+     * @return Response, in JSON vorm, met het net aangemaakte project
+     */
     @POST
     @Path("/project_registration")
     @Consumes({MediaType.APPLICATION_JSON})

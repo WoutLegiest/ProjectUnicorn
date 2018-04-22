@@ -3,6 +3,10 @@ package be.kuleuven.gent.project.data;
 import javax.persistence.*;
 import java.io.Serializable;
 
+/**
+ * Dit is een object van een ProUser gebruiker, deze geeft nog extra attributen aan de gewone {@link #user}. De primaire sleutel
+ * is hier de loginName
+ */
 @Entity
 @Table(name="ProUser")
 public class ProUser implements Serializable {

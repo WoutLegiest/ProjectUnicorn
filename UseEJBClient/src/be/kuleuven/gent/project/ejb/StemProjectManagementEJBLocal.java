@@ -8,6 +8,9 @@ import be.kuleuven.gent.project.data.User;
 import javax.ejb.Local;
 import java.util.List;
 
+/**
+ * Interface waarmee we een StemProjectManagementEJB kunnen aanmaken
+ */
 @Local
 public interface StemProjectManagementEJBLocal {
 
