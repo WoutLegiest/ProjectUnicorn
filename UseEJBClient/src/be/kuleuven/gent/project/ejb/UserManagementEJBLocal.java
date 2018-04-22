@@ -3,12 +3,16 @@ package be.kuleuven.gent.project.ejb;
 import be.kuleuven.gent.project.data.*;
 
 import javax.ejb.Local;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @Local
 public interface UserManagementEJBLocal {
 
     User createUser(User user);
+
+    String encodeSHA256(String password) throws UnsupportedEncodingException, NoSuchAlgorithmException;
 
     ProUser createProUser(User user);
 

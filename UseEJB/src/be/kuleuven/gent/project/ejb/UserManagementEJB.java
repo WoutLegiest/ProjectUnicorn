@@ -45,6 +45,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         return user;
     }
 
+    @Override
     public String encodeSHA256(String password) throws UnsupportedEncodingException, NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         md.update(password.getBytes("UTF-8"));

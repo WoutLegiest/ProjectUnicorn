@@ -12,6 +12,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 
 @Named
 @Stateless
@@ -27,13 +29,8 @@ public class UserController implements Serializable  {
     private String organisation;
     private String tag;
 
-    public User getLoggedInUser() {
-        return loggedInUser;
-    }
-
-    public void setLoggedInUser(User loggedInUser) {
-        this.loggedInUser = loggedInUser;
-    }
+    private String oldPassword;
+    private String newPassword;
 
     public void logout() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
@@ -78,6 +75,18 @@ public class UserController implements Serializable  {
         }
     }
 
+    public String changePassword() throws UnsupportedEncodingException, NoSuchAlgorithmException {
+
+        String oldhPassword = userEJB.encodeSHA256(oldPassword);
+        String newhPassword = userEJB.encodeSHA256(newPassword);
+        if (loggedInUser.gethPassword().equals(oldhPassword)) {
+            loggedInUser.sethPassword(newhPassword);
+            userEJB.updateDB(loggedInUser);
+            return "accountSettings?faces-redirect=true;";
+        }
+        return "changePasswordError?faces-redirect=true;";
+    }
+
     public String getOrganisation() {
         return organisation;
     }
@@ -92,6 +101,30 @@ public class UserController implements Serializable  {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public User getLoggedInUser() {
+        return loggedInUser;
+    }
+
+    public void setLoggedInUser(User loggedInUser) {
+        this.loggedInUser = loggedInUser;
+    }
+
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 }
 
