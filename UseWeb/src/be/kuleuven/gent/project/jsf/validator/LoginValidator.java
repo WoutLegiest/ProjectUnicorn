@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 /**
- * Deze validator controleert of de opgegeven loginNaam niet als is gebruikt door een andere gebruiker
+ * Deze validator controleert of de opgegeven gebruikersnaam uniek is
  */
 @FacesValidator("loginValidator")
 public class LoginValidator implements Validator {

@@ -9,7 +9,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 /**
- * Het controleerd of de opgegeven wachtwoorden, tijdens het aanmaken van een gebruiker, wel identiek zijn
+ * Het controleert of beide opgegeven wachtwoorden geleik zijn.
  */
 @FacesValidator("passwordValidator")
 public class PasswordValidator implements Validator {

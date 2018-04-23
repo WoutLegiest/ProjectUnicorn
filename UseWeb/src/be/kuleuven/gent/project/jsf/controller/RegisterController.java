@@ -31,7 +31,7 @@ public class RegisterController implements Serializable {
 
     /**
      * Voor het registeren van een gebruiker. Gebruikt de UserManagementEJB op de users aan te maken.
-     * @return
+     * @return De webpagina die bevestigd dat er een gebruiker is aangemaakt.
      */
     public String register() {
 
@@ -47,7 +47,7 @@ public class RegisterController implements Serializable {
     }
 
     /**
-     * Deze gebruikt de UserManagementEJB om alle gebruiker te zoeken.
+     * Deze gebruikt de UserManagementEJB om alle gebruikers te zoeken.
      */
     public void findAllUsers(){
         users = ejb.findAllUsers();

@@ -90,7 +90,7 @@ public class UserController implements Serializable  {
 
     /**
      * Voor het veranderen van het wachtwoord van een gebruiker, gebruikt de UserManagementEJB
-     * @return een link naar de volgende pagina
+     * @return een link naar de volgende webpagina
      * @throws UnsupportedEncodingException
      * @throws NoSuchAlgorithmException
      */

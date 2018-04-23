@@ -89,8 +89,8 @@ public class ProfessionalMeasurementController implements Serializable {
     }
 
     /**
-     * Het controleren van een gebruiker. Er wordt gecontroleerd of de gebruiker een Admin is, een proUser die een bijhorende meting heeft gedaan
-     * of een andere proUser.
+     * Het controleren van een gebruiker. Er wordt gecontroleerd of de gebruiker een Admin is, een proUser
+     * die een bijhorende meting heeft gedaan of een andere proUser.
      * @return een int die het type van de gebruiker weerspiegeld
      */
     public int checkUser(){

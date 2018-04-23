@@ -116,7 +116,7 @@ public class ProfessionalProjectManagementEJB implements ProfessionalProjectMana
     }
 
     /**
-     * Methode op project objecten een te pakken in de database
+     * Methode op project objecten in te pakken in de database
      * @param t
      * @param <T>
      */

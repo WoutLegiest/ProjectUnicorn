@@ -33,7 +33,8 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
     }
 
     /**
-     * Er worden een aantal gebruiker aangemaakt indivduele projecten. Deze worden op de database gezet
+     * Er worden een aantal gebruikers aangemaakt voor indivduele projecten.
+     * Deze worden op de database gezet.
      * @param sp
      * @param aantal Het aantal groepjes
      */
@@ -58,16 +59,8 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
 
             userman.createUser(user);
             userman.createStudent(user, school,klas,i);
-
-            //Aanpassen JPA
-
-
-
         }
-
-
     }
-
 
     /**
      * Alle projecten worden gezocht van een bepaalde leerkracht

@@ -13,7 +13,7 @@ import javax.inject.Named;
 import java.io.Serializable;
 
 /**
- * Deze controller wordt aangesproken door de webpaginas. De controller zal op zijn beurt de correcte EJB aanroepen.
+ * Deze controller wordt aangesproken door de webpagina's. De controller zal op zijn beurt de correcte EJB aanroepen.
  * De controller dient om alle StemProjecten te beheren
  */
 @Named

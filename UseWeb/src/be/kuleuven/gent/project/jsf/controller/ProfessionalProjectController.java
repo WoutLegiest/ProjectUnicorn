@@ -11,7 +11,7 @@ import java.io.*;
 import java.util.List;
 
 /**
- * Deze controller wordt aangesproken door de webpaginas. De controller zal op zijn beurt de correcte EJB aanroepen.
+ * Deze controller wordt aangesproken door de webpagina's. De controller zal op zijn beurt de correcte EJB aanroepen.
  * Deze controller is gebruikt om professionele projecten te beheren
  */
 @Named
@@ -45,7 +45,7 @@ public class ProfessionalProjectController implements Serializable{
     }
 
     /**
-     * het vinden van een project op basis van zijn projectID. Mbv de ProfessionalProjectManagementEJB
+     * Het vinden van een project op basis van zijn projectID. Mbv de ProfessionalProjectManagementEJB
      */
     public void findProject() {
         project = ProfessionalProjectEJB.findProject(projectId);

@@ -235,7 +235,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
 
     /**
      * Check of de token ouder is dan één dag
-     * @param login De loginnaam van een user
+     * @param login De gebruikersnaam van een user
      * @return een boolean, true als ze niet ouder zijn dan een dag en false als ze wel ouder zijn dan een dag
      */
     public boolean checkTokenOnDate(String login){
