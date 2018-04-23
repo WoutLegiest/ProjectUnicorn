@@ -19,7 +19,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("measurement_service")
+@Path("stem_measurement_service")
 public class StemMeasurementRestService {
 
     @EJB

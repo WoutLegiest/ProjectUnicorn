@@ -23,7 +23,7 @@ public class ProjectRestService {
     @Path("/project_registration")
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
-    public Response analyzeData(String jsonInput)  {
+    public Response generateProject(String jsonInput)  {
 
         try {
             JSONObject jsonObject = new JSONObject(jsonInput);
