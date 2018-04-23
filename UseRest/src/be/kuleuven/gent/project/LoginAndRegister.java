@@ -17,6 +17,9 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * De klasse die zorgt dat we kunnen inloggen op de applicatie
+ */
 @Path("login")
 @Produces(MediaType.TEXT_PLAIN)
 public class LoginAndRegister {
@@ -24,6 +27,11 @@ public class LoginAndRegister {
     @EJB
     private UserManagementEJBLocal umejbl;
 
+    /**
+     * Zal controleren of de ingevoerde gegevens correct zijn en een ProUser gebruiker zijn in de databank
+     * @param userCredentials Er worden eigenschappen van de user doorgestuurd
+     * @return Een response met daarin de data van de User (indien correct), anders een bericht met daarin de begane fout
+     */
     @Path("/Pro")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -63,6 +71,11 @@ public class LoginAndRegister {
 
     }
 
+    /**
+     * Zal controleren of de ingevoerde gegevens correct zijn en een student gebruiker zijn in de databank
+     * @param userCredentials Er worden eigenschappen van de user doorgestuurd
+     * @return Een response met daarin de data van de User (indien correct), anders een bericht met daarin de begane fout
+     */
     @Path("/Student")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -102,6 +115,11 @@ public class LoginAndRegister {
 
     }
 
+    /**
+     * Zal de token van een gebruiker gaan opvragen.
+     * @param userCredentials Er worden eigenschappen van de user doorgegeven
+     * @return er wordt een response gemaakt met daarin de userToken
+     */
     @Path("/token")
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -110,7 +128,6 @@ public class LoginAndRegister {
 
         String userName = info.get(0);
         String hPasswd = info.get(1);
-
 
         StringBuilder json =new StringBuilder();
         Genson genson = new Genson();
@@ -126,6 +143,10 @@ public class LoginAndRegister {
 
     }
 
+    /**
+     * Alle projecten worden opgevraagd in de databank mbv een UserManagementEJB
+     * @return een response, in JSON vorm, met daarin alle projecten
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/all")

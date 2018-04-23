@@ -21,6 +21,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * REST Service voor het verwerken van metingen
+ */
 @Path("measurement_service")
 public class MeasurementRestService {
 
@@ -42,6 +45,11 @@ public class MeasurementRestService {
     @EJB
     private ProfessionalMeasurementManagementEJBLocal professionalMeasurementManagementEJBLocal;
 
+    /**
+     * Methode die de data ontvangt van de applicatie, deze klaarmaakt voor het verwerken via Octave
+     * @param jsonInput De input data uit de applicatie
+     * @return Response, in JSON vorm, waarin een dataAdapter zit met daarin alle data. Zowel de gemeten data als de verwerkte data.
+     */
     @POST
     @Path("/data_process")
     @Consumes({MediaType.APPLICATION_JSON})
@@ -91,6 +99,11 @@ public class MeasurementRestService {
         }
     }
 
+    /**
+     * Er wordt een professionele meting aangemaakt en op de server gezet
+     * @param jsonInput De input data uit de applicatie
+     * @return Response, in JSON vorm, van het aangemaakte professionele meting
+     */
     @POST
     @Path("/measurement_registration")
     @Consumes({MediaType.APPLICATION_JSON})

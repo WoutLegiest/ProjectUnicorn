@@ -15,6 +15,10 @@ import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * Deze controller wordt aangesproken door de webpaginas. De controller zal op zijn beurt de correcte EJB aanroepen.
+ * De controller dient op de Users te beheren
+ */
 @Named
 @Stateless
 public class UserController implements Serializable  {
@@ -32,6 +36,9 @@ public class UserController implements Serializable  {
     private String oldPassword;
     private String newPassword;
 
+    /**
+     * Voor het uit loggen van elke gebruiker
+     */
     public void logout() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         ec.invalidateSession();
@@ -42,6 +49,9 @@ public class UserController implements Serializable  {
         }
     }
 
+    /**
+     * Voor het vinden welke gebruiker er op dat moment is ingelogd. Er wordt de UserManagementEJB gebruikt
+     */
     public void findUser() {
         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
         String userName = ec.getRemoteUser();
@@ -61,6 +71,9 @@ public class UserController implements Serializable  {
         }
     }
 
+    /**
+     * Het aanpassen van de eigenschappen van een gebruiker. De UserManagementEJB wordt gebruikt.
+     */
     public void changeData() {
         userEJB.updateDB(loggedInUser);
 
@@ -75,6 +88,12 @@ public class UserController implements Serializable  {
         }
     }
 
+    /**
+     * Voor het veranderen van het wachtwoord van een gebruiker, gebruikt de UserManagementEJB
+     * @return een link naar de volgende pagina
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     */
     public String changePassword() throws UnsupportedEncodingException, NoSuchAlgorithmException {
 
         String oldhPassword = userEJB.encodeSHA256(oldPassword);

@@ -5,6 +5,9 @@ import be.kuleuven.gent.project.data.*;
 import javax.ejb.Local;
 import java.util.List;
 
+/**
+ * Interface waarmee we een ProfessionalMeasurementManagementEJB kunnen aanmaken
+ */
 @Local
 public interface ProfessionalMeasurementManagementEJBLocal {
 

@@ -15,6 +15,9 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * REST service voor het ophalen van informatie over projecten
+ */
 @Path("ProfProjectData")
 @Produces(MediaType.TEXT_PLAIN)
 public class SpotterProjectData {
@@ -26,6 +29,12 @@ public class SpotterProjectData {
     @EJB
     private UserManagementEJBLocal umejbl;
 
+    /**
+     *Er worden projecten gezocht op basis van de breedte- en lengtegraad en deze worden teruggeven in een JSON vorm
+     * @param latitude De breedtegraad
+     * @param longitude De lengtegraad
+     * @return String met daarin alle locaties, in JSON vorm
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public String getProjectLocations(@HeaderParam("latitude") String latitude, @HeaderParam("longitude") String longitude){
@@ -39,6 +48,10 @@ public class SpotterProjectData {
         return json.toString();
     }
 
+    /**
+     * Alle projecten worden opgevraagd
+     * @return een Response, in JSON vorm, met daarin alle projecten
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/all")
@@ -48,6 +61,10 @@ public class SpotterProjectData {
         return Response.ok(projects, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * alle project namen worden opgevraagd
+     * @return een Response, in JSON vorm, met daarin alle projecten titels
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/titles")
@@ -61,12 +78,5 @@ public class SpotterProjectData {
         return Response.ok(projectTitles, MediaType.APPLICATION_JSON).build();
     }
 
-    @PUT
-    @Produces({MediaType.APPLICATION_JSON})
-    @Path("/newProject")
-    public Response newProject( ){
-
-        return null;
-    }
 
 }

@@ -8,6 +8,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.sql.Date;
 
+/**
+ * Hierin worden de tokens van de gebruiker opgeslaan, deze token worden gebruikt in de applicatie.
+ */
 @XmlRootElement
 @Entity
 @Table(name = "UserTokens")

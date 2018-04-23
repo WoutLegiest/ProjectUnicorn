@@ -6,6 +6,9 @@ import be.kuleuven.gent.project.data.ProfessionalProject;
 import javax.ejb.Local;
 import java.util.List;
 
+/**
+ * Interface waarmee we een ProfessionalProjectManagementEJB kunnen aanmaken
+ */
 @Local
 public interface ProfessionalProjectManagementEJBLocal {
 

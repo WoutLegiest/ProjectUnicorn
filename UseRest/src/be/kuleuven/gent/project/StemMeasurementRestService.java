@@ -29,6 +29,11 @@ public class StemMeasurementRestService {
     @EJB
     private UserManagementEJBLocal umejbl;
 
+    /**
+     * Alle metingen van een bepaalde gebruiker worden opgevraagd
+     * @param userCredentials De gegevens van de gebruiker
+     * @return Response, met daarin alle metingen van die gebruiker
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/own")
@@ -42,6 +47,11 @@ public class StemMeasurementRestService {
         return Response.ok(stemMeasurements, MediaType.APPLICATION_JSON).build();
     }
 
+    /**
+     * Projecten van een gebruiker worden opgezocht
+     * @param userCredentials De gegevens van de gebruiker
+     * @return Response, met daarin het gezochte project
+     */
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/project")
@@ -56,7 +66,11 @@ public class StemMeasurementRestService {
     }
 
 
-
+    /**
+     * Haalt info uit de doorgegeven string
+     * @param info string waaruit de informatie wordt gehaald
+     * @return De eigenschaooen van de user worden in een lijst doorgegeven
+     */
     private ArrayList<String> contractInformation(String info) {
         String userName = null;
         String tokenObj;

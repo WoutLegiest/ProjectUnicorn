@@ -14,8 +14,8 @@
     </title>
 
     <f:metadata>
-        <f:viewParam name="professionalProject" value="#{spotterProjectController.projectId}"/>
-        <f:viewAction action="#{spotterProjectController.findProject}"/>
+        <f:viewParam name="professionalProject" value="#{professionalProjectController.projectId}"/>
+        <f:viewAction action="#{professionalProjectController.findProject}"/>
     </f:metadata>
 </h:head>
 
@@ -25,15 +25,15 @@
 
         <h1>Are you sure you want to delete this project?</h1>
 
-        <h3><h:outputLabel value="#{spotterProjectController.project.name}"/></h3>
+        <h3><h:outputLabel value="#{professionalProjectController.project.name}"/></h3>
 
-        <p><h:outputLabel value="#{spotterProjectController.project.location}"/></p>
+        <p><h:outputLabel value="#{professionalProjectController.project.location}"/></p>
 
 
         <h:form>
 
             <h:commandButton styleClass="submit col-5"
-                             action="#{spotterProjectController.deleteProject}"
+                             action="#{professionalProjectController.deleteProject}"
                              value="Yes"/>
 
             <h:commandButton styleClass="submit col-5"

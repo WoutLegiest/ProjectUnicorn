@@ -11,6 +11,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * De standaard ApplicationConfig klasse voor het gebruik van een REST service
+ */
 @ApplicationPath("rest_unicorn")
 public class ApplicationConfig extends Application {
 

@@ -9,6 +9,9 @@ import javax.faces.validator.ValidatorException;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 
+/**
+ * Deze Validator zal checken of het opgegeven email adress wel voldoen aan de correcte syntax
+ */
 @FacesValidator("emailValidator")
 public class EmailValidator implements Validator {
 

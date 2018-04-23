@@ -1,5 +1,8 @@
 package be.kuleuven.gent.project.Support;
 
+/**
+ * Een lichtere versie van de Student
+ */
 public class UserLightStudent extends UserLight {
     private String school;
     private String className;

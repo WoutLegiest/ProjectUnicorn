@@ -71,7 +71,7 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
 
     /**
      * Alle projecten worden gezocht van een bepaalde leerkracht
-     * @param t De leerkracht object
+     * @param t Het leerkracht object
      * @return De lijst met al de StemProjecten die hij/zij opvolgd
      */
     @Override
@@ -85,6 +85,11 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
         return q.getResultList();
     }
 
+    /**
+     * Er worden metingen gezocht op basis van de student
+     * @param u de user die wordt gebruikt om te zoeken
+     * @return een lijst met daarin alle metingen van de student
+     */
     @Override
     public List<STEMMeasurement> findAllMeasurementsByStudent(User u) {
         StringBuilder query = new StringBuilder();
@@ -96,6 +101,11 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
         return q.getResultList();
     }
 
+    /**
+     * De projecten van een user worden gezocht
+     * @param user de user die wordt gebruikt om te zoeken
+     * @return Het project waaraan de user heeft meegewerkt
+     */
     @Override
     public StemProject findProjectByUser(User user) {
         StringBuilder query = new StringBuilder();
