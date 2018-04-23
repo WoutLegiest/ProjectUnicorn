@@ -33,7 +33,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/MeasurementDataRestService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/MeasurementRestService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/ProjectRestService.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/SpotterProjectData.java">
           <value>
             <set />
           </value>

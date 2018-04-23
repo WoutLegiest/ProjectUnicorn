@@ -44,7 +44,6 @@ public class ProjectRestService {
 
 
             ProfessionalProject profProject = ppEJB.makeProject(name, location, latitude, longitude, description);
-
             return Response.ok(profProject,MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             e.printStackTrace();
