@@ -31,6 +31,8 @@ public interface UserManagementEJBLocal {
 
     Student findStudent(String login);
 
+    List<Student> findAllStudentsForProject(StemProject project);
+
     List<User> findAllUsers();
 
     UserToken createToken(User user);

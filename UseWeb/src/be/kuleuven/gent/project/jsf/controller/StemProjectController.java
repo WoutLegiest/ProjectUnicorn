@@ -1,6 +1,7 @@
 package be.kuleuven.gent.project.jsf.controller;
 
 import be.kuleuven.gent.project.data.StemProject;
+import be.kuleuven.gent.project.data.Student;
 import be.kuleuven.gent.project.data.Teacher;
 import be.kuleuven.gent.project.ejb.StemProjectManagementEJBLocal;
 import be.kuleuven.gent.project.ejb.UserManagementEJBLocal;
@@ -11,6 +12,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Deze controller wordt aangesproken door de webpagina's. De controller zal op zijn beurt de correcte EJB aanroepen.
@@ -48,8 +50,15 @@ public class StemProjectController implements Serializable {
     /**
      * Vinden van alle projecten die bij een bepaalde leerkracht horen. Gebruikt de StemProjectManagementEJB
      */
-    public void findAllProjectsByTeacher(){
-        stemProjectEJB.findAllProjectsByTeacher(findTeacher());
+    public List<StemProject> findAllProjectsByTeacher(){
+        return stemProjectEJB.findAllProjectsByTeacher(findTeacher());
+    }
+
+    /**
+     * Vinden van alle studenten die aan een gegeven project deelnemen.
+     */
+    public List<Student> findStudentsForProject(){
+        return userEJB.findAllStudentsForProject(project);
     }
 
     /**
@@ -59,7 +68,14 @@ public class StemProjectController implements Serializable {
     public String newProject(){
         project.setTeacher(findTeacher());
         stemProjectEJB.createProject(project, numberOfGroups);
-        return "projects";
+        return "projects?faces-redirect=true;";
+    }
+
+    /**
+     * Het vinden van een project op basis van zijn projectID.
+     */
+    public void findProject() {
+        project = stemProjectEJB.findProject(projectId);
     }
 
     public StemProject getProject() {

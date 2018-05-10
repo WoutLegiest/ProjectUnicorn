@@ -21,33 +21,44 @@
 
                 <h3>Create new account</h3>
 
-                <h:outputLabel value="Class Name:"/>
+                <br/>
+
+                <h:outputLabel value="Class Name:"
+                               styleClass="col-3"/>
                 <h:inputText id="className"
+                             styleClass="right col-9"
                              value="#{stemProjectController.project.className}"
                              required="true"
                              a:placeholder="Class Name."
                              maxlength="30"/>
 
-                <h:outputLabel value="Description:"/>
-                <h:inputTextarea id="description"
-                                 rows="4"
-                                 value="#{stemProjectController.project.description}"
-                                 required="true"
-                                 a:placeholder="Description" />
-
-                <h:outputLabel value="Number of groups:"/>
+                <h:outputLabel value="Number of groups:"
+                               styleClass="col-3"/>
                 <h:inputText id="groups"
+                             styleClass="right col-9"
                              value="#{stemProjectController.numberOfGroups}"
                              required="true"
                              a:placeholder="Amount of groups"
                              maxlength="30"/>
 
-                <h:commandButton action="#{stemProjectController.newProject}" value="Submit"/>
+                <h:outputLabel value="Description:"
+                               styleClass="col-3"/>
+                <h:inputTextarea id="description"
+                                 styleClass="right col-9"
+                                 rows="4"
+                                 value="#{stemProjectController.project.description}"
+                                 required="true"
+                                 a:placeholder="Description"/>
+
+                <h:commandButton action="#{stemProjectController.newProject}"
+                                 type="submit"
+                                 value="Submit"
+                                 styleClass="col-12"/>
 
             </h:form>
 
-
         </div>
+
     </ui:define>
 
 </ui:composition>

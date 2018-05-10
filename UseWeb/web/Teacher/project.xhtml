@@ -25,11 +25,42 @@
 
             <h1><h:outputLabel value="#{stemProjectController.project.className}"/></h1>
 
-            <h3><h:outputLabel value="#{stemProjectController.project.teacher.user.getFullName}"/></h3>
+            <h3><h:outputLabel value="#{stemProjectController.project.teacher.user.getFullName()}"/></h3>
 
             <p><h:outputLabel value="#{professionalProjectController.project.description}"/></p>
 
-            <p>Hier komt een tabel met meetwaarden</p>
+            <h:dataTable value="#{stemProjectController.findStudentsForProject()}" var="p"
+                         styleClass="projects-table"
+                         headerClass="projects-table-header"
+                         rowClasses="projects-table-odd-row,projects-table-even-row"
+            >
+
+                <h:column>
+                    <f:facet name="header">Login</f:facet>
+                    <h:outputText value="#{p.user.login}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Password</f:facet>
+                    <h:outputText value="#{p.user.login}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">School</f:facet>
+                    <h:outputText value="#{p.school}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Class</f:facet>
+                    <h:outputText value="#{p.className}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Group number</f:facet>
+                    <h:outputText value="#{p.grNr}"/>
+                </h:column>
+
+            </h:dataTable>
 
         </div>
 

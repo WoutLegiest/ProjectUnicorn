@@ -25,7 +25,7 @@ public class Student implements Serializable {
     private String school;
 
     @Column(name = "className", nullable = false)
-    private String klas;
+    private String className;
 
     @Column(name = "groupNr", nullable = false)
     private int grNr;
@@ -34,10 +34,10 @@ public class Student implements Serializable {
         super();
     }
 
-    public Student(User user, String school, String klas, int grNr) {
+    public Student(User user, String school, String className, int grNr) {
         this.user = user;
         this.school = school;
-        this.klas = klas;
+        this.className = className;
         this.grNr = grNr;
     }
 
@@ -65,12 +65,12 @@ public class Student implements Serializable {
         this.school = school;
     }
 
-    public String getKlas() {
-        return klas;
+    public String getClassName() {
+        return className;
     }
 
-    public void setKlas(String klas) {
-        this.klas = klas;
+    public void setClassName(String klas) {
+        this.className = klas;
     }
 
     public int getGrNr() {

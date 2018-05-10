@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import javax.xml.bind.DatatypeConverter;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -95,13 +96,13 @@ public class UserManagementEJB implements UserManagementEJBLocal {
      * Aanmaken van een Student op basis van een User object
      * @param user user de basis waarvan we een Student object maken
      * @param school De bijhorende school
-     * @param klas De bijhorende klas
-     * @param grNr Het bijhorende groepsnummer
+     * @param studentClass De bijhorende klas
+     * @param groupNumber Het bijhorende groepsnummer
      * @return Het gemaakte Student object
      */
     @Override
-    public Student createStudent(User user, String school, String klas, int grNr){
-        Student student = new Student(user, school, klas, grNr);
+    public Student createStudent(User user, String school, String studentClass, int groupNumber){
+        Student student = new Student(user, school, studentClass, groupNumber);
         em.persist(student);
         return student;
     }
@@ -182,6 +183,24 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         return null;
 
     }
+
+    /**
+     * Vinden van alle studenten op basis van klas die uit een project kan gehaald worden.
+     * @param project
+     * @return Een lijst met studenten.
+     */
+    @Override
+    public List<Student> findAllStudentsForProject(StemProject project){
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("SELECT s FROM Student s ");
+        queryBuilder.append("WHERE s.className = '");
+        queryBuilder.append(project.getClassName());
+        queryBuilder.append("'");
+        TypedQuery<Student> q = em.createQuery(queryBuilder.toString(), Student.class);
+        List<Student> students = q.getResultList();
+        return students;
+    }
+
 
     /**
      * Alle gebruiker worden gezocht en teruggeven

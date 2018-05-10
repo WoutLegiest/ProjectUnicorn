@@ -15,8 +15,10 @@
         <div class="col-12 section left">
 
             <h1>Projecten</h1>
-            
-            <h:commandButton action="newProject" value="New Project"/>
+
+            <h:form>
+                <h:commandButton action="newProject?faces-redirect=true;" value="New Project"/>
+            </h:form>
 
             <h:dataTable value="#{stemProjectController.findAllProjectsByTeacher()}" var="p"
                          styleClass="projects-table"

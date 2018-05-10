@@ -22,4 +22,8 @@ public interface StemProjectManagementEJBLocal {
 
     StemProject findProjectByUser(User user);
 
+    StemProject findProject(long id);
+
+    <T> void updateDB(T t);
+
 }
