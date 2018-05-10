@@ -36,7 +36,6 @@ public class STEMMeasurement implements Serializable{
     @Column(name = "description", nullable = false)
     private String description;
 
-
     @Column(table = "data", name="xData")
     @Lob
     @Basic(fetch=FetchType.LAZY)

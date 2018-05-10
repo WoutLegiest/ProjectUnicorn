@@ -65,7 +65,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         md.update(password.getBytes("UTF-8"));
         byte[] digest = md.digest();
-        return DatatypeConverter.printBase64Binary(digest).toString();
+        return DatatypeConverter.printBase64Binary(digest);
     }
 
     /**

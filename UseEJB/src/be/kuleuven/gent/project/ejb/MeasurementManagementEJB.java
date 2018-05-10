@@ -1,6 +1,5 @@
 package be.kuleuven.gent.project.ejb;
 
-
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -89,10 +88,9 @@ public class MeasurementManagementEJB implements MeasurementManagementEJBLocal {
      * en wordt hard in het document gezet. Slaat dit script lokaal op in een .m file.
      * @param list Eén Arraylist wordt gebruikt om in het script te steken.
      * @return Het pad waar het script staat wordt teruggegeven
-     * @throws IOException
      */
     @Override
-    public String maakScript(ArrayList<Float> list) throws IOException {
+    public String maakScript(ArrayList<Float> list) {
 
         /*
         1) Opening van het script
