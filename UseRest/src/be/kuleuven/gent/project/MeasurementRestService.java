@@ -111,20 +111,14 @@ public class MeasurementRestService {
     public Response registerMeasurement(String jsonInput)  {
         try {
             JSONObject jsonObject = new JSONObject(jsonInput);
-            long projectID = jsonObject.getLong("professionalProject_id");
+            JSONObject projectJSON = jsonObject.getJSONObject("project");
+            long projectID = projectJSON.getLong("id");
             long dataID = jsonObject.getLong("idData");
             String login = jsonObject.getString("proUser_User_LoginName");
             String description = jsonObject.getString("description");
-            String dateString = jsonObject.getString("datum");
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date parsed = null;
-            try {
-                parsed = sdf.parse(dateString);
-            } catch (ParseException e1) {
-                // TODO Auto-generated catch block
-                e1.printStackTrace();
-            }
-            Date dateSql = new Date(parsed.getTime());
+            Long dateLong = jsonObject.getLong("datum");
+
+            Date dateSql = new Date(dateLong);
             ProUser proUser = userManagementEJBLocal.findProUser(login);
             ProfessionalProject professionalProject= professionalProjectManagementEJBLocal.findProject(projectID);
             Data data = dataManagementEJBLocal.findData(dataID);
