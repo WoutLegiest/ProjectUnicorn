@@ -64,9 +64,9 @@
                 //Custom markers
                 var unicorn = '../resources/unicornMarker.png';
 
-                var name = "#{spotterProjectController.project.name}";
-                var latitude = parseFloat("#{spotterProjectController.project().latitude}");
-                var longitude = parseFloat("#{spotterProjectController.project().longitude}");
+                var name = "#{professionalProjectController.project.name}";
+                var latitude = parseFloat("#{professionalProjectController.project().latitude}");
+                var longitude = parseFloat("#{professionalProjectController.project().longitude}");
                 var uluru = {lat: latitude, lng: longitude};
 
                 var map = new google.maps.Map(document.getElementById('map'), {
