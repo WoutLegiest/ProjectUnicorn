@@ -60,7 +60,7 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
             User user = new User(sb.toString(), sb.toString(), "student", email);
 
             userEJB.createUser(user);
-            userEJB.createStudent(user, school, studentClass, i);
+            userEJB.createStudent(user, school, studentClass, i+1);
         }
 
         updateDB(stemProject);
