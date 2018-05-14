@@ -68,7 +68,7 @@ public class StemProjectController implements Serializable {
     public String newProject(){
         project.setTeacher(findTeacher());
         stemProjectEJB.createProject(project, numberOfGroups);
-        return "projecten?faces-redirect=true";
+        return "projects?faces-redirect=true";
     }
 
     /**
