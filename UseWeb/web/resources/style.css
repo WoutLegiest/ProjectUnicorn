@@ -168,6 +168,11 @@
 	margin-bottom: 30px;
 }
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
 @media only screen and (max-width: 768px) {
 	/* For mobile phones: */
 	[class*="col-"] {
