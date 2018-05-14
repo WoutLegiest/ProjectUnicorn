@@ -8,7 +8,7 @@ j
 b
 2UseJPA/src/be/kuleuven/gent/project/data/User.java,0/6/0695fa76cf09a6a6977b1765075da629bc7a1bbe
 n
->UseEJB/src/be/kuleuven/gent/project/ejb/UserManagementEJB.java,9/d/9d11ceb3030e6c1638b9ea80dbcae7512af4c699
+>UseEJB/src/be/kuleuven/gent/project/ejb/UserManagementEJB.java,9\d\9d11ceb3030e6c1638b9ea80dbcae7512af4c699
 r
 BUseRest/src/be/kuleuven/gent/project/Support/UserLightStudent.java,1/0/1029ea74cb5f86cba5095d3ea37e874c0c2ae607
 j
@@ -28,7 +28,7 @@ DUseRest/src/be/kuleuven/gent/project/StemMeasurementRestService.java,d/4/d4103
 l
 <UseRest/src/be/kuleuven/gent/project/SpotterProjectData.java,a/8/a8112bb7b02aeffa78fd4fb43dd0d0abf63611b4
 u
-EUseEJB/src/be/kuleuven/gent/project/ejb/StemProjectManagementEJB.java,f/6/f65559dedda1bfca6a6508da53fbb6912036f28b
+EUseEJB/src/be/kuleuven/gent/project/ejb/StemProjectManagementEJB.java,f\6\f65559dedda1bfca6a6508da53fbb6912036f28b
 p
 @UseRest/src/be/kuleuven/gent/project/MeasurementRestService.java,d/2/d23ae64f7acd28dc8fef85d5121f63f8f8e0db3d
 l
@@ -43,3 +43,15 @@ i
 9UseRest/src/be/kuleuven/gent/project/DataRestService.java,9/a/9ad35b87f0f38fe25ce1afa96846f14ae248173b
 m
 =UseRest/src/be/kuleuven/gent/project/Support/DataAdapter.java,6/c/6c4934733b0716a259dcedb7aecdb34f6e3f36bc
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+}
+MUseWeb/src/be/kuleuven/gent/project/jsf/controller/StemProjectController.java,8\1\81db584205ce32841b28c66f43bfbd1847c136fc
+i
+9UseJPA/src/be/kuleuven/gent/project/data/StemProject.java,f\a\fa2743a95200be5d9dbfd50cf6c021d2cba71154
+R
+"UseWeb/web/Teacher/projecten.xhtml,1\5\157e02a681f366c4859be3433fd9b44d828b7bb7
+P
+ UseWeb/web/Teacher/project.xhtml,4\a\4aa9e35fe8fe6a67bcab61b8f649c18221ccc55b
+P
+ UseWeb/web/ProUser/project.xhtml,1\6\16e0865f9b565d4791e4c9c30b1a438b00c83ad3

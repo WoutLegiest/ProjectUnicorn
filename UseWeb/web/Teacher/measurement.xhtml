@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="layoutTeacher.xhtml">
+
+    <ui:define name="title">Project</ui:define>
+
+    <ui:define name="meta">
+        <script src="scripts/highcharts.js"/>
+        <script src="scripts/boost.js"/>
+        <script src="scripts/exporting.js"/>
+
+        <f:metadata>
+            <f:viewParam name="measurement" value="#{stemMeasurementController.measurementId}"/>
+            <f:viewAction action="#{stemMeasurementController.findMeasurement}"/>
+        </f:metadata>
+
+    </ui:define>
+
+    <ui:define name="content">
+
+        <div class="col-12 section" style="float: left;">
+
+            <h1>
+                Measurement
+            </h1>
+
+            <h3>
+                <h:outputLabel value="#{sMeasurementController.naaam}"/>
+            </h3> <br/>
+
+            <p>
+                <h:outputLabel value="#{stemMeasurementController.gysdgsd.description}"/>
+            </p>
+        </div>
+
+        <div class="col-12 section">
+
+            <div id="dataChart" style="height: 400px; max-width: 800px; margin: 0 auto" />
+            <div id="xChart" style="height: 400px; max-width: 800px; margin: 0 auto" />
+            <div id="yChart" style="height: 400px; max-width: 800px; margin: 0 auto" />
+            <div id="zChart" style="height: 400px; max-width: 800px; margin: 0 auto" />
+
+        </div>
+
+        <script type="text/javascript" src="scripts/jsChart.js"/>
+
+        <h:outputScript>
+            getDataFromREST("#{stemMeasurementController.measurementId}");
+        </h:outputScript>
+    </ui:define>
+
+</ui:composition>
+</html>

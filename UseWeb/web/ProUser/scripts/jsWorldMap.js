@@ -88,7 +88,6 @@ function map(name, lat, lng) {
         var index = i + 1;
 
         info.push('<h3>' + name[i] + '</h3>' +
-            '<p>uitleg over het project</p>' +
             '<a href="project.xhtml?professionalProject=' + index + '">View project</a>');
 
         google.maps.event.addListener(marker, 'click', (function (marker, i) {

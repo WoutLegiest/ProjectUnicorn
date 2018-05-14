@@ -93,12 +93,13 @@ public class StemProjectManagementEJB implements StemProjectManagementEJBLocal {
     @Override
     public List<STEMMeasurement> findAllMeasurementsByStudent(User u) {
         StringBuilder query = new StringBuilder();
-        query.append("SELECT m FROM STEMMeasurement m WHERE m.student.user.login = '");
+        query.append("SELECT m FROM STEMMeasurement m WHERE m.userLogin = '");
         query.append(u.getLogin());
         query.append("'");
         TypedQuery<STEMMeasurement> q =
                 em.createQuery(query.toString(), STEMMeasurement.class);
-        return q.getResultList();
+        List<STEMMeasurement> list = q.getResultList();
+        return list;
     }
 
     /**

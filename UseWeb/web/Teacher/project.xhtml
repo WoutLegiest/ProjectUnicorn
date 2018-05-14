@@ -60,6 +60,11 @@
                     <h:outputText value="#{p.grNr}"/>
                 </h:column>
 
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <a href="measurements.xhtml?student=#{p.user.login}">View measurements</a>
+                </h:column>
+
             </h:dataTable>
 
         </div>
