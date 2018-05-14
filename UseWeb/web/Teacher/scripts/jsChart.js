@@ -8,8 +8,8 @@ function getDataFromREST(id) {
             toJSON(inputData);
         }
     };
-    xhttp.open("GET", "http://localhost:8080/UseWebWeb/rest_unicorn/ProfMeasurementData/data", true);
-    xhttp.setRequestHeader("measurementId", id);
+    xhttp.open("GET", "http://localhost:8080/UseWebWeb/rest_unicorn/data", true);
+    xhttp.setRequestHeader("idData", id);
     xhttp.send();
 }
 
