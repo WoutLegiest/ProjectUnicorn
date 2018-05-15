@@ -43,7 +43,7 @@ public class MeasurementRestService {
     private ProfessionalMeasurementManagementEJBLocal professionalMeasurementManagementEJBLocal;
 
     @EJB
-    private STEMMeasurementManagementEJBLocal stemMeasurementManagementEJBLocal;
+    private StemMeasurementManagementEJBLocal stemMeasurementManagementEJBLocal;
 
     /**
      * Methode die de data ontvangt van de applicatie, deze klaarmaakt voor het verwerken via Octave
