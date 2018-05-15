@@ -33,11 +33,11 @@
             </h1>
 
             <h3>
-                <h:outputLabel value="#{sMeasurementController.naaam}"/>
+                <h:outputLabel value="#{stemMeasurementController.measurement.userLogin}"/>
             </h3> <br/>
 
             <p>
-                <h:outputLabel value="#{stemMeasurementController.gysdgsd.description}"/>
+                <h:outputLabel value="#{stemMeasurementController.measurement.description}"/>
             </p>
         </div>
 
@@ -53,7 +53,7 @@
         <script type="text/javascript" src="scripts/jsChart.js"/>
 
         <h:outputScript>
-            getDataFromREST("#{stemMeasurementController.measurementId}");
+            getDataFromREST("#{stemMeasurementController.measurement.idData}");
         </h:outputScript>
     </ui:define>
 

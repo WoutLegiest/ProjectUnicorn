@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html
-		PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="layoutIndex.xhtml">
-	<ui:define name="title">Index</ui:define>
+    <ui:define name="title">Index</ui:define>
 
-	<ui:define name="content">
-		<div class="col-12 section left">
+    <ui:define name="content">
+        <div class="col-12 section left">
 
-			<h1>Vibration Project</h1>
+            <h1>Vibration Project</h1>
 
-			<p>
-				Welkom op de home pagina van het vibration project.  <br/>
-				Dit project bestaat uit twee verschillende onderdelen.
-			</p>
+            <p>
+                Welkom op de home pagina van het vibration project. <br/>
+                Dit project bestaat uit twee verschillende onderdelen.
+            </p>
 
-			<p>
-				Het eerste onderdeel is de vibration spotter: Een applicatie gebouwd voor professionele gebruikers die
-				niet aan de verleiding kunnen weeerstaan om overal trilling te registreren.
-				De website biedt voor deze gebruikers, onder de menu optie "spotter",
-				een hanidge tool met een overview van zowel zelf als door andere uitgevoerde metingen.
-			</p>
+            <p>
+                Het eerste onderdeel is de vibration spotter: Een applicatie gebouwd voor professionele gebruikers die
+                niet aan de verleiding kunnen weeerstaan om overal trilling te registreren.
+                De website biedt voor deze gebruikers, onder de menu optie "spotter",
+                een hanidge tool met een overview van zowel zelf als door andere uitgevoerde metingen.
+            </p>
 
-			<p>
-				Het tweede onderdeel is het STEM-gedeelte: een applicatie gebouwd voor studenten
-				die ermee kunnen onderzoeken welke invloed de structuur van een gebouw heeft op de trillingen.
-				De website biedt voor de leerkracht een handige ondersteuning en geeft de mogelijkheid om onder andere
-				projecten aan te maken en resultaten te bekijken.
-			</p>
+            <p>
+                Het tweede onderdeel is het STEM-gedeelte: een applicatie gebouwd voor studenten
+                die ermee kunnen onderzoeken welke invloed de structuur van een gebouw heeft op de trillingen.
+                De website biedt voor de leerkracht een handige ondersteuning en geeft de mogelijkheid om onder andere
+                projecten aan te maken en resultaten te bekijken.
+            </p>
 
-			<p>
-				Wij wensen u een prettig verblijf op onze site.
+            <p>
+                Wij wensen u een prettig verblijf op onze site.
 
-			</p>
+            </p>
 
-			<p>
-				Dit project is met liefde gmeaakt door Pelle Reyniers, Boris Wauters en Wouter Legiest.
-			</p>
-			<h:outputLink value="Admin/home.xhtml" >
-				Home Admin
-			</h:outputLink>
+            <p>
+                Dit project is met liefde gmeaakt door Pelle Reyniers, Boris Wauters en Wouter Legiest.
+            </p>
 
-		</div>
+            <h:button outcome="/Admin/home?faces-redirect=true"
+                      value="Homepagina van de admin." />
 
-	</ui:define>
+        </div>
+
+    </ui:define>
 
 </ui:composition>
 
