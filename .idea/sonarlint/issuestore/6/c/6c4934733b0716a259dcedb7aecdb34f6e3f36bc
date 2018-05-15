@@ -1,39 +1,39 @@
 
-squid:S1319"mThe type of the "zF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-Œsquid:S1319"pThe type of the "xData" object should be an interface such as "List" rather than the implementation "ArrayList".(†Íòæ8¹á¢õ´,
-Šsquid:S1319"nThe type of the "yR1" object should be an interface such as "List" rather than the implementation "ArrayList".(ñ¤©8¹á¢õ´,
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(©ÖÃ£8¹á¢õ´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¤ªşÁıÿÿÿÿ8¹á¢õ´,
-squid:S1319"nThe type of the "xR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-squid:S1319"nThe type of the "xR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-squid:S1319"mThe type of the "xF" object should be an interface such as "List" rather than the implementation "ArrayList".(ßÿâÂúÿÿÿÿ8¹á¢õ´,
-‰squid:S1319"mThe type of the "yF" object should be an interface such as "List" rather than the implementation "ArrayList".(­óÈô8¹á¢õ´,
-squid:S1319"nThe type of the "yR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-squid:S1319"nThe type of the "xR1" object should be an interface such as "List" rather than the implementation "ArrayList".(’Åî÷ıÿÿÿÿ8¹á¢õ´,
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÿìÓ¿8¹á¢õ´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Æá™†şÿÿÿÿ8¹á¢õ´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(øÕ®ûÿÿÿÿ8¹á¢õ´,
-‰squid:S1319"mThe type of the "zF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ï¼·»8¹á¢õ´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(û´Ê¢üÿÿÿÿ8¹á¢õ´,
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰áÉ´8¹á¢õ´,
-‹squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(äœÁq8¹á¢õ´,
-Œsquid:S1319"pThe type of the "yData" object should be an interface such as "List" rather than the implementation "ArrayList".(¯Â²•8¹á¢õ´,
-dsquid:S00107"BConstructor has 10 parameters, which is greater than 7 authorized.(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-squid:S1319"mThe type of the "yF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-squid:S1319"mThe type of the "xF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ççˆúÿÿÿÿ8¹á¢õ´,
-Šsquid:S1319"nThe type of the "zR2" object should be an interface such as "List" rather than the implementation "ArrayList".(È¥ŒÂ8¹á¢õ´,
-Šsquid:S1319"nThe type of the "xR2" object should be an interface such as "List" rather than the implementation "ArrayList".(¨–µÚ8¹á¢õ´,
-squid:S1319"nThe type of the "zR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-Šsquid:S1319"nThe type of the "yR2" object should be an interface such as "List" rather than the implementation "ArrayList".(¿¬¤8¹á¢õ´,
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ê³ç8¹á¢õ´,
-Šsquid:S1319"nThe type of the "zR1" object should be an interface such as "List" rather than the implementation "ArrayList".(ê­£8¹á¢õ´,
-Œsquid:S1319"pThe type of the "input" object should be an interface such as "List" rather than the implementation "ArrayList".(†‡ü³8¹á¢õ´,
-squid:S1319"nThe type of the "zR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¹á¢õ´,
-tsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(°ÉÅ­8¹á¢õ´,
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¿ıİ±8¹á¢õ´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(®Ïúÿÿÿÿ8¹á¢õ´,
-squid:S1319"nThe type of the "yR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¹á¢õ´,
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‹÷Üï8¹á¢õ´,
-Œsquid:S1319"pThe type of the "zData" object should be an interface such as "List" rather than the implementation "ArrayList".(ÔèÅÁ8¹á¢õ´,
+squid:S1319"nThe type of the "xR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+squid:S1319"mThe type of the "yF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‹÷Üï8¢“«€¶,
+Šsquid:S1319"nThe type of the "zR1" object should be an interface such as "List" rather than the implementation "ArrayList".(ê­£8¢“«€¶,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(©ÖÃ£8¢“«€¶,
+Šsquid:S1319"nThe type of the "zR2" object should be an interface such as "List" rather than the implementation "ArrayList".(È¥ŒÂ8¢“«€¶,
+squid:S1319"nThe type of the "zR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+Œsquid:S1319"pThe type of the "zData" object should be an interface such as "List" rather than the implementation "ArrayList".(ÔèÅÁ8¢“«€¶,
+‹squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(äœÁq8¢“«€¶,
+squid:S1319"mThe type of the "xF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+Šsquid:S1319"nThe type of the "yR2" object should be an interface such as "List" rather than the implementation "ArrayList".(¿¬¤8¢“«€¶,
+squid:S1319"mThe type of the "zF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+‰squid:S1319"mThe type of the "zF" object should be an interface such as "List" rather than the implementation "ArrayList".(Ï¼·»8¢“«€¶,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÿìÓ¿8¢“«€¶,
+Œsquid:S1319"pThe type of the "xData" object should be an interface such as "List" rather than the implementation "ArrayList".(†Íòæ8¢“«€¶,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ççˆúÿÿÿÿ8¢“«€¶,
+Šsquid:S1319"nThe type of the "yR1" object should be an interface such as "List" rather than the implementation "ArrayList".(ñ¤©8¢“«€¶,
+Œsquid:S1319"pThe type of the "yData" object should be an interface such as "List" rather than the implementation "ArrayList".(¯Â²•8¢“«€¶,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‰áÉ´8¢“«€¶,
+Œsquid:S1319"pThe type of the "input" object should be an interface such as "List" rather than the implementation "ArrayList".(†‡ü³8¢“«€¶,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(®Ïúÿÿÿÿ8¢“«€¶,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¿ıİ±8¢“«€¶,
+Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ê³ç8¢“«€¶,
+squid:S1319"nThe type of the "xR1" object should be an interface such as "List" rather than the implementation "ArrayList".(’Åî÷ıÿÿÿÿ8¢“«€¶,
+squid:S1319"nThe type of the "xR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+‰squid:S1319"mThe type of the "yF" object should be an interface such as "List" rather than the implementation "ArrayList".(­óÈô8¢“«€¶,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¤ªşÁıÿÿÿÿ8¢“«€¶,
+squid:S1319"nThe type of the "yR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+Šsquid:S1319"nThe type of the "xR2" object should be an interface such as "List" rather than the implementation "ArrayList".(¨–µÚ8¢“«€¶,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(û´Ê¢üÿÿÿÿ8¢“«€¶,
+squid:S1319"nThe type of the "yR1" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+tsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(°ÉÅ­8¢“«€¶,
+squid:S1319"mThe type of the "xF" object should be an interface such as "List" rather than the implementation "ArrayList".(ßÿâÂúÿÿÿÿ8¢“«€¶,
+dsquid:S00107"BConstructor has 10 parameters, which is greater than 7 authorized.(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¢“«€¶,
+squid:S1319"nThe type of the "zR2" object should be an interface such as "List" rather than the implementation "ArrayList".(Ÿ°ÎÌıÿÿÿÿ8¢“«€¶,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(øÕ®ûÿÿÿÿ8¢“«€¶,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Æá™†şÿÿÿÿ8¢“«€¶,

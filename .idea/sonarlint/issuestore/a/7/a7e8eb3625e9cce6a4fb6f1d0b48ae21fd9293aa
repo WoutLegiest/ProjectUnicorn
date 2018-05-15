@@ -1,5 +1,0 @@
-
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(“¿şÿÿÿÿ8§…äÌª,
-squid:S1319"sThe type of the "dataList" object should be an interface such as "List" rather than the implementation "ArrayList".(ôÓğª8§…äÌª,
-nsquid:UselessImportCheck"@Remove this unused import 'com.sun.xml.xsom.impl.scd.Iterators'.(Ğà‹úÿÿÿÿ8§…äÌª,
-Vsquid:S1191"5Use classes from the Java API instead of Sun classes.(Ğà‹úÿÿÿÿ8§…äÌª,

@@ -1,7 +1,8 @@
 
-Xsquid:S1854"=Remove this useless assignment to local variable "userToken".(·…İ78“éºí®,
-^squid:S1854"=Remove this useless assignment to local variable "userToken".(Î÷İ¥øÿÿÿÿ8“éºí®,
-Tsquid:S1854"8Remove this useless assignment to local variable "json".(Ê¾8“éºí®,
-Fsquid:S1481"+Remove this unused "genson" local variable.(Ö¾Îs8“éºí®,
+Xsquid:S1854"=Remove this useless assignment to local variable "userToken".(·…İ78‹Èÿ„¶,
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÎÏæ²ıÿÿÿÿ8‹Èÿ„¶,
 Esquid:S1481")Remove this unused "json" local variable.(Ê¾8“éºí®,
 Usquid:S1854":Remove this useless assignment to local variable "genson".(Ö¾Îs8“éºí®,
+^squid:S1854"=Remove this useless assignment to local variable "userToken".(Î÷İ¥øÿÿÿÿ8“éºí®,
+Fsquid:S1481"+Remove this unused "genson" local variable.(Ö¾Îs8“éºí®,
+Tsquid:S1854"8Remove this useless assignment to local variable "json".(Ê¾8“éºí®,

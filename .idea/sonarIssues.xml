@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseEJB/src/be/kuleuven/gent/project/ejb/StemMeasurementManagementEJB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseEJB/src/be/kuleuven/gent/project/ejb/StemProjectManagementEJB.java">
           <value>
             <set />
@@ -24,6 +29,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/STEMMeasurementManagementEJBLocal.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/StemMeasurementManagementEJBLocal.java">
           <value>
             <set />
           </value>

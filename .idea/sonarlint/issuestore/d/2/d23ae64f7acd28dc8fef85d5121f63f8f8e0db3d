@@ -1,5 +1,8 @@
 
-`squid:UselessImportCheck"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8ïİ õ´,
-`squid:S2147"DCombine this catch with the one at line 95, which has the same body.(ï­£Ä8ïİ õ´,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ïİ õ´,
-^squid:UselessImportCheck"5Remove this unused import 'java.text.ParseException'.(ñ®ï•8ïİ õ´,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8…«ä†¶,
+`squid:S2147"DCombine this catch with the one at line 95, which has the same body.(ï­£Ä8¬…â†¶,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¬…â†¶,
+^squid:UselessImportCheck"5Remove this unused import 'java.text.ParseException'.(ñ®ï•8¬…â†¶,
+Ysquid:S1854"8Remove this useless assignment to local variable "data".(ìÙˆ¡ùÿÿÿÿ8„Öˆ¶,
+`squid:UselessImportCheck"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8¬…â†¶,
+Jsquid:S1481")Remove this unused "data" local variable.(ìÙˆ¡ùÿÿÿÿ8„Öˆ¶,

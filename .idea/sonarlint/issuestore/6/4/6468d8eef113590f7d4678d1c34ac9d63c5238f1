@@ -1,5 +1,5 @@
 
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8÷¼ş©,
 bsquid:UselessImportCheck"4Remove this unused import 'javax.websocket.Encoder'.(¶ú‘Ôûÿÿÿÿ8êŒ¥ş©,
 Vsquid:S1191"5Use classes from the Java API instead of Sun classes.(Ğà‹úÿÿÿÿ8ı”¼ş©,
 nsquid:UselessImportCheck"@Remove this unused import 'com.sun.xml.xsom.impl.scd.Iterators'.(Ğà‹úÿÿÿÿ8ı”¼ş©,
-Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8÷¼ş©,

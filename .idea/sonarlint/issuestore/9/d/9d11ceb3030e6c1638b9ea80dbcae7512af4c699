@@ -1,8 +1,8 @@
 
-Hsquid:S2140ã")Use "java.util.Random.nextInt()" instead.(ææñÛ8‡£Øõ´,
-vsquid:S00117ß"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï«Œ€şÿÿÿÿ8‡£Øõ´,
-Fsquid:S11480"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡£Øõ´,
-ƒsquid:S1488Ô"_Immediately return this expression instead of assigning it to the temporary variable "persons".(Øñ´üıÿÿÿÿ8‡£Øõ´,
-„squid:S1488È"`Immediately return this expression instead of assigning it to the temporary variable "students".(³ºĞÆúÿÿÿÿ8‡£Øõ´,
-esquid:UselessImportCheck"5Remove this unused import 'java.nio.charset.Charset'.(ü¶ØŸıÿÿÿÿ8‡£Øõ´,
-isquid:S1192w"FDefine a constant instead of duplicating this literal "login" 3 times.(¦á»•úÿÿÿÿ8‡£Øõ´,
+gsquid:S1192"FDefine a constant instead of duplicating this literal "login" 3 times.(¦á»•úÿÿÿÿ8‡£Øõ´,
+Esquid:S2140")Use "java.util.Random.nextInt()" instead.(ææñÛ8‡£Øõ´,
+csquid:UselessImportCheck"5Remove this unused import 'java.nio.charset.Charset'.(ü¶ØŸıÿÿÿÿ8‡£Øõ´,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡£Øõ´,
+ssquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï«Œ€şÿÿÿÿ8‡£Øõ´,
+€squid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "persons".(Øñ´üıÿÿÿÿ8‡£Øõ´,
+squid:S1488"`Immediately return this expression instead of assigning it to the temporary variable "students".(³ºĞÆúÿÿÿÿ8‡£Øõ´,
