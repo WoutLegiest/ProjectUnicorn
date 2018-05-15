@@ -16,7 +16,6 @@ import java.util.ArrayList;
 @XmlRootElement
 @Entity
 @Table(name="STEMMeasurement")
-@SecondaryTable(name = "data", pkJoinColumns=@PrimaryKeyJoinColumn(name="idData", referencedColumnName="idData"))
 public class STEMMeasurement implements Serializable{
 
     @Id
@@ -36,32 +35,15 @@ public class STEMMeasurement implements Serializable{
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(table = "data", name="xData")
-    @Lob
-    @Basic(fetch=FetchType.LAZY)
-    private Byte[]xData;
+    @Column(name = "date", nullable = false)
+    private java.sql.Date date;
 
-    @Column(table = "data", name="yData")
-    @Lob
-    @Basic(fetch=FetchType.LAZY)
-    private Byte[]yData;
-
-    @Column(table = "data", name="zData")
-    @Lob
-    @Basic(fetch=FetchType.LAZY)
-    private Byte[]zData;
-
-    public Byte[] getxData() {
-        return xData;
-    }
-
-    public STEMMeasurement(Long idProject, Long idData, String userLogin, Byte[] xData, Byte[] yData, Byte[] zData) {
+    public STEMMeasurement(Long idProject, Long idData, String userLogin, String description, java.sql.Date date) {
         this.idProject = idProject;
         this.idData = idData;
         this.userLogin = userLogin;
-        this.xData = xData;
-        this.yData = yData;
-        this.zData = zData;
+        this.date=date;
+        this.description=description;
     }
 
     public STEMMeasurement(){
@@ -98,26 +80,6 @@ public class STEMMeasurement implements Serializable{
 
     public void setIdData(Long idData) {
         this.idData = idData;
-    }
-
-    public void setxData(Byte[] xData) {
-        this.xData = xData;
-    }
-
-    public Byte[] getyData() {
-        return yData;
-    }
-
-    public void setyData(Byte[] yData) {
-        this.yData = yData;
-    }
-
-    public Byte[] getzData() {
-        return zData;
-    }
-
-    public void setzData(Byte[] zData) {
-        this.zData = zData;
     }
 
     public String getDescription() {

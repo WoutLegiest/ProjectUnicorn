@@ -22,9 +22,11 @@ public class DataAdapter {
     private ArrayList<Float>xR1;
     private ArrayList<Float>xR2;
     private ArrayList<Float>xF;
+
     private ArrayList<Float>yR1;
     private ArrayList<Float>yR2;
     private ArrayList<Float>yF;
+
     private ArrayList<Float>zR1;
     private ArrayList<Float>zR2;
     private ArrayList<Float>zF;

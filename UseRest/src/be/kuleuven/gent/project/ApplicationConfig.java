@@ -29,6 +29,7 @@ public class ApplicationConfig extends Application {
 		c.add(MeasurementDataRestService.class);
 		c.add(DataRestService.class);
 		c.add(ProjectRestService.class);
+		c.add(StemMeasurementRestService.class);
 
 		classes = Collections.unmodifiableSet(c);
 	}

@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="unicorn@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
     <root id="1">
-      <ServerVersion>5.7.17</ServerVersion>
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
-    <schema id="2" parent="1" name="Wereld">
+    <schema id="2" parent="1" name="homecare">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="3" parent="1" name="audit">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="4" parent="1" name="films">
+    <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="5" parent="1" name="homecare">
-      <Collation>latin1_swedish_ci</Collation>
-    </schema>
-    <schema id="6" parent="1" name="information_schema">
+    <schema id="4" parent="1" name="mydb">
       <Collation>utf8_general_ci</Collation>
     </schema>
-    <schema id="7" parent="1" name="mysql">
+    <schema id="5" parent="1" name="mysql">
       <Collation>latin1_swedish_ci</Collation>
     </schema>
-    <schema id="8" parent="1" name="performance_schema">
+    <schema id="6" parent="1" name="performance_schema">
       <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="7" parent="1" name="sys">
+      <Collation>utf8_general_ci</Collation>
+    </schema>
+    <schema id="8" parent="1" name="test">
+      <Collation>latin1_swedish_ci</Collation>
     </schema>
     <schema id="9" parent="1" name="unicorn">
       <Current>1</Current>
@@ -1038,7 +1037,6 @@
     </column>
     <index id="259" parent="233" name="fk_Group_User_User1_idx">
       <ColNames>group_LoginName</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="260" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1090,15 +1088,12 @@ group_LoginName</ColNames>
     </column>
     <index id="268" parent="234" name="fk_Spottermeting_Data_idx">
       <ColNames>idData</ColNames>
-      <Type>btree</Type>
     </index>
     <index id="269" parent="234" name="fk_Spottermeting_SpotterProject1_idx">
       <ColNames>professionalProjectId</ColNames>
-      <Type>btree</Type>
     </index>
     <index id="270" parent="234" name="fk_Spottermeting_ProUser1_idx">
       <ColNames>loginName</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="271" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1164,7 +1159,6 @@ loginName</ColNames>
     <index id="281" parent="235" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
-      <Type>btree</Type>
     </index>
     <key id="282" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1194,7 +1188,6 @@ loginName</ColNames>
     </column>
     <index id="287" parent="236" name="fk_ProUser_Group_User1_idx">
       <ColNames>loginName</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="288" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1237,26 +1230,24 @@ loginName</ColNames>
       <DataType>longtext|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="295" parent="237" name="fk_StemExperiment_StemProject1_idx">
+    <column id="295" parent="237" name="date">
+      <Position>6</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="296" parent="237" name="fk_StemExperiment_StemProject1_idx">
       <ColNames>idSTEMProject</ColNames>
-      <Type>btree</Type>
     </index>
-    <index id="296" parent="237" name="fk_StemExperiment_Student1_idx">
+    <index id="297" parent="237" name="fk_StemExperiment_Student1_idx">
       <ColNames>student_Group_User_User_LoginName</ColNames>
-      <Type>btree</Type>
     </index>
-    <key id="297" parent="237" name="PRIMARY">
+    <key id="298" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idSTEMMeasurement
 idSTEMProject</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="298" parent="237" name="fk_idSTEMProject">
-      <ColNames>idSTEMProject</ColNames>
-      <RefSchemaName>unicorn</RefSchemaName>
-      <RefTableName>stemproject</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
     <foreign-key id="299" parent="237" name="fk_student_Group_User_User_LoginName">
       <ColNames>student_Group_User_User_LoginName</ColNames>
       <RefSchemaName>unicorn</RefSchemaName>
@@ -1289,7 +1280,6 @@ idSTEMProject</ColNames>
     </column>
     <index id="304" parent="238" name="fk_StemProject_Teacher1_idx">
       <ColNames>teacher_LoginName</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="305" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1332,7 +1322,6 @@ teacher_LoginName</ColNames>
     </column>
     <index id="312" parent="239" name="fk_Student_User1_idx">
       <ColNames>user_LoginName</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="313" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1365,7 +1354,6 @@ teacher_LoginName</ColNames>
     </column>
     <index id="318" parent="240" name="fk_Teacher_User_id">
       <ColNames>loginName</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="319" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1423,12 +1411,10 @@ teacher_LoginName</ColNames>
     <index id="328" parent="241" name="idUser_UNIQUE">
       <ColNames>idUser</ColNames>
       <Unique>1</Unique>
-      <Type>btree</Type>
     </index>
     <index id="329" parent="241" name="loginName_UNIQUE">
       <ColNames>loginName</ColNames>
       <Unique>1</Unique>
-      <Type>btree</Type>
     </index>
     <key id="330" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -1463,7 +1449,6 @@ teacher_LoginName</ColNames>
     </column>
     <index id="336" parent="242" name="fk_UserTokens_User_LoginNaam_idx">
       <ColNames>user_Login</ColNames>
-      <Type>btree</Type>
     </index>
     <key id="337" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

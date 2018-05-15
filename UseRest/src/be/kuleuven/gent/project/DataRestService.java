@@ -29,4 +29,5 @@ public class DataRestService {
         DataAdapter dataAdapter = new DataAdapter(idData, data);
         return Response.ok(dataAdapter, MediaType.APPLICATION_JSON).build();
     }
+
 }

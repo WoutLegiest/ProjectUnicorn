@@ -8,6 +8,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseEJB/src/be/kuleuven/gent/project/ejb/STEMMeasurementManagementEJB.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseEJB/src/be/kuleuven/gent/project/ejb/StemProjectManagementEJB.java">
           <value>
             <set />
@@ -18,12 +23,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/STEMMeasurementManagementEJBLocal.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/StemProjectManagementEJBLocal.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/UseEJBClient/src/be/kuleuven/gent/project/ejb/UserManagementEJBLocal.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseJPA/src/be/kuleuven/gent/project/data/STEMMeasurement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/ApplicationConfig.java">
           <value>
             <set />
           </value>
@@ -63,6 +83,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/Support/DataAdapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseRest/src/be/kuleuven/gent/project/Support/UserLight.java">
           <value>
             <set />
@@ -73,7 +98,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/UseWeb/web/Teacher/feedback.xhtml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/UseWeb/web/Teacher/overview.xhtml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/UseWeb/web/index.xhtml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/consoles/db/66c7fc35-5100-4e5f-9952-45819cc359a8/console.sql">
           <value>
             <set />
           </value>

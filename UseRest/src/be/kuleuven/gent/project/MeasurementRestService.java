@@ -1,10 +1,7 @@
 package be.kuleuven.gent.project;
 
 import be.kuleuven.gent.project.Support.DataAdapter;
-import be.kuleuven.gent.project.data.Data;
-import be.kuleuven.gent.project.data.ProUser;
-import be.kuleuven.gent.project.data.ProfessionalMeasurement;
-import be.kuleuven.gent.project.data.ProfessionalProject;
+import be.kuleuven.gent.project.data.*;
 import be.kuleuven.gent.project.ejb.*;
 
 import javax.ejb.EJB;
@@ -44,6 +41,9 @@ public class MeasurementRestService {
 
     @EJB
     private ProfessionalMeasurementManagementEJBLocal professionalMeasurementManagementEJBLocal;
+
+    @EJB
+    private STEMMeasurementManagementEJBLocal stemMeasurementManagementEJBLocal;
 
     /**
      * Methode die de data ontvangt van de applicatie, deze klaarmaakt voor het verwerken via Octave
@@ -124,6 +124,29 @@ public class MeasurementRestService {
             Data data = dataManagementEJBLocal.findData(dataID);
             ProfessionalMeasurement professionalMeasurement = professionalMeasurementManagementEJBLocal.makeMeasurement(proUser,professionalProject,data,description,dateSql);
             return Response.ok(professionalMeasurement,MediaType.APPLICATION_JSON).build();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return Response.ok(e,MediaType.APPLICATION_JSON).build();
+        }
+    }
+
+    @POST
+    @Path("/STEMmeasurement_registration")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response registerSTEMMeasurement(String jsonInput)  {
+        try {
+            JSONObject jsonObject = new JSONObject(jsonInput);
+            long dataID = jsonObject.getLong("idData");
+            String login = jsonObject.getString("login");
+            String description = jsonObject.getString("description");
+            Long dateLong = jsonObject.getLong("datum");
+
+            Date dateSql = new Date(dateLong);
+            Student student = userManagementEJBLocal.findStudent(login);
+            Data data = dataManagementEJBLocal.findData(dataID);
+            STEMMeasurement stemMeasurement = stemMeasurementManagementEJBLocal.makeMeasurement(student,dataID,description,dateSql);
+            return Response.ok(stemMeasurement,MediaType.APPLICATION_JSON).build();
         } catch (JSONException e) {
             e.printStackTrace();
             return Response.ok(e,MediaType.APPLICATION_JSON).build();

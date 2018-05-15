@@ -172,7 +172,7 @@ public class UserManagementEJB implements UserManagementEJBLocal {
     @Override
     public Student findStudent(String login) {
 
-        Query q = em.createNativeQuery("SELECT * FROM Student", Teacher.class);
+        Query q = em.createNativeQuery("SELECT * FROM Student", Student.class);
         List<Student> persons = q.getResultList();
 
         for (Student student : persons) {

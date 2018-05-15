@@ -92,8 +92,10 @@ public class LoginAndRegister {
 
         Student student = umejbl.findStudent(userName);
 
+        //return Response.ok(student.getUser().getLogin(),MediaType.APPLICATION_JSON).build();
 
-        if (student!=null&& (student.getUser().getGroup().equals("Student"))){
+
+        if (student!=null&& (student.getUser().getGroup().equals("student"))){
             UserLight userke = new UserLight(student.getUser().getId(),student.getUser().getFirstName(), student.getUser().getLastName(), student.getUser().getLogin(),student.getUser().getEmail(), student.getUser().getGroup());
             if(hPasswd.equals(student.getUser().gethPassword())){
                 UserToken userToken = umejbl.findToken(student.getUser());

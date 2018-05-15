@@ -1,7 +1,7 @@
 
-squid:S1319"rThe type of the "results" object should be an interface such as "List" rather than the implementation "ArrayList".(½êò8öØ‘Î´,
-squid:S1319"sThe type of the "dataList" object should be an interface such as "List" rather than the implementation "ArrayList".(ÚÄàé8öØ‘Î´,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8öØ‘Î´,
-Œsquid:S1319"pThe type of the "input" object should be an interface such as "List" rather than the implementation "ArrayList".(½êò8öØ‘Î´,
-Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8öØ‘Î´,
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Æá™†şÿÿÿÿ8öØ‘Î´,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¹á¢õ´,
+Œsquid:S1319"pThe type of the "input" object should be an interface such as "List" rather than the implementation "ArrayList".(½êò8¹á¢õ´,
+‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Æá™†şÿÿÿÿ8¹á¢õ´,
+squid:S1319"rThe type of the "results" object should be an interface such as "List" rather than the implementation "ArrayList".(½êò8¹á¢õ´,
+Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¹á¢õ´,
+squid:S1319"sThe type of the "dataList" object should be an interface such as "List" rather than the implementation "ArrayList".(ÚÄàé8¹á¢õ´,
